@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Onboard on ENI — ASEAN Labs</title>
+<meta name="description" content="Connect to ENI Mainnet in under 3 minutes. Step-by-step guide for MetaMask, Bitget Wallet, and Token Pocket." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --linen: #ECEAE3;
+    --ink: #0A0A0A;
+    --gold: #F5C842;
+    --gold-deep: #E5B72E;
+    --paper: #FFFFFF;
+    --shadow-offset: 6px;
+    --shadow-offset-sm: 4px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--linen);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+
+  body {
+    background-image: radial-gradient(circle, rgba(10,10,10,0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 100vh;
+    padding: 32px 16px 80px;
+  }
+
+  .wrap { max-width: 880px; margin: 0 auto; }
+
+  /* Top bar */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: var(--ink);
+    color: var(--linen);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 2px solid var(--ink);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--gold);
+    margin-bottom: 40px;
+  }
+  .topbar .crumb { opacity: 0.6; }
+  .topbar .crumb strong { color: var(--gold); opacity: 1; font-weight: 700; }
+  .topbar .status { display: flex; align-items: center; gap: 8px; }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #4CFF7A;
+    box-shadow: 0 0 0 2px rgba(76,255,122,0.25);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 2px rgba(76,255,122,0.25); }
+    50% { box-shadow: 0 0 0 6px rgba(76,255,122,0); }
+  }
+
+  /* Hero */
+  .hero { margin-bottom: 40px; }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    display: inline-block;
+    background: var(--ink);
+    color: var(--gold);
+    padding: 6px 12px;
+    border: 2px solid var(--ink);
+  }
+  h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  h1 .accent {
+    background: var(--gold);
+    padding: 0 12px;
+    display: inline-block;
+    border: 3px solid var(--ink);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
+    transform: rotate(-1deg);
+    margin: 0 4px;
+  }
+  .subtitle {
+    font-size: 18px;
+    max-width: 620px;
+    margin-top: 24px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .meta-row span {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 6px 10px;
+  }
+
+  /* Before-you-start banner */
+  .pre-check {
+    background: var(--gold);
+    border: 3px solid var(--ink);
+    box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--ink);
+    padding: 18px 22px;
+    margin-bottom: 56px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .pre-check .pre-icon {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    line-height: 1;
+    background: var(--ink);
+    color: var(--gold);
+    padding: 6px 12px;
+    flex-shrink: 0;
+  }
+  .pre-check .pre-body strong {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .pre-check .pre-body p { font-size: 14px; line-height: 1.5; }
+  .pre-check .pre-body a {
+    color: var(--ink);
+    font-weight: 700;
+    border-bottom: 2px solid var(--ink);
+    text-decoration: none;
+  }
+
+  /* Section heading */
+  .section-head {
+    margin: 56px 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .section-head .num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 36px;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 4px 14px;
+    border: 3px solid var(--ink);
+    box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--ink);
+    transform: rotate(-1deg);
+  }
+  .section-head h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(24px, 4vw, 36px);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .section-intro {
+    margin-bottom: 24px;
+    font-size: 15px;
+    max-width: 720px;
+  }
+
+  /* Network details card */
+  .card {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
+    padding: 28px;
+  }
+
+  .field {
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(10,10,10,0.2);
+  }
+  .field:first-of-type { padding-top: 4px; }
+  .field:last-of-type { border-bottom: none; padding-bottom: 4px; }
+  .field-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+  .field-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    word-break: break-all;
+  }
+  .field-value.gold-bg {
+    background: var(--gold);
+    padding: 2px 8px;
+    border: 1.5px solid var(--ink);
+    display: inline-block;
+    width: fit-content;
+  }
+  .copy-btn {
+    background: var(--linen);
+    border: 2px solid var(--ink);
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .copy-btn:hover {
+    background: var(--gold);
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .copy-btn:active { transform: translate(1px, 1px); box-shadow: none; }
+  .copy-btn.copied { background: #4CFF7A; }
+
+  .rpc-hint {
+    font-size: 13px;
+    background: var(--linen);
+    border-left: 4px solid var(--gold);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+  .rpc-hint strong { font-weight: 700; }
+
+  .rpc-list {
+    grid-column: 2 / 4;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .rpc-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    background: var(--linen);
+    border: 1.5px solid var(--ink);
+    padding: 6px 10px;
+  }
+  .rpc-item.is-primary {
+    background: #FFF8E1;
+    border-width: 2px;
+  }
+  .rpc-item .badge {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--linen);
+    padding: 2px 5px;
+    flex-shrink: 0;
+  }
+  .rpc-item .badge.primary { background: var(--gold); color: var(--ink); }
+  .rpc-item .url { flex: 1; font-weight: 700; word-break: break-all; }
+  .rpc-item .copy-btn { width: 28px; height: 28px; font-size: 11px; }
+
+  /* Wallet tabs */
+  .wallet-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: -3px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    background: var(--linen);
+    border: 3px solid var(--ink);
+    border-bottom: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-right: -3px;
+    transition: all 0.1s ease;
+    position: relative;
+    color: var(--ink);
+  }
+  .tab:hover { background: var(--gold); }
+  .tab.active {
+    background: var(--paper);
+    z-index: 2;
+    color: var(--ink);
+  }
+  .tab .tab-icon { margin-right: 8px; }
+
+  .wallet-panel {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
+    padding: 32px;
+    display: none;
+  }
+  .wallet-panel.active { display: block; }
+
+  .wallet-panel h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .wallet-panel .panel-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    margin-bottom: 28px;
+  }
+
+  /* Step list */
+  .step-list { list-style: none; counter-reset: step; }
+  .step-list li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px dashed rgba(10,10,10,0.2);
+    align-items: start;
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-list li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    background: var(--ink);
+    color: var(--gold);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--ink);
+  }
+  .step-list .step-body strong {
+    display: block;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+  .step-list .step-body p { font-size: 14px; line-height: 1.55; margin-bottom: 6px; }
+  .step-list .step-body p:last-child { margin-bottom: 0; }
+  .step-list .step-body code {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    background: var(--linen);
+    border: 1.5px solid var(--ink);
+    padding: 1px 6px;
+    word-break: break-all;
+    font-weight: 700;
+  }
+  .step-list .step-body em {
+    background: #FFF8E1;
+    padding: 1px 4px;
+    font-style: normal;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  /* Tip box */
+  .tip {
+    margin-top: 22px;
+    background: var(--linen);
+    border: 2px dashed var(--ink);
+    padding: 16px 18px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .tip strong {
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Reference info section */
+  .ref-info {
+    margin-top: 32px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 20px 24px;
+  }
+  .ref-info h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .ref-info .ref-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 13px;
+    border-top: 1px dashed rgba(10,10,10,0.2);
+  }
+  .ref-info .ref-row .ref-label { opacity: 0.65; }
+  .ref-info .ref-row .ref-val {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    margin-top: 64px;
+    background: var(--ink);
+    color: var(--linen);
+    border: 3px solid var(--ink);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--gold);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(26px, 4vw, 36px);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+  .final-cta p {
+    font-size: 15px;
+    opacity: 0.85;
+    margin-bottom: 28px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    border: 3px solid var(--gold);
+    padding: 16px 28px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--linen);
+    transition: all 0.1s ease;
+  }
+  .cta-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--shadow-offset-sm) + 2px) calc(var(--shadow-offset-sm) + 2px) 0 var(--linen);
+  }
+  .cta-btn:active { transform: translate(2px, 2px); box-shadow: none; }
+
+  /* Wallet install footer */
+  .wallet-installs {
+    margin-top: 56px;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
+    padding: 28px;
+  }
+  .wallet-installs h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .wallet-installs p.hint {
+    font-size: 14px;
+    margin-bottom: 18px;
+    opacity: 0.75;
+  }
+  .install-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 600px) {
+    .install-grid { grid-template-columns: 1fr; }
+  }
+  .install-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--linen);
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.1s ease;
+  }
+  .install-link:hover {
+    background: var(--gold);
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .install-link .ic {
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    flex-shrink: 0;
+  }
+  .install-link .arrow { margin-left: auto; font-family: 'Archivo Black', sans-serif; }
+
+  .footer-note {
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+  }
+  .footer-note a {
+    color: var(--ink);
+    border-bottom: 2px solid var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120%);
+    background: var(--ink);
+    color: var(--gold);
+    padding: 14px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--gold);
+    z-index: 1000;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 90vw;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 600px) {
+    .field { grid-template-columns: 1fr auto; }
+    .field-label { grid-column: 1 / -1; }
+    .field-value { grid-column: 1; }
+    .rpc-list { grid-column: 1 / -1; }
+    .step-list li { grid-template-columns: 1fr; }
+    .step-list li::before { margin-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="crumb">ASEAN LABS &nbsp;/&nbsp; <strong>HOW TO ONBOARD</strong></div>
+    <div class="status"><span class="dot"></span><span>MAINNET LIVE</span></div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <span class="eyebrow">// Onboarding Guide</span>
+    <h1>How to onboard<br>on<span class="accent">ENI</span>.</h1>
+    <p class="subtitle">
+      Add the ENI Mainnet to your wallet in three minutes. Works with MetaMask, Bitget Wallet, and Token Pocket.
+    </p>
+    <div class="meta-row">
+      <span>◆ &lt;1S FINALITY</span>
+      <span>◆ WORKS WITH METAMASK &amp; MORE</span>
+      <span>◆ LIVE SINCE JUN 2025</span>
+      <span>◆ 100% UPTIME</span>
+    </div>
+  </header>
+
+  <!-- Before you start -->
+  <div class="pre-check">
+    <div class="pre-icon">!</div>
+    <div class="pre-body">
+      <strong>Before you start</strong>
+      <p>You need a crypto wallet installed. Don't have one yet? <a href="#install-wallets">Jump to install links →</a></p>
+    </div>
+  </div>
+
+  <!-- Section 1: Network Details -->
+  <div class="section-head">
+    <span class="num">01</span>
+    <h2>Get the network details</h2>
+  </div>
+
+  <p class="section-intro">Copy these values. You'll paste them into your wallet's "Add Network" screen in the next step. The Chain ID and the Primary RPC URL are the two values your wallet absolutely needs.</p>
+
+  <section class="card">
+    <div class="field">
+      <div class="field-label">Network Name</div>
+      <div class="field-value">ENI Mainnet</div>
+      <button class="copy-btn" data-copy="ENI Mainnet" aria-label="Copy network name">⧉</button>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Chain ID</div>
+      <div class="field-value gold-bg">173</div>
+      <button class="copy-btn" data-copy="173" aria-label="Copy chain ID">⧉</button>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Currency Symbol</div>
+      <div class="field-value">EGAS</div>
+      <button class="copy-btn" data-copy="EGAS" aria-label="Copy currency symbol">⧉</button>
+    </div>
+
+    <div class="field">
+      <div class="field-label">Block Explorer</div>
+      <div class="field-value">https://scan.eniac.network</div>
+      <button class="copy-btn" data-copy="https://scan.eniac.network" aria-label="Copy explorer URL">⧉</button>
+    </div>
+
+    <div class="field" style="grid-template-columns: 130px 1fr; align-items: start;">
+      <div class="field-label" style="padding-top: 8px;">RPC URL</div>
+      <div class="rpc-list">
+        <div class="rpc-hint">
+          <strong>Use the Primary URL only.</strong> The others below are alternatives if the primary is unavailable. You only enter one RPC URL into your wallet.
+        </div>
+        <div class="rpc-item is-primary">
+          <span class="badge primary">Primary</span>
+          <span class="url">https://rpc.eniac.network</span>
+          <button class="copy-btn" data-copy="https://rpc.eniac.network" aria-label="Copy primary RPC">⧉</button>
+        </div>
+        <div class="rpc-item">
+          <span class="badge">Backup 1</span>
+          <span class="url">https://rpc1.eniac.network</span>
+          <button class="copy-btn" data-copy="https://rpc1.eniac.network" aria-label="Copy backup 1">⧉</button>
+        </div>
+        <div class="rpc-item">
+          <span class="badge">Backup 2</span>
+          <span class="url">https://rpc2.eniac.network</span>
+          <button class="copy-btn" data-copy="https://rpc2.eniac.network" aria-label="Copy backup 2">⧉</button>
+        </div>
+        <div class="rpc-item">
+          <span class="badge">Mirror</span>
+          <span class="url">https://enirpc.com</span>
+          <button class="copy-btn" data-copy="https://enirpc.com" aria-label="Copy mirror">⧉</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>// What is EGAS?</strong>
+      EGAS is the native gas token for ENI Mainnet during early versions (V0.1–V0.3). It's used to pay transaction fees, the same way ETH works on Ethereum.
+    </div>
+  </section>
+
+  <!-- Reference info (Token ID lives here, separated from wallet fields) -->
+  <div class="ref-info">
+    <h3>// Reference Info (not used by wallet)</h3>
+    <div class="ref-row">
+      <span class="ref-label">Token ID</span>
+      <span class="ref-val">2730</span>
+    </div>
+    <div class="ref-row">
+      <span class="ref-label">Token Decimals</span>
+      <span class="ref-val">18</span>
+    </div>
+    <div class="ref-row">
+      <span class="ref-label">Network Type</span>
+      <span class="ref-val">EVM-Compatible L1</span>
+    </div>
+  </div>
+
+  <!-- Section 2: Add to Wallet -->
+  <div class="section-head">
+    <span class="num">02</span>
+    <h2>Add ENI to your wallet</h2>
+  </div>
+
+  <p class="section-intro">Pick your wallet below. Each tab has step-by-step instructions for that specific wallet.</p>
+
+  <div class="wallet-tabs">
+    <button class="tab active" data-tab="metamask"><span class="tab-icon">🦊</span>MetaMask</button>
+    <button class="tab" data-tab="bitget"><span class="tab-icon">🟦</span>Bitget Wallet</button>
+    <button class="tab" data-tab="tokenpocket"><span class="tab-icon">🪙</span>Token Pocket</button>
+  </div>
+
+  <!-- MetaMask -->
+  <div class="wallet-panel active" id="panel-metamask">
+    <h3>MetaMask</h3>
+    <div class="panel-sub">// Browser extension or mobile app</div>
+    <ol class="step-list">
+      <li><div class="step-body"><strong>Open MetaMask</strong><p>Click the orange <em>fox icon</em> in your browser toolbar, or open the MetaMask app on your phone. Make sure you're logged in.</p></div></li>
+      <li><div class="step-body"><strong>Open the network menu</strong><p>At the very top of the wallet you'll see a small button showing your current network — usually <em>"Ethereum Mainnet"</em> with a colored circle next to it. Click it. A dropdown of networks appears.</p></div></li>
+      <li><div class="step-body"><strong>Add a new network</strong><p>Scroll to the bottom of the dropdown and click <code>+ Add network</code>. On the next screen, click <code>Add a network manually</code> at the bottom.</p></div></li>
+      <li><div class="step-body"><strong>Fill in the form</strong><p>Paste the values from Section 01 above. You only need these five fields:</p><p>· Network Name: <code>ENI Mainnet</code><br>· New RPC URL: <code>https://rpc.eniac.network</code><br>· Chain ID: <code>173</code><br>· Currency Symbol: <code>EGAS</code><br>· Block Explorer URL: <code>https://scan.eniac.network</code></p></div></li>
+      <li><div class="step-body"><strong>Save and switch</strong><p>Click <code>Save</code>. MetaMask will switch to ENI Mainnet automatically (or prompt you to switch — accept it). You'll see <em>"ENI Mainnet"</em> at the top of your wallet. Done.</p></div></li>
+    </ol>
+    <div class="tip"><strong>// You're done</strong>Your wallet is now connected to ENI. You can send and receive EGAS, interact with ENI dApps, and view your transactions on the block explorer.</div>
+  </div>
+
+  <!-- Bitget -->
+  <div class="wallet-panel" id="panel-bitget">
+    <h3>Bitget Wallet</h3>
+    <div class="panel-sub">// Mobile-first multi-chain wallet</div>
+    <ol class="step-list">
+      <li><div class="step-body"><strong>Open Bitget Wallet</strong><p>Launch the Bitget Wallet app on your phone, or open the browser extension. Make sure you're logged in.</p></div></li>
+      <li><div class="step-body"><strong>Tap the network selector</strong><p>At the top of the home screen, you'll see the current network name (e.g. <em>"Ethereum"</em> or a network icon). Tap it to open the network list.</p></div></li>
+      <li><div class="step-body"><strong>Add a custom network</strong><p>Scroll to the bottom of the network list. Tap <code>+ Add Custom Network</code> (sometimes labeled <code>Manage Networks</code> → <code>Custom</code>).</p></div></li>
+      <li><div class="step-body"><strong>Fill in the network form</strong><p>· Network Name: <code>ENI Mainnet</code><br>· RPC URL: <code>https://rpc.eniac.network</code><br>· Chain ID: <code>173</code><br>· Symbol: <code>EGAS</code><br>· Block Explorer: <code>https://scan.eniac.network</code></p></div></li>
+      <li><div class="step-body"><strong>Confirm and switch</strong><p>Tap <code>Confirm</code>. The network is saved. Open the network list again and select <em>ENI Mainnet</em> to switch to it.</p></div></li>
+    </ol>
+    <div class="tip"><strong>// You're done</strong>ENI Mainnet now appears in your network list. Switch to it any time you want to interact with the ENI ecosystem.</div>
+  </div>
+
+  <!-- Token Pocket -->
+  <div class="wallet-panel" id="panel-tokenpocket">
+    <h3>Token Pocket</h3>
+    <div class="panel-sub">// Asia-popular DeFi wallet</div>
+    <ol class="step-list">
+      <li><div class="step-body"><strong>Open Token Pocket</strong><p>Launch the Token Pocket app on your phone, or open the browser extension. Make sure you're logged in.</p></div></li>
+      <li><div class="step-body"><strong>Open the network selector</strong><p>From the wallet home screen, tap the chain name or chain icon at the top of the screen to open the network selector.</p></div></li>
+      <li><div class="step-body"><strong>Add a custom EVM network</strong><p>In the network list, look for the <code>Custom</code> tab or the <code>+</code> icon. Tap it to add a new EVM-compatible network.</p></div></li>
+      <li><div class="step-body"><strong>Enter the network details</strong><p>· Network Name: <code>ENI Mainnet</code><br>· RPC URL: <code>https://rpc.eniac.network</code><br>· Chain ID: <code>173</code><br>· Symbol: <code>EGAS</code><br>· Block Explorer: <code>https://scan.eniac.network</code></p></div></li>
+      <li><div class="step-body"><strong>Save and select</strong><p>Tap <code>Save</code> or <code>Confirm</code>. Then select <em>ENI Mainnet</em> from the chain list to switch.</p></div></li>
+    </ol>
+    <div class="tip"><strong>// You're done</strong>You're now on ENI Mainnet. Your wallet will display your EGAS balance and route all transactions through ENI.</div>
+  </div>
+
+  <!-- Wallet install links -->
+  <section class="wallet-installs" id="install-wallets">
+    <h3>Don't have a wallet yet?</h3>
+    <p class="hint">Install one of these first, then come back to this page.</p>
+    <div class="install-grid">
+      <a class="install-link" href="https://metamask.io/download/" target="_blank" rel="noopener">
+        <span class="ic">🦊</span>
+        <span>Install MetaMask</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="install-link" href="https://web3.bitget.com/en/wallet-download" target="_blank" rel="noopener">
+        <span class="ic">🟦</span>
+        <span>Install Bitget</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="install-link" href="https://www.tokenpocket.pro/en/download/app" target="_blank" rel="noopener">
+        <span class="ic">🪙</span>
+        <span>Install Token Pocket</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>Building something on ENI?</h2>
+    <p>ASEAN Labs is the official ENI incubator across 7 markets. We help projects launch, grow, and scale across Southeast Asia, Japan, Korea, and China.</p>
+    <a href="mailto:info@aseanlabs.io?subject=Apply%20to%20Build%20on%20ENI&body=Hi%20ASEAN%20Labs%20team%2C%0A%0AI%27d%20like%20to%20apply%20to%20build%20on%20ENI.%20Here%20are%20the%20basics%3A%0A%0AProject%20name%3A%20%0AWebsite%20or%20deck%3A%20%0AOne-line%20description%3A%20%0AStage%20(idea%20%2F%20building%20%2F%20live%20%2F%20token%20launched)%3A%20%0ACategory%20(DeFi%20%2F%20Infra%20%2F%20Gaming%20%2F%20RWA%20%2F%20Consumer%20%2F%20Other)%3A%20%0AMy%20name%20%26%20role%3A%20%0ATelegram%20%2F%20X%20handle%3A%20%0ABased%20in%3A%20%0A%0AWhat%20we%20need%20from%20ASEAN%20Labs%3A%0A%0AThanks%2C%0A" class="cta-btn">Apply to Build on ENI →</a>
+  </section>
+
+  <p class="footer-note">
+    Need help? &nbsp;<a href="mailto:info@aseanlabs.io">info@aseanlabs.io</a>
+  </p>
+
+</div>
+
+<div class="toast" id="toast">Copied</div>
+
+<script>
+(function(){
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.className = 'toast show';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toast.className = 'toast'; }, 1800);
+  }
+
+  // Copy buttons
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy');
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.classList.add('copied');
+        btn.textContent = '✓';
+        showToast('Copied: ' + (text.length > 36 ? text.substring(0, 36) + '…' : text));
+        setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '⧉'; }, 1300);
+      } catch (err) {
+        showToast('Copy failed — select manually');
+      }
+    });
+  });
+
+  // Tabs
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.wallet-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + target).classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* =========================================
+     * Preset 1: Yellow / Black / Cyan
+     * =========================================
+     * To switch presets, override these vars.
+     * Each preset uses exactly 3 colours.
+     */
+    --background: #F4BF4B;   /* Primary yellow — page bg       */
+    --foreground: #000000;   /* Black  — text & borders        */
+    --nav-bg:     #F4BF4B;   /* Primary yellow — nav bar       */
+    --accent:     #F4BF4B;   /* Primary yellow — fills         */
+    --sym: #000000;
+
+    /* Typography tokens — fonts loaded via Google Fonts in _document.tsx */
+    --font-sans: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+  }
+
+  html,
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *:focus-visible {
+    outline: 4px solid theme('colors.accent');
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background-color: theme('colors.accent');
+    color: theme('colors.ink');
+  }
+}
+
+@layer utilities {
+  .symbol-tone {
+    color: var(--sym, currentColor);
+  }
+}

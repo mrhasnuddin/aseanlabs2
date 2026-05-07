@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL --max-time 20 https://namada.net/_next/static/chunks/pages/index-c06bd8e9dc748ddf.js -o /tmp/idx.js)",
+      "Bash(curl -sL --max-time 20 https://namada.net/_next/static/chunks/82-ca573417ab7e41b7.js -o /tmp/82.js)",
+      "Bash(curl -sL --max-time 20 https://namada.net/_next/static/chunks/pages/_app-13482c2fd0475418.js -o /tmp/app.js)",
+      "Bash(grep -oE 'registerPlugin[^,;\\)]{0,60}' /tmp/app.js)",
+      "Bash(grep -oE 'PIXI[^\"]{0,30}' /tmp/app.js)",
+      "Bash(grep -oE '\"buildId\":\"[^\"]+\"|\"nextExport\":[a-z]+|\"runtimeConfig\"[^}]{0,80}' /tmp/namada.html)",
+      "Bash(grep -oiE 'class=\"[^\"]{0,100}\\(infinite|loop|slider|swiper|marquee|track\\)[^\"]{0,60}\"' /tmp/namada.html)",
+      "Bash(grep -oE '\\\\.group\\\\\\\\/button[^}{]{0,120}' /tmp/namada.css)",
+      "Bash(pnpm -v)",
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

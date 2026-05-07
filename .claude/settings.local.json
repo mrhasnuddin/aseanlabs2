@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:namada.net)",
+      "Bash(curl -sL --max-time 20 -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36\" https://namada.net/ -D /tmp/namada_headers.txt -o /tmp/namada.html)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL --max-time 20 https://namada.net/_next/static/css/a6607899678d4094.css -o /tmp/namada.css)",
+      "Bash(grep -oE 'transition[^;}]{0,60}' /tmp/namada.css)"
+    ]
+  }
+}
