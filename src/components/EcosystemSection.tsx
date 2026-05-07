@@ -58,6 +58,12 @@ export const EcosystemSection = () => {
   const dragTargetRef = useRef<{ index: number; offsetX: number; offsetY: number } | null>(null);
   const [hoveredProject, setHoveredProject] = useState<typeof PROJECTS[0] | null>(null);
   const { t } = useTranslation();
+
+  const getTagTranslation = (tag: string) => {
+    const key = `ecosystem.tag.${tag.toLowerCase().replace(/[^a-z0-9]/g, '')}`;
+    const translated = t(key);
+    return translated !== key ? translated : tag;
+  };
   
   // Filter for mobile list and search logic
   const filteredProjects = PROJECTS.filter(p => {
@@ -420,10 +426,10 @@ export const EcosystemSection = () => {
         <div className="pt-32 pb-24 px-6 md:hidden">
           <div className="text-center mb-8">
             <h2 className="font-sans text-5xl font-bold uppercase leading-[0.95] tracking-tighter text-foreground text-balance mb-4">
-              {t('ecosystem.headlinePart1') !== 'ecosystem.headlinePart1' ? t('ecosystem.headlinePart1') : 'THRIVING'}<br />
-              <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--foreground)' }}>{t('ecosystem.headlineHighlight') !== 'ecosystem.headlineHighlight' ? t('ecosystem.headlineHighlight') : 'ECOSYSTEM'}</span>
+              {t('ecosystem.title1') !== 'ecosystem.title1' ? t('ecosystem.title1') : 'THRIVING'}<br />
+              <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--foreground)' }}>{t('ecosystem.title2') !== 'ecosystem.title2' ? t('ecosystem.title2') : 'ECOSYSTEM'}</span>
             </h2>
-            <p className="font-mono text-sm sm:text-base leading-relaxed text-foreground/80 mt-2">{t('ecosystem.subtitleMobile') !== 'ecosystem.subtitleMobile' ? t('ecosystem.subtitleMobile') : 'Building the future of ASEAN onchain.'}</p>
+            <p className="font-mono text-sm sm:text-base leading-relaxed text-foreground/80 mt-2">{t('ecosystem.descMobile') !== 'ecosystem.descMobile' ? t('ecosystem.descMobile') : 'Building the future of ASEAN onchain.'}</p>
           </div>
           
           <div className="sticky top-4 z-20 mb-6">
@@ -458,7 +464,7 @@ export const EcosystemSection = () => {
                 onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
                 className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-black transition-colors shadow-[2px_2px_0_0_#000] ${selectedTag === tag ? 'bg-black text-white' : 'bg-white hover:bg-gray-100'}`}
               >
-                {tag}
+                {getTagTranslation(tag)}
               </button>
             ))}
           </div>
@@ -481,7 +487,7 @@ export const EcosystemSection = () => {
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (
                     <span key={tag} className="text-xs font-bold border-2 border-black px-2 py-1 bg-[#F4BF4B] uppercase tracking-wider shadow-[2px_2px_0_0_#000]">
-                      {tag}
+                      {getTagTranslation(tag)}
                     </span>
                   ))}
                 </div>
@@ -511,10 +517,10 @@ export const EcosystemSection = () => {
           {/* Centered Content */}
           <div ref={centerPanelRef} className="z-10 text-center pointer-events-auto max-w-2xl px-6 flex flex-col items-center bg-[#F4BF4B]/95 p-8 border-2 border-black shadow-[8px_8px_0_0_#000]">
             <h2 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.95] tracking-tighter text-foreground text-balance mb-4">
-              {t('ecosystem.headlinePart1') !== 'ecosystem.headlinePart1' ? t('ecosystem.headlinePart1') : 'THRIVING'}<br />
-              <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--foreground)' }}>{t('ecosystem.headlineHighlight') !== 'ecosystem.headlineHighlight' ? t('ecosystem.headlineHighlight') : 'ECOSYSTEM'}</span>
+              {t('ecosystem.title1') !== 'ecosystem.title1' ? t('ecosystem.title1') : 'THRIVING'}<br />
+              <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--foreground)' }}>{t('ecosystem.title2') !== 'ecosystem.title2' ? t('ecosystem.title2') : 'ECOSYSTEM'}</span>
             </h2>
-            <p className="font-mono text-sm sm:text-base lg:text-lg leading-relaxed text-foreground/80 mt-2 mb-8">{t('ecosystem.subtitle') !== 'ecosystem.subtitle' ? t('ecosystem.subtitle') : 'A comprehensive collection of applications, protocols, and partners building the future of ASEAN onchain.'}</p>
+            <p className="font-mono text-sm sm:text-base lg:text-lg leading-relaxed text-foreground/80 mt-2 mb-8">{t('ecosystem.descDesktop') !== 'ecosystem.descDesktop' ? t('ecosystem.descDesktop') : 'A comprehensive collection of applications, protocols, and partners building the future of ASEAN onchain.'}</p>
             
             <div className="flex gap-4 w-full max-w-lg justify-center items-center">
               <div className="flex-1 border-2 border-black bg-white shadow-[6px_6px_0_0_#000] flex focus-within:shadow-[2px_2px_0_0_#000] focus-within:translate-x-1 focus-within:translate-y-1 transition-all">
@@ -557,7 +563,7 @@ export const EcosystemSection = () => {
                   onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
                   className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-black transition-colors shadow-[2px_2px_0_0_#000] ${selectedTag === tag ? 'bg-black text-white' : 'bg-white hover:bg-gray-100'}`}
                 >
-                  {tag}
+                  {getTagTranslation(tag)}
                 </button>
               ))}
             </div>
@@ -602,7 +608,7 @@ export const EcosystemSection = () => {
                 <div className="flex flex-wrap gap-2 mb-3">
                   {hoveredProject.tags.map(tag => (
                     <span key={tag} className="text-xs font-bold border-2 border-black px-1.5 py-0.5 bg-[#F4BF4B] uppercase tracking-wider shadow-[2px_2px_0_0_#000]">
-                      {tag}
+                      {getTagTranslation(tag)}
                     </span>
                   ))}
                 </div>

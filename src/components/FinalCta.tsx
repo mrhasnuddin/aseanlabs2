@@ -1,36 +1,37 @@
 import React from 'react';
 import Link from 'next/link';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const CTA_ITEMS = [
   {
     id: 'wallet',
-    titleKey: 'nav.walletTutorial',
+    titleKey: 'finalCta.walletTitle',
     titleDef: 'WALLET TUTORIAL',
-    descriptionKey: 'cta.walletDesc',
+    descriptionKey: 'finalCta.walletDesc',
     descriptionDef: 'Learn how to set up your wallet and manage assets securely on the network.',
     href: '/onboard',
   },
   {
     id: 'dao',
-    titleKey: 'nav.daoaas',
+    titleKey: 'finalCta.daoTitle',
     titleDef: 'DAOaaS',
-    descriptionKey: 'cta.daoDesc',
+    descriptionKey: 'finalCta.daoDesc',
     descriptionDef: 'Deploy, manage, and scale your decentralized organization with ease.',
     href: '/#dao-as-a-service',
   },
   {
     id: 'process',
-    titleKey: 'nav.process',
+    titleKey: 'finalCta.processTitle',
     titleDef: 'PROCESS',
-    descriptionKey: 'cta.processDesc',
+    descriptionKey: 'finalCta.processDesc',
     descriptionDef: 'Discover how Asean Labs accelerates Web3 builders from concept to launch.',
     href: '/process',
   },
   {
     id: 'why-us',
-    titleKey: 'nav.whyUs',
+    titleKey: 'finalCta.whyUsTitle',
     titleDef: 'WHY US',
-    descriptionKey: 'cta.whyUsDesc',
+    descriptionKey: 'finalCta.whyUsDesc',
     descriptionDef: 'Learn why the biggest projects choose us for Southeast Asian expansion.',
     href: '/why-us',
   },
@@ -47,7 +48,7 @@ export function FinalCta() {
         {/* Header Section */}
         <div className="border-b border-[#F4BF4B] pb-6">
           <h2 className="text-[#F4BF4B] font-mono text-xl md:text-2xl lg:text-3xl font-medium tracking-tight uppercase">
-            {t('cta.headline') !== 'cta.headline' ? t('cta.headline') : 'BUILD AND GROW WITH ASEAN LABS'}
+            {t('finalCta.title') !== 'finalCta.title' ? t('finalCta.title') : 'BUILD AND GROW WITH ASEAN LABS'}
           </h2>
         </div>
 

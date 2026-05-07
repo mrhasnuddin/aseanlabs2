@@ -14,37 +14,56 @@ const langs = {
 
 async function run() {
   const keys = Object.keys(en);
-  const values = Object.values(en);
 
   for (const [locale, code] of Object.entries(langs)) {
-    console.log(`Translating to ${locale}...`);
-    try {
-      const translatedObj = {};
+    const filePath = `src/locales/${locale}.json`;
+    let translatedObj = {};
+    
+    if (fs.existsSync(filePath)) {
+      try {
+        translatedObj = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      } catch (e) {
+        console.error(`Error reading ${filePath}, starting fresh:`, e.message);
+      }
+    }
+
+    console.log(`Checking translations for ${locale}...`);
+    let addedCount = 0;
+    
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      const text = en[key];
       
-      for (let i = 0; i < values.length; i++) {
-        const text = values[i];
-        const key = keys[i];
-        
-        try {
-          const res = await translate(text, { to: code, forceBatch: false });
-          translatedObj[key] = res.text;
-        } catch (e) {
-          console.error(`Error on key "${key}" for ${locale}:`, e.message);
-          // Fallback to English if translation fails
-          translatedObj[key] = text;
-        }
-        
-        // Small delay to avoid rate limiting
-        if (i % 5 === 0) {
-           await new Promise(resolve => setTimeout(resolve, 500));
-        }
+      // Skip if key already exists and is not empty
+      if (translatedObj[key] && translatedObj[key].trim() !== '') {
+        continue;
       }
       
-      fs.writeFileSync(`src/locales/${locale}.json`, JSON.stringify(translatedObj, null, 2));
-      console.log(`Finished ${locale}`);
-    } catch (e) {
-      console.error(`Fatal error translating ${locale}:`, e.message);
+      try {
+        console.log(`Translating [${key}]...`);
+        const res = await translate(text, { to: code, forceBatch: false });
+        translatedObj[key] = res.text;
+        addedCount++;
+      } catch (e) {
+        console.error(`Error on key "${key}" for ${locale}:`, e.message);
+        // Fallback to English if translation fails
+        translatedObj[key] = text;
+      }
+      
+      // Small delay to avoid rate limiting
+      if (addedCount % 5 === 0 && addedCount > 0) {
+         await new Promise(resolve => setTimeout(resolve, 500));
+      }
     }
+    
+    // Ensure the order matches en.json
+    const finalObj = {};
+    for (const key of keys) {
+      finalObj[key] = translatedObj[key] || en[key];
+    }
+    
+    fs.writeFileSync(filePath, JSON.stringify(finalObj, null, 2));
+    console.log(`Finished ${locale} (${addedCount} keys added)`);
   }
 }
 

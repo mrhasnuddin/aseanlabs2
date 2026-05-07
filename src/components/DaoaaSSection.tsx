@@ -4,10 +4,10 @@ import { NbButton } from './NbButton';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const PRODUCES_LIST = [
-  { key: 'daoaas.produces1', default: "On-chain activity that shows up in block explorers — not just in community dashboards." },
-  { key: 'daoaas.produces2', default: "TVL growth tied to real user behavior. Measurable via wallet interactions and contract calls." },
-  { key: 'daoaas.produces3', default: "A community with governance rights and long-term protocol alignment — users who stay." },
-  { key: 'daoaas.produces4', default: "Metrics your investors can verify without asking for screenshots." }
+  { key: 'daoaas.produce1', default: "On-chain activity that shows up in block explorers — not just in community dashboards." },
+  { key: 'daoaas.produce2', default: "TVL growth tied to real user behavior. Measurable via wallet interactions and contract calls." },
+  { key: 'daoaas.produce3', default: "A community with governance rights and long-term protocol alignment — users who stay." },
+  { key: 'daoaas.produce4', default: "Metrics your investors can verify without asking for screenshots." }
 ];
 
 export function DaoaaSSection() {
