@@ -295,27 +295,42 @@ export function ServicesSection() {
                       </div>
                     </div>
                     {/* Scannable Barcode */}
-                    <div className="flex h-12 w-full mt-3 justify-center items-end bg-transparent pt-2 overflow-hidden">
-                      <div className="flex h-full gap-0 scale-[0.7] md:scale-100 origin-bottom">
+                    <div className="flex h-16 w-full mt-3 justify-center items-end overflow-hidden">
+                      <div className="flex h-full gap-0 items-end bg-white px-4 py-1 origin-bottom">
                         {(() => {
-                          const CODE39 = {
-                            'A': '211112112', 'S': '111121212', 'E': '221111211', 'N': '111112122',
-                            'L': '112112112', 'B': '112111122', 'X': '121121112', 'I': '112121111',
-                            ' ': '122111211', '*': '121121211'
+                          // Complete Code 39 encoding: each char = 9 elements (bars+spaces), 
+                          // odd positions = bars, even = spaces, 1=narrow 2=wide
+                          const CODE39: Record<string, string> = {
+                            '0': '111221211', '1': '211211112', '2': '112211112',
+                            '3': '212211111', '4': '111221112', '5': '211221111',
+                            '6': '112221111', '7': '111211212', '8': '211211211',
+                            '9': '112211211', 'A': '211112112', 'B': '112112112',
+                            'C': '212112111', 'D': '111122112', 'E': '211122111',
+                            'F': '112122111', 'G': '111112212', 'H': '211112211',
+                            'I': '112112211', 'J': '111122211', 'K': '211111122',
+                            'L': '112111122', 'M': '212111121', 'N': '111121122',
+                            'O': '211121121', 'P': '112121121', 'Q': '111111222',
+                            'R': '211111221', 'S': '112111221', 'T': '111121221',
+                            'U': '221111112', 'V': '122111112', 'W': '222111111',
+                            'X': '121121112', 'Y': '221121111', 'Z': '122121111',
+                            '-': '121111212', '.': '221111211', ' ': '122111211',
+                            '*': '121121211',
                           };
                           const text = "*ASEAN LABS X ENI*";
+                          const NARROW = 2;
+                          const WIDE = 5;
                           return text.split('').map((char, charIdx) => {
-                            const pattern = CODE39[char as keyof typeof CODE39] || CODE39[' '];
+                            const pattern = CODE39[char] || CODE39[' '];
                             return (
                               <div key={charIdx} className="flex h-full">
                                 {pattern.split('').map((p, pIdx) => (
                                   <div 
                                     key={pIdx} 
                                     className={`h-full ${pIdx % 2 === 0 ? 'bg-black' : 'bg-transparent'}`}
-                                    style={{ width: p === '1' ? '2px' : '6px' }}
+                                    style={{ width: p === '1' ? `${NARROW}px` : `${WIDE}px` }}
                                   />
                                 ))}
-                                <div className="h-full bg-transparent w-[2px]" />
+                                <div className="h-full bg-transparent" style={{ width: `${NARROW}px` }} />
                               </div>
                             );
                           });
