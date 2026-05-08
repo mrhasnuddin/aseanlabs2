@@ -38,13 +38,13 @@ const ADVANTAGES = [
 ];
 
 const REGIONS = [
-  { country: 'Malaysia', countryKey: 'why.my', languages: 'EN · CN · MY', location: [4.2105, 101.9758] },
-  { country: 'Singapore', countryKey: 'why.sg', languages: 'EN · CN', location: [1.3521, 103.8198] },
-  { country: 'Thailand', countryKey: 'why.th', languages: 'TH · EN', location: [15.8700, 100.9925] },
-  { country: 'Vietnam', countryKey: 'why.vn', languages: 'EN', location: [14.0583, 108.2772] },
-  { country: 'Japan', countryKey: 'why.jp', languages: 'JP · EN', location: [36.2048, 138.2529] },
-  { country: 'Korea', countryKey: 'why.kr', languages: 'KR · EN', location: [35.9078, 127.7669] },
-  { country: 'China', countryKey: 'why.cn', languages: 'CN · EN', location: [35.8617, 104.1954] }
+  { country: 'Malaysia', countryKey: 'why.countryMY', languages: 'EN · CN · MY', location: [4.2105, 101.9758] },
+  { country: 'Singapore', countryKey: 'why.countrySG', languages: 'EN · CN', location: [1.3521, 103.8198] },
+  { country: 'Thailand', countryKey: 'why.countryTH', languages: 'TH · EN', location: [15.8700, 100.9925] },
+  { country: 'Vietnam', countryKey: 'why.countryVN', languages: 'EN', location: [14.0583, 108.2772] },
+  { country: 'Japan', countryKey: 'why.countryJP', languages: 'JP · EN', location: [36.2048, 138.2529] },
+  { country: 'Korea', countryKey: 'why.countryKR', languages: 'KR · EN', location: [35.9078, 127.7669] },
+  { country: 'China', countryKey: 'why.countryCN', languages: 'CN · EN', location: [35.8617, 104.1954] }
 ];
 
 // Globe config constants
@@ -441,10 +441,10 @@ export default function WhyUsPage() {
               <div className="w-full lg:w-1/2 flex flex-col gap-10">
                 <div className="mb-4">
                   <h2 className="font-sans text-4xl md:text-6xl font-black uppercase tracking-tighter text-[#F4BF4B] mb-4">
-                    {t('why.regionalPresence') !== 'why.regionalPresence' ? t('why.regionalPresence') : 'Regional Presence'}
+                    {t('why.regionTitle')}
                   </h2>
                   <p className="font-sans text-lg font-medium text-white/80 leading-relaxed">
-                    {t('why.directAccess') !== 'why.directAccess' ? t('why.directAccess') : 'Direct access to core markets'}
+                    {t('why.regionDesc')}
                   </p>
                 </div>
 
