@@ -110,9 +110,6 @@ export function CursorMaskGrid() {
       const mx = pending.x;
       const my = pending.y;
       
-      wrap.style.setProperty('--mouse-x', `${mx}px`);
-      wrap.style.setProperty('--mouse-y', `${my}px`);
-      
       // Disable symbol collision (repulsion) on mobile for performance
       if (window.innerWidth < 768) {
         pending.has = false;
@@ -201,8 +198,12 @@ export function CursorMaskGrid() {
           if ((r === 4 && c === 1) || (r === 7 && c === cRight)) isSymbol = true;
           if ((r === 13 && c === cRight) || (r === 16 && c === 1)) isSymbol = true;
         } else {
-          // Desktop: symbols in the middle where the mask will hide them
-          if (y > 180 && y < dims.h - 180) {
+          // Desktop: symbols around the text, leaving a clean gap in the middle
+          const centerX = dims.w / 2;
+          const centerY = dims.h / 2;
+          const isCenter = Math.abs(x - centerX) < 540 && Math.abs(y - centerY) < 280;
+
+          if (y > 120 && y < dims.h - 120 && !isCenter) {
             if (r % 2 === 0) {
               const offset = (Math.abs((r / 2) % 4 - 2)) * 2;
               if (c % 8 === offset) {
@@ -226,11 +227,7 @@ export function CursorMaskGrid() {
   return (
     <div
       ref={wrapRef}
-      className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-transparent md:z-20 md:bg-background"
-      style={dims.w >= 768 ? {
-        maskImage: `radial-gradient(circle at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0px, transparent ${REVEAL_RADIUS}px, black ${REVEAL_RADIUS + 1}px, black 100%)`,
-        WebkitMaskImage: `radial-gradient(circle at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0px, transparent ${REVEAL_RADIUS}px, black ${REVEAL_RADIUS + 1}px, black 100%)`,
-      } : {}}
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-transparent"
       aria-hidden="true"
     >
       <div className="absolute inset-0 pointer-events-none">

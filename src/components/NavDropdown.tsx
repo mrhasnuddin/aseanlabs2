@@ -140,7 +140,7 @@ export function NavMegaPanel({
       <div className="mx-auto w-full max-w-[1480px] border-x border-b border-foreground bg-background">
         {title && (
           <div className="border-b border-foreground px-6 py-4 md:px-10 md:py-6">
-            <p className="font-sans text-sm font-bold uppercase tracking-widest text-mono">
+            <p className="font-sans text-sm font-bold uppercase tracking-widest text-foreground">
               {title}
             </p>
           </div>
@@ -152,6 +152,9 @@ export function NavMegaPanel({
           {items.map((item, index) => (
             <NavMegaItem key={item.label} item={item} index={index} onClick={onItemClick} />
           ))}
+          <div className="bg-background hidden sm:block lg:hidden" style={{ display: items.length % 2 === 1 ? undefined : 'none' }} />
+          <div className="bg-background hidden lg:block" style={{ display: items.length % 3 !== 0 ? undefined : 'none' }} />
+          <div className="bg-background hidden lg:block" style={{ display: items.length % 3 === 1 ? undefined : 'none' }} />
         </div>
       </div>
     </div>
@@ -171,8 +174,8 @@ function NavMegaItem({ item, onClick, index }: { item: NavItem; onClick: () => v
         className="group flex h-full flex-col justify-between p-6 transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-nb-lg focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-foreground bg-background hover:bg-foreground hover:text-background"
         {...linkProps}
       >
-        <div className="mb-12 flex items-start justify-between gap-4">
-          <h3 className="font-sans text-2xl font-bold uppercase tracking-widest transition-colors duration-150 md:text-3xl">
+        <div className="mb-12 flex items-start justify-between gap-4 text-foreground group-hover:text-background transition-colors duration-150">
+          <h3 className="font-sans text-2xl font-bold uppercase tracking-widest md:text-3xl">
             {item.label}
           </h3>
           <span
@@ -182,7 +185,7 @@ function NavMegaItem({ item, onClick, index }: { item: NavItem; onClick: () => v
             ↗
           </span>
         </div>
-        <p className="font-mono text-xs leading-relaxed opacity-80 md:text-sm">{item.description}</p>
+        <p className="font-mono text-xs leading-relaxed opacity-80 md:text-sm text-foreground group-hover:text-background transition-colors duration-150">{item.description}</p>
       </Link>
     </div>
   );

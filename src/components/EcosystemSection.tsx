@@ -51,7 +51,6 @@ export const EcosystemSection = () => {
   const [gravityActive, setGravityActive] = useState(false);
   const gravityActiveRef = useRef(false);
   const clickCountRef = useRef(0);
-  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dragStartPosRef = useRef<{ x: number, y: number } | null>(null);
 
   // Interaction state
@@ -372,18 +371,11 @@ export const EcosystemSection = () => {
   };
 
   const handleBackgroundClick = () => {
-    if (isMobile) return;
+    if (isMobile || gravityActiveRef.current) return;
     clickCountRef.current += 1;
-    
-    if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
     
     if (clickCountRef.current >= 5) {
       triggerGravity();
-      clickCountRef.current = 0;
-    } else {
-      clickTimeoutRef.current = setTimeout(() => {
-        clickCountRef.current = 0;
-      }, 500);
     }
   };
 
@@ -399,6 +391,7 @@ export const EcosystemSection = () => {
   const handleResetGravity = () => {
     gravityActiveRef.current = false;
     setGravityActive(false);
+    clickCountRef.current = 0;
     // Give all nodes a fast random explosion velocity
     nodesRef.current.forEach(node => {
       node.vx = (Math.random() - 0.5) * 50;
@@ -419,12 +412,12 @@ export const EcosystemSection = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#F4BF4B] font-mono border-b-2 border-black" id="ecosystem">
+    <section className="relative w-full overflow-hidden bg-[#F4BF4B] font-mono border-b-2 border-black md:h-[100vh]" id="ecosystem">
       
       {/* Mobile View */}
       {isMobile ? (
         <div className="pt-32 pb-24 px-6 md:hidden">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 animate-fade-in">
             <h2 className="font-sans text-5xl font-bold uppercase leading-[0.95] tracking-tighter text-foreground text-balance mb-4">
               {t('ecosystem.title1') !== 'ecosystem.title1' ? t('ecosystem.title1') : 'THRIVING'}<br />
               <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--foreground)' }}>{t('ecosystem.title2') !== 'ecosystem.title2' ? t('ecosystem.title2') : 'ECOSYSTEM'}</span>
@@ -432,7 +425,7 @@ export const EcosystemSection = () => {
             <p className="font-mono text-sm sm:text-base leading-relaxed text-foreground/80 mt-2">{t('ecosystem.descMobile') !== 'ecosystem.descMobile' ? t('ecosystem.descMobile') : 'Building the future of ASEAN onchain.'}</p>
           </div>
           
-          <div className="sticky top-4 z-20 mb-6">
+          <div className="sticky top-4 z-20 mb-6 animate-fade-in">
             <div className="border-2 border-black bg-white shadow-[4px_4px_0_0_#000] flex">
               <div className="p-3 border-r-2 border-black bg-gray-100 flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter">
@@ -469,7 +462,7 @@ export const EcosystemSection = () => {
             ))}
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 animate-fade-in">
             {filteredProjects.map((project) => (
               <a 
                 key={project.id} 
@@ -500,7 +493,7 @@ export const EcosystemSection = () => {
         /* Desktop Canvas View */
         <div 
           ref={containerRef}
-          className="hidden md:flex h-[100vh] relative flex-col items-center justify-center overflow-hidden"
+          className="hidden md:flex h-full relative flex-col items-center justify-center overflow-hidden"
           onClick={handleBackgroundClick}
           onContextMenu={(e) => e.preventDefault()} // Disable right click context menu optionally
         >
@@ -515,7 +508,7 @@ export const EcosystemSection = () => {
           />
 
           {/* Centered Content */}
-          <div ref={centerPanelRef} className="z-10 text-center pointer-events-auto max-w-2xl px-6 flex flex-col items-center bg-[#F4BF4B]/95 p-8 border-2 border-black shadow-[8px_8px_0_0_#000]">
+          <div ref={centerPanelRef} className="z-10 text-center pointer-events-auto max-w-2xl px-6 flex flex-col items-center bg-[#F4BF4B]/95 p-8 border-2 border-black shadow-[8px_8px_0_0_#000] animate-fade-in">
             <h2 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.95] tracking-tighter text-foreground text-balance mb-4">
               {t('ecosystem.title1') !== 'ecosystem.title1' ? t('ecosystem.title1') : 'THRIVING'}<br />
               <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--foreground)' }}>{t('ecosystem.title2') !== 'ecosystem.title2' ? t('ecosystem.title2') : 'ECOSYSTEM'}</span>

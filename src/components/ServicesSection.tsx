@@ -240,7 +240,7 @@ export function ServicesSection() {
 
       <div className="mx-auto max-w-[1480px] relative">
         {/* Section header */}
-        <div className="mb-32 lg:mb-48 flex flex-col xl:flex-row gap-16 xl:gap-24 items-stretch">
+        <div className="mb-32 lg:mb-48 flex flex-col xl:flex-row gap-16 xl:gap-24 items-stretch animate-fade-in">
           {/* Headline Column */}
           <div className="flex-1 max-w-4xl flex flex-col justify-between py-1">
             <div>

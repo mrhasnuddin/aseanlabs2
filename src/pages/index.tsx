@@ -53,23 +53,28 @@ export default function Home() {
         }
       );
 
-      // Buttery smooth snapping
-      const sections = gsap.utils.toArray('.snap-start') as HTMLElement[];
-      const getSnaps = () => {
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        return sections.map(s => ScrollTrigger.create({ trigger: s, start: "top top" }).start / scrollHeight);
-      };
+      // Native CSS scroll snapping is now used (via snap-y snap-proximity on html)
+      // for a better rubber-band effect.
 
-      ScrollTrigger.create({
-        start: 0,
-        end: "bottom bottom",
-        snap: {
-          snapTo: getSnaps,
-          duration: { min: 0.4, max: 0.8 },
-          delay: 0.1,
-          ease: "power3.inOut"
-        } as any
+      // Generic entrance animation for sections
+      const fadeElements = gsap.utils.toArray('.animate-fade-in');
+      fadeElements.forEach((el: any) => {
+        gsap.fromTo(el,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              once: true,
+            }
+          }
+        );
       });
+
     });
 
     return () => mm.revert();
@@ -92,11 +97,11 @@ export default function Home() {
       </Head>
       <Nav />
       <main>
-        <section className="snap-start" id="hero"><Hero /></section>
+        <section className="" id="hero"><Hero /></section>
         <div id="social-proof"><PartnersSection /></div>
         <div 
           id="about"
-          className="snap-start relative"
+          className="relative"
           style={{ 
             '--background': '#000000', 
             '--foreground': '#F4BF4B',
@@ -106,11 +111,11 @@ export default function Home() {
         >
           <StatsSection />
         </div>
-        <section className="snap-start relative" id="why-us"><AudienceCardsSection /></section>
-        <section className="snap-start relative" id="capabilities"><ServicesSection /></section>
+        <section className="relative" id="why-us"><AudienceCardsSection /></section>
+        <section className="relative" id="capabilities"><ServicesSection /></section>
         <div 
           id="foundation-section-wrapper"
-          className="snap-start relative"
+          className="relative"
           style={{ 
             '--background': '#F4BF4B', 
             '--foreground': '#000000',
@@ -123,7 +128,7 @@ export default function Home() {
         </div>
         <div 
           id="dao-section"
-          className="snap-start relative"
+          className="relative"
           style={{ 
             '--background': '#F4BF4B', 
             '--foreground': '#000000',
@@ -138,11 +143,11 @@ export default function Home() {
           <div id="ecosystem" className="absolute -top-24"></div>
           <EcosystemSection />
         </section>
-        <section className="snap-start relative" id="final-cta">
+        <section className="relative" id="final-cta">
           <div id="faq" className="absolute -top-24"></div>
           <FinalCta />
         </section>
-        <section className="snap-start" id="footer">
+        <section className="" id="footer">
           <Footer />
         </section>
       </main>

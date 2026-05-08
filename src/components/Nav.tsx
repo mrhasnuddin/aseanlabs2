@@ -40,11 +40,11 @@ const ABOUT_ITEMS = [
     href: '/#social-proof',
   },
   {
-    labelKey: 'nav.faq',
-    descKey: 'nav.desc.faq',
-    defaultLabel: 'FAQ',
-    defaultDesc: 'Common questions from creators, builders, and teams we collaborate with.',
-    href: '/#faq',
+    labelKey: 'nav.whyUs',
+    descKey: 'nav.desc.whyUs',
+    defaultLabel: 'Why Us',
+    defaultDesc: 'Why top protocols and builders choose ASEAN Labs as their execution partner.',
+    href: '/why-us',
   },
 ];
 

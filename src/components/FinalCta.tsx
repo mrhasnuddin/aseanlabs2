@@ -35,7 +35,7 @@ export function FinalCta() {
   return (
     <section className="relative w-full bg-[#000000] px-6 py-20 md:px-10 font-sans border-t-2 border-[#000000]">
       {/* Outer container to match Namada's "card" style */}
-      <div className="mx-auto w-full max-w-[1480px] border border-[#F4BF4B] rounded-sm p-6 md:p-12 flex flex-col gap-12">
+      <div className="mx-auto w-full max-w-[1480px] border border-[#F4BF4B] rounded-sm p-6 md:p-12 flex flex-col gap-12 animate-fade-in">
         
         {/* Header Section */}
         <div className="border-b border-[#F4BF4B] pb-6">

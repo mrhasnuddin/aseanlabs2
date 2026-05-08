@@ -27,7 +27,7 @@ export function DaoaaSSection() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1480px] px-6 md:px-10">
-        <div className="flex flex-col gap-16 lg:gap-24 w-full">
+        <div className="flex flex-col gap-16 lg:gap-24 w-full animate-fade-in">
           
           {/* Top Section: Copywriting & CTAs & Icon */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 w-full">

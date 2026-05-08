@@ -21,7 +21,7 @@ export function FoundationSection() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1480px] px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center animate-fade-in">
           
           {/* Left Column: Copywriting */}
           <div className="flex flex-col items-start gap-8">
@@ -77,7 +77,7 @@ export function FoundationSection() {
         </div>
 
         {/* Stats / Interactive Cards */}
-        <div className="mt-20 lg:mt-32 w-full border border-foreground flex flex-col">
+        <div className="mt-20 lg:mt-32 w-full border border-foreground flex flex-col animate-fade-in">
           {/* Top Row: 4 Proof Cards */}
           <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-foreground">
             {[
@@ -178,7 +178,7 @@ export function FoundationSection() {
         </div>
 
         {/* Core Architecture Pillars */}
-        <div className="mt-12 lg:mt-16 w-full bg-foreground text-background border border-foreground px-6 py-16 lg:px-12 lg:py-24">
+        <div className="mt-12 lg:mt-16 w-full bg-foreground text-background border border-foreground px-6 py-16 lg:px-12 lg:py-24 animate-fade-in">
           <h2 className="text-center font-sans text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-widest text-accent mb-20">
             {t('foundation.archTitle') !== 'foundation.archTitle' ? t('foundation.archTitle') : 'NETWORK ARCHITECTURE'}
           </h2>
