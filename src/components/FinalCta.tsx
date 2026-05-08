@@ -5,34 +5,26 @@ import { useTranslation } from '@/hooks/useTranslation';
 const CTA_ITEMS = [
   {
     id: 'wallet',
-    titleKey: 'finalCta.walletTitle',
-    titleDef: 'WALLET TUTORIAL',
-    descriptionKey: 'finalCta.walletDesc',
-    descriptionDef: 'Learn how to set up your wallet and manage assets securely on the network.',
+    titleKey: 'cta.walletTitle',
+    descriptionKey: 'cta.walletDesc',
     href: '/onboard',
   },
   {
     id: 'dao',
-    titleKey: 'finalCta.daoTitle',
-    titleDef: 'DAOaaS',
-    descriptionKey: 'finalCta.daoDesc',
-    descriptionDef: 'Deploy, manage, and scale your decentralized organization with ease.',
+    titleKey: 'cta.daoTitle',
+    descriptionKey: 'cta.daoDesc',
     href: '/#dao-as-a-service',
   },
   {
     id: 'process',
-    titleKey: 'finalCta.processTitle',
-    titleDef: 'PROCESS',
-    descriptionKey: 'finalCta.processDesc',
-    descriptionDef: 'Discover how Asean Labs accelerates Web3 builders from concept to launch.',
+    titleKey: 'cta.processTitle',
+    descriptionKey: 'cta.processDesc',
     href: '/process',
   },
   {
     id: 'why-us',
-    titleKey: 'finalCta.whyUsTitle',
-    titleDef: 'WHY US',
-    descriptionKey: 'finalCta.whyUsDesc',
-    descriptionDef: 'Learn why the biggest projects choose us for Southeast Asian expansion.',
+    titleKey: 'cta.whyUsTitle',
+    descriptionKey: 'cta.whyUsDesc',
     href: '/why-us',
   },
 ];
@@ -48,7 +40,7 @@ export function FinalCta() {
         {/* Header Section */}
         <div className="border-b border-[#F4BF4B] pb-6">
           <h2 className="text-[#F4BF4B] font-mono text-xl md:text-2xl lg:text-3xl font-medium tracking-tight uppercase">
-            {t('finalCta.title') !== 'finalCta.title' ? t('finalCta.title') : 'BUILD AND GROW WITH ASEAN LABS'}
+            {t('cta.headline')}
           </h2>
         </div>
 
@@ -63,12 +55,12 @@ export function FinalCta() {
               }`}
             >
               <p className="text-[#F4BF4B]/80 font-mono text-sm leading-relaxed max-w-[280px]">
-                {t(item.descriptionKey) !== item.descriptionKey ? t(item.descriptionKey) : item.descriptionDef}
+                {t(item.descriptionKey)}
               </p>
               
               <div className="mt-12 flex items-end justify-between transition-transform duration-300 group-hover:-translate-y-2">
                 <h3 className="text-[#F4BF4B] font-sans text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight max-w-[80%] leading-none transition-colors duration-300 group-hover:text-[#00E5FF]">
-                  {t(item.titleKey) !== item.titleKey ? t(item.titleKey) : item.titleDef}
+                  {t(item.titleKey)}
                 </h3>
                 <svg 
                   className="w-6 h-6 md:w-8 md:h-8 text-[#F4BF4B] transform transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#00E5FF]" 

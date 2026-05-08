@@ -30,6 +30,17 @@ export const LOCALE_NAMES: Record<string, string> = {
   ko: '한국어',
 };
 
+export const LOCALE_SHORT: Record<string, string> = {
+  en: 'EN',
+  ms: 'MS',
+  id: 'ID',
+  'zh-TW': '繁',
+  'zh-CN': '简',
+  vi: 'VI',
+  ja: 'JA',
+  ko: 'KO',
+};
+
 export const LOCALE_FLAGS: Record<string, string> = {
   en: '🇬🇧',
   ms: '🇲🇾',

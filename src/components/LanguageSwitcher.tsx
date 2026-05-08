@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Globe, ChevronDown } from 'lucide-react';
-import { LOCALE_NAMES, LOCALE_FLAGS } from '@/hooks/useTranslation';
+import { LOCALE_NAMES, LOCALE_SHORT, LOCALE_FLAGS } from '@/hooks/useTranslation';
 
 interface Props {
   variant?: 'nav' | 'footer' | 'mobile';
@@ -43,7 +43,7 @@ export function LanguageSwitcher({ variant = 'nav' }: Props) {
                   : 'border-ink/20 text-ink hover:border-ink hover:bg-ink/5'
               }`}
             >
-              <span>{LOCALE_NAMES[loc] || loc.toUpperCase()}</span>
+              <span>{LOCALE_SHORT[loc] || loc.toUpperCase()}</span>
               <span>{LOCALE_FLAGS[loc]}</span>
             </button>
           ))}
@@ -52,25 +52,20 @@ export function LanguageSwitcher({ variant = 'nav' }: Props) {
     );
   }
 
-  // Desktop (Nav & Footer)
+  // Desktop (Nav & Footer) — compact initials in button, full names in dropdown
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`inline-flex items-center justify-between gap-2 border-2 px-3 py-2 font-mono text-sm font-bold uppercase tracking-widest transition-colors duration-0 ${
+        className={`inline-flex items-center justify-center gap-2 border-2 px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest transition-colors duration-0 ${
           variant === 'footer'
             ? 'border-black bg-transparent text-black hover:bg-black hover:text-[#F4BF4B]'
             : 'border-ink bg-transparent text-ink hover:bg-ink hover:text-[#F4BF4B]'
         }`}
       >
-        <Globe size={16} />
-        <span className="hidden lg:inline-block">
-          {LOCALE_NAMES[locale] || locale.toUpperCase()}
-        </span>
-        <span className="inline-block lg:hidden">
-          {locale.toUpperCase()}
-        </span>
-        <ChevronDown size={16} className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <Globe size={14} />
+        <span>{LOCALE_SHORT[locale] || locale.toUpperCase()}</span>
+        <ChevronDown size={14} className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
