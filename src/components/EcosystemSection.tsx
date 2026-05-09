@@ -410,9 +410,8 @@ export const EcosystemSection = () => {
       }
     }
   };
-
   return (
-    <section className="relative w-full overflow-hidden bg-[#F4BF4B] font-mono border-b-2 border-black md:h-[100vh]" id="ecosystem">
+    <section className="relative w-full overflow-hidden bg-[#F4BF4B] font-mono md:h-[100vh]" id="ecosystem">
       
       {/* Mobile View */}
       {isMobile ? (

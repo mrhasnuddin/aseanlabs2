@@ -38,7 +38,7 @@ export function PartnersSection() {
 
       <div className="relative z-10 w-full flex flex-col items-center gap-8 md:gap-12 animate-fade-in">
         <div className="inline-flex flex-col items-center">
-          <span className="inline-flex items-center gap-2 border-2 border-foreground bg-cream px-4 py-2 font-mono text-[11px] tracking-widest2 text-foreground uppercase font-bold shadow-[4px_4px_0_0_#000] mb-4">
+          <span className="inline-flex items-center gap-2 border-2 border-foreground bg-cream px-4 py-2 font-mono text-[11px] tracking-widest2 text-foreground uppercase font-bold mb-4">
             {t('partners.badge') !== 'partners.badge' ? t('partners.badge') : 'Backed By Trust'}
           </span>
           <h2 className="font-sans text-3xl md:text-5xl font-bold uppercase tracking-tighter text-foreground text-center">
@@ -55,7 +55,7 @@ export function PartnersSection() {
                 href={partner.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-full aspect-[2.2/1] bg-white border-2 border-black shadow-[4px_4px_0_0_#000] hover:-translate-y-1 hover:translate-x-1 hover:shadow-none transition-all cursor-pointer p-2 md:p-3 group"
+                className="flex items-center justify-center w-full aspect-[2.2/1] bg-white border-2 border-black transition-all cursor-pointer p-2 md:p-3 group"
               >
                 <div 
                   className={`relative w-full h-full opacity-80 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0 ${partner.invert ? 'brightness-0' : ''}`}

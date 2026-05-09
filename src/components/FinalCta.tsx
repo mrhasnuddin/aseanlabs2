@@ -33,10 +33,11 @@ export function FinalCta() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative w-full bg-[#000000] px-6 py-20 md:px-10 font-sans border-t-2 border-[#000000]">
-      {/* Outer container to match Namada's "card" style */}
-      <div className="mx-auto w-full max-w-[1480px] border border-[#F4BF4B] rounded-sm p-6 md:p-12 flex flex-col gap-12 animate-fade-in">
-        
+    <section className="relative w-full bg-[#F4BF4B] py-20 font-sans">
+      <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10">
+        {/* Outer container to match Namada's "card" style */}
+        <div className="w-full bg-[#000000] border-2 border-[#000000] p-6 md:p-12 flex flex-col gap-12 animate-fade-in">
+          
         {/* Header Section */}
         <div className="border-b border-[#F4BF4B] pb-6">
           <h2 className="text-[#F4BF4B] font-mono text-xl md:text-2xl lg:text-3xl font-medium tracking-tight uppercase">
@@ -79,10 +80,16 @@ export function FinalCta() {
         {/* Abstract Geometric Shapes (Namada Style) */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-16 pt-12 border-t border-[#F4BF4B]/30">
           {/* Shape 1 - Excited */}
-          <div className="group flex flex-col items-center gap-2 cursor-pointer hover:animate-[bounce_0.6s_infinite]" title="Excited">
-            <div className="w-5 h-5 border-4 border-[#F4BF4B] rounded-full transition-transform duration-200 group-hover:-translate-y-1"></div>
+          <div
+            className="group flex flex-col items-center gap-2 cursor-pointer"
+            title="Excited"
+            style={{ animation: 'bounce 0.6s infinite', animationPlayState: 'paused' }}
+            onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'running')}
+            onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'paused')}
+          >
+            <div className="w-5 h-5 border-4 border-[#F4BF4B] rounded-full"></div>
             <div 
-              className="w-10 h-10 bg-[#F4BF4B] transition-transform duration-200 group-hover:scale-105"
+              className="w-10 h-10 bg-[#F4BF4B]"
               style={{ WebkitMaskImage: 'url(/symbols/svg1.svg)', maskImage: 'url(/symbols/svg1.svg)', WebkitMaskSize: 'contain', maskSize: 'contain', WebkitMaskRepeat: 'no-repeat', maskRepeat: 'no-repeat', WebkitMaskPosition: 'center', maskPosition: 'center' }}
             ></div>
           </div>
@@ -128,6 +135,7 @@ export function FinalCta() {
           </div>
         </div>
 
+      </div>
       </div>
     </section>
   );

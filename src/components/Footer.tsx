@@ -41,6 +41,7 @@ const FOOTER_COLUMNS = [
       { labelKey: 'nav.linktree', defaultLabel: 'LINKTREE', href: 'https://linktr.ee/aseanlabs', external: true },
       { labelKey: 'nav.twitter', defaultLabel: 'X (TWITTER)', href: 'https://x.com/AseanLabs_', external: true },
       { labelKey: 'nav.telegram', defaultLabel: 'TELEGRAM', href: 'https://t.me/aseanlabs', external: true },
+      { labelKey: 'nav.brand', defaultLabel: 'VISUAL IDENTITY', href: '/brand' },
     ],
   },
 ];
@@ -54,7 +55,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10 flex flex-col gap-16 pt-20">
         
         {/* Top Banner (Black Bar) */}
-        <div className="w-full bg-[#000000] rounded-lg border-2 border-[#000000] px-6 py-6 md:px-8 md:py-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[4px_4px_0_0_#000]">
+        <div className="w-full bg-[#000000] border-2 border-[#000000] px-6 py-6 md:px-8 md:py-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <h2 className="text-[#F4BF4B] font-sans text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-center md:text-left">
             {t('footer.bannerTitle') !== 'footer.bannerTitle' ? t('footer.bannerTitle') : 'ASEAN LABS IS HERE'}
           </h2>
