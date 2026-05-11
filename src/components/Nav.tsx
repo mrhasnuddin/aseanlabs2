@@ -46,6 +46,20 @@ const ABOUT_ITEMS = [
     defaultDesc: 'Why top protocols and builders choose ASEAN Labs as their execution partner.',
     href: '/why-us',
   },
+  {
+    labelKey: 'nav.howXplanWorks',
+    descKey: 'nav.desc.howXplanWorks',
+    defaultLabel: 'How XPlan Works',
+    defaultDesc: 'Every action verified. Every reward earned. Every metric on-chain.',
+    href: '/how-xplan-works',
+  },
+  {
+    labelKey: 'nav.brand',
+    descKey: 'nav.desc.brand',
+    defaultLabel: 'Visual Identity',
+    defaultDesc: 'Brand guidelines, logos, and visual assets for ASEAN Labs.',
+    href: '/brand',
+  },
 ];
 
 const PRODUCT_ITEMS = [
@@ -62,6 +76,13 @@ const PRODUCT_ITEMS = [
     defaultLabel: 'Integrations',
     defaultDesc: 'Tools, infrastructure, and partners we plug into your stack.',
     href: '/#integrations',
+  },
+  {
+    labelKey: 'nav.daoaas',
+    descKey: 'nav.desc.daoaas',
+    defaultLabel: 'DAOaaS',
+    defaultDesc: 'Launch your DAO, manage treasury, and scale your governance.',
+    href: '/#dao-as-a-service',
   },
 ];
 
@@ -80,6 +101,13 @@ const NETWORK_ITEMS = [
     defaultLabel: 'Ecosystem',
     defaultDesc: 'Projects and infrastructure shipping across the ENI network.',
     href: '/#ecosystem',
+  },
+  {
+    labelKey: 'nav.walletTutorial',
+    descKey: 'nav.desc.walletTutorial',
+    defaultLabel: 'Wallet Tutorial',
+    defaultDesc: 'Learn how to set up your wallet and connect to the ENI Mainnet.',
+    href: '/onboard',
   },
 ];
 

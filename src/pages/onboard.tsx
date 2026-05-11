@@ -167,7 +167,7 @@ export default function OnboardPage() {
           />
 
           <main className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-10 py-20 lg:py-32 flex flex-col items-center">
-          <div className="w-full max-w-[1200px]">
+          <div className="w-full">
             {/* Back Button */}
             <Link 
               href="/" 
@@ -200,23 +200,25 @@ export default function OnboardPage() {
           </div>
           
           {/* Final Footer CTA */}
-          <footer className="w-full max-w-[1200px] bg-black p-12 lg:p-20 text-center text-[#F4BF4B] border border-black">
-            <h2 className="mb-6 font-sans text-5xl lg:text-7xl font-bold uppercase leading-none tracking-tighter">
-              {t('onboard.footerTitle') !== 'onboard.footerTitle' ? t('onboard.footerTitle') : 'Building on ENI?'}
-            </h2>
-            <p className="mx-auto mb-12 max-w-xl text-lg text-white/70 font-sans font-medium">
-              {t('onboard.footerSubtitle') !== 'onboard.footerSubtitle' ? t('onboard.footerSubtitle') : 'ASEAN Labs is the execution layer for ENI builders. We help you launch, grow, and scale.'}
-            </p>
-            <a 
-              href="mailto:info@aseanlabs.io?subject=Apply%20to%20Build%20on%20ENI"
-              className="inline-flex items-center gap-4 border border-[#F4BF4B] bg-[#F4BF4B] px-12 py-6 font-sans text-lg font-bold uppercase tracking-widest text-black transition-colors duration-0 hover:bg-transparent hover:text-[#F4BF4B]"
-            >
-              {t('onboard.footerCta') !== 'onboard.footerCta' ? t('onboard.footerCta') : 'Apply to Build on ENI'}
-              <span className="text-2xl">→</span>
-            </a>
-          </footer>
-          <Footer />
+          <div className="w-full mb-20">
+            <div className="w-full bg-black p-12 lg:p-20 text-center text-[#F4BF4B] border-2 border-black">
+              <h2 className="mb-6 font-sans text-5xl lg:text-7xl font-bold uppercase leading-none tracking-tighter">
+                {t('onboard.footerTitle') !== 'onboard.footerTitle' ? t('onboard.footerTitle') : 'Building on ENI?'}
+              </h2>
+              <p className="mx-auto mb-12 max-w-xl text-lg text-white/70 font-sans font-medium">
+                {t('onboard.footerSubtitle') !== 'onboard.footerSubtitle' ? t('onboard.footerSubtitle') : 'ASEAN Labs is the execution layer for ENI builders. We help you launch, grow, and scale.'}
+              </p>
+              <a 
+                href="mailto:info@aseanlabs.io?subject=Apply%20to%20Build%20on%20ENI"
+                className="inline-flex items-center gap-4 border border-[#F4BF4B] bg-[#F4BF4B] px-12 py-6 font-sans text-lg font-bold uppercase tracking-widest text-black transition-colors duration-0 hover:bg-transparent hover:text-[#F4BF4B]"
+              >
+                {t('onboard.footerCta') !== 'onboard.footerCta' ? t('onboard.footerCta') : 'Apply to Build on ENI'}
+                <span className="text-2xl">→</span>
+              </a>
+            </div>
+          </div>
         </main>
+        <Footer />
         </div>
       </div>
     </>
@@ -336,7 +338,7 @@ function WalletBookRack() {
               </div>
 
               {/* Active State */}
-              <div className={`absolute top-0 left-0 h-full w-full lg:w-[800px] xl:w-[900px] p-6 md:p-10 lg:p-12 transition-all ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col overflow-y-auto ${isActive ? 'opacity-100 translate-y-0 z-10 duration-700 delay-300' : 'opacity-0 translate-y-8 pointer-events-none z-0 duration-200 delay-0'}`}>
+              <div className={`absolute top-0 left-0 h-full w-full p-6 md:p-10 lg:p-12 transition-all ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col overflow-y-auto ${isActive ? 'opacity-100 translate-y-0 z-10 duration-700 delay-300' : 'opacity-0 translate-y-8 pointer-events-none z-0 duration-200 delay-0'}`}>
                  <div className="flex items-center justify-between mb-8 border-b border-[#F4BF4B]/20 pb-6 shrink-0">
                    <div className="flex items-center gap-6">
                      <span className="font-mono text-4xl font-bold text-[#F4BF4B]">0{i + 1}</span>

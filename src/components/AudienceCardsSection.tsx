@@ -200,7 +200,7 @@ function WalletOnboardingBanner() {
             href="/onboard"
             variant="primary-yellow"
             size="lg"
-            className="!px-10 !py-6 !text-lg !font-black !tracking-widest w-full lg:w-auto justify-center"
+            className="!px-10 !py-6 !text-lg !font-black !tracking-widest w-full lg:w-auto justify-center !shadow-none hover:!shadow-none !translate-x-0 !translate-y-0"
           >
             {t('audience.walletCta') !== 'audience.walletCta' ? t('audience.walletCta') : 'Go to Tutorial'}
             <span aria-hidden="true" className="ml-2">→</span>

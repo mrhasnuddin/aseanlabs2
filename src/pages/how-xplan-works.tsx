@@ -70,7 +70,7 @@ export default function HowXplanWorksPage() {
         />
 
         <main className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-10 py-20 lg:py-32 flex flex-col items-center">
-          <div className="w-full max-w-[1200px]">
+          <div className="w-full">
             {/* Back Button / Breadcrumbs */}
             <Link 
               href="/" 
@@ -98,31 +98,33 @@ export default function HowXplanWorksPage() {
           </div>
           
           {/* Final Footer CTA */}
-          <footer className="w-full max-w-[1200px] bg-black p-12 lg:p-20 text-center text-[#F4BF4B] border border-black">
-            <h2 className="mb-6 font-sans text-5xl lg:text-7xl font-bold uppercase leading-none tracking-tighter">
-              {t('xplan.footerTitle') !== 'xplan.footerTitle' ? t('xplan.footerTitle') : 'Ready to grow?'}
-            </h2>
-            <p className="mx-auto mb-12 max-w-xl text-lg text-white/70 font-sans font-medium">
-              {t('xplan.footerSubtitle') !== 'xplan.footerSubtitle' ? t('xplan.footerSubtitle') : 'Integrate DAOaaS and connect verified user behavior to on-chain rewards and real TVL growth.'}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a 
-                href="mailto:info@aseanlabs.io?subject=Inquiry%20about%20DAOaaS"
-                className="inline-flex items-center gap-4 border border-[#F4BF4B] bg-[#F4BF4B] px-10 py-5 font-sans text-lg font-bold uppercase tracking-widest text-black transition-colors duration-0 hover:bg-transparent hover:text-[#F4BF4B]"
-              >
-                {t('xplan.footerCta1') !== 'xplan.footerCta1' ? t('xplan.footerCta1') : 'Contact Us'}
-              </a>
-              <a 
-                href="https://daoaas.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 border border-[#F4BF4B] bg-transparent px-10 py-5 font-sans text-lg font-bold uppercase tracking-widest text-[#F4BF4B] transition-colors duration-0 hover:bg-[#F4BF4B] hover:text-black"
-              >
-                {t('xplan.footerCta2') !== 'xplan.footerCta2' ? t('xplan.footerCta2') : 'Visit DAOaaS.io'}
-                <span className="text-xl">↗</span>
-              </a>
+          <div className="w-full mb-20">
+            <div className="w-full bg-black p-12 lg:p-20 text-center text-[#F4BF4B] border-2 border-black">
+              <h2 className="mb-6 font-sans text-5xl lg:text-7xl font-bold uppercase leading-none tracking-tighter">
+                {t('xplan.footerTitle') !== 'xplan.footerTitle' ? t('xplan.footerTitle') : 'Ready to grow?'}
+              </h2>
+              <p className="mx-auto mb-12 max-w-xl text-lg text-white/70 font-sans font-medium">
+                {t('xplan.footerSubtitle') !== 'xplan.footerSubtitle' ? t('xplan.footerSubtitle') : 'Integrate DAOaaS and connect verified user behavior to on-chain rewards and real TVL growth.'}
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a 
+                  href="mailto:info@aseanlabs.io?subject=Inquiry%20about%20DAOaaS"
+                  className="inline-flex items-center gap-4 border border-[#F4BF4B] bg-[#F4BF4B] px-10 py-5 font-sans text-lg font-bold uppercase tracking-widest text-black transition-colors duration-0 hover:bg-transparent hover:text-[#F4BF4B]"
+                >
+                  {t('xplan.footerCta1') !== 'xplan.footerCta1' ? t('xplan.footerCta1') : 'Contact Us'}
+                </a>
+                <a 
+                  href="https://daoaas.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 border border-[#F4BF4B] bg-transparent px-10 py-5 font-sans text-lg font-bold uppercase tracking-widest text-[#F4BF4B] transition-colors duration-0 hover:bg-[#F4BF4B] hover:text-black"
+                >
+                  {t('xplan.footerCta2') !== 'xplan.footerCta2' ? t('xplan.footerCta2') : 'Visit DAOaaS.io'}
+                  <span className="text-xl">↗</span>
+                </a>
+              </div>
             </div>
-          </footer>
+          </div>
         </main>
         <Footer />
       </div>

@@ -12,8 +12,8 @@ const FOOTER_COLUMNS = [
       { labelKey: 'nav.aboutUs', defaultLabel: 'ABOUT US', href: '/#about' },
       { labelKey: 'nav.process', defaultLabel: 'PROCESS', href: '/process' },
       { labelKey: 'nav.whyUs', defaultLabel: 'WHY US', href: '/why-us' },
+      { labelKey: 'nav.howXplanWorks', defaultLabel: 'HOW XPLAN WORKS', href: '/how-xplan-works' },
       { labelKey: 'nav.socialProof', defaultLabel: 'SOCIAL PROOF', href: '/#social-proof' },
-      { labelKey: 'nav.faq', defaultLabel: 'FAQ', href: '/#faq' },
     ],
   },
   {
@@ -63,7 +63,7 @@ export function Footer() {
             href="mailto:contact@aseanlabs.io"
             variant="primary-black"
             size="md"
-            className="!px-8 w-full md:w-auto justify-center"
+            className="!px-8 w-full md:w-auto justify-center !shadow-none hover:!shadow-none !translate-x-0 !translate-y-0"
           >
             {t('footer.bannerCta') !== 'footer.bannerCta' ? t('footer.bannerCta') : 'REACH OUT TO US'}
             <span aria-hidden="true" className="ml-2">→</span>

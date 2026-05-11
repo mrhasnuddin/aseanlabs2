@@ -80,7 +80,7 @@ export default function BrandIdentityPage() {
         />
 
         <main className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-10 py-20 lg:py-32 flex flex-col items-center">
-          <div className="w-full max-w-[1200px]">
+          <div className="w-full">
             {/* Back Button */}
             <Link 
               href="/" 
