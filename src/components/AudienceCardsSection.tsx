@@ -39,8 +39,8 @@ const CARDS: AudienceCard[] = [
     ctaHref: 'mailto:Info@aseanlabs.io?subject=Build%20Inquiry%20-%20ASEAN%20Labs',
     disabled: false,
     img: '/cards/builder.svg',
-    bg: '#F4BF4B',
-    text: '#000000',
+    bg: 'var(--color-canvas)',
+    text: 'var(--color-struct)',
     topOffset: '0px',
   },
   {
@@ -49,8 +49,8 @@ const CARDS: AudienceCard[] = [
     ctaKey: 'audience.ecosystemCta', defaultCta: 'Explore the Ecosystem',
     ctaHref: '#ecosystem',
     img: '/cards/Ecosystem.svg',
-    bg: '#00E5FF',
-    text: '#000000',
+    bg: 'var(--color-accent)',
+    text: 'var(--color-struct)',
     topOffset: '80px',
   },
   {
@@ -59,8 +59,8 @@ const CARDS: AudienceCard[] = [
     ctaKey: 'audience.enterpriseCta', defaultCta: 'Talk to the Team',
     ctaHref: 'https://calendly.com/aseanlabs1/30min',
     img: '/cards/enterprise.svg',
-    bg: '#000000',
-    text: '#F4BF4B',
+    bg: 'var(--color-struct)',
+    text: 'var(--color-canvas)',
     topOffset: '160px',
     cardBorder: '3px solid #F4BF4B',
   },
@@ -97,10 +97,10 @@ export function AudienceCardsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-black py-20 lg:min-h-screen lg:flex lg:flex-col lg:justify-start lg:py-24">
+    <section ref={sectionRef} className="relative w-full bg-struct py-20 lg:min-h-screen lg:flex lg:flex-col lg:justify-start lg:py-24">
       <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10 lg:flex lg:flex-col lg:flex-1">
         {/* Section label */}
-        <p className="mb-12 font-mono text-sm font-bold uppercase tracking-[0.4em] text-[#F4BF4B]/60">
+        <p className="mb-12 font-mono text-sm font-bold uppercase tracking-[0.4em] text-canvas/60">
           {t('audience.badge') !== 'audience.badge' ? t('audience.badge') : 'Who We Work With'}
         </p>
 
@@ -171,7 +171,7 @@ function WalletOnboardingBanner() {
   const { t } = useTranslation();
 
   return (
-    <div className="relative w-full border-[3px] border-black bg-[#F4BF4B] p-10 lg:p-14 overflow-hidden group">
+    <div className="relative w-full border-[3px] border-struct bg-canvas p-10 lg:p-14 overflow-hidden group">
       {/* Background pattern */}
       <div 
         className="absolute inset-0 opacity-[0.07] pointer-events-none" 
@@ -183,14 +183,14 @@ function WalletOnboardingBanner() {
       
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
         <div className="flex-1">
-          <div className="inline-block bg-black text-[#F4BF4B] px-3 py-1 font-mono text-xs font-black uppercase tracking-widest mb-6">
+          <div className="inline-block bg-struct text-canvas px-3 py-1 font-mono text-xs font-black uppercase tracking-widest mb-6">
             {t('audience.walletBadge') !== 'audience.walletBadge' ? t('audience.walletBadge') : 'Documentation Layer'}
           </div>
-          <h2 className="font-sans text-5xl lg:text-7xl font-black uppercase tracking-tighter text-black mb-4 leading-[0.85]">
+          <h2 className="font-sans text-5xl lg:text-7xl font-black uppercase tracking-tighter text-struct mb-4 leading-[0.85]">
             {t('audience.walletTitle1') !== 'audience.walletTitle1' ? t('audience.walletTitle1') : 'SETUP YOUR'}<br />
             {t('audience.walletTitle2') !== 'audience.walletTitle2' ? t('audience.walletTitle2') : 'WALLET'}
           </h2>
-          <p className="font-mono text-sm sm:text-base lg:text-lg leading-relaxed text-black/80 mt-2 max-w-2xl">
+          <p className="font-mono text-sm sm:text-base lg:text-lg leading-relaxed text-struct/80 mt-2 max-w-2xl">
             {t('audience.walletBody') !== 'audience.walletBody' ? t('audience.walletBody') : 'Ready to build? Follow our step-by-step tutorial to configure your environment and connect to the ENI Mainnet in under 2 minutes.'}
           </p>
         </div>

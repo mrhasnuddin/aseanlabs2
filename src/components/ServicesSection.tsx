@@ -176,65 +176,67 @@ export function ServicesSection() {
   return (
     <section
       ref={containerRef}
-      className="relative z-10 w-full bg-black px-6 py-32 md:px-10 lg:py-48 overflow-hidden"
+      className="relative z-10 w-full bg-struct px-6 py-32 md:px-10 lg:py-48 overflow-hidden"
     >
       <style>{`
         .timeline-box {
-          background-color: black;
-          border: 1px solid var(--accent, #F4BF4B);
-          color: white;
+          background-color: var(--color-struct);
+          border: 1px solid var(--color-accent);
+          color: var(--color-canvas);
           transform: translate(0, 0);
-          box-shadow: 0px 0px 0px #000;
+          box-shadow: 0px 0px 0px var(--color-struct);
           transition: all 0.3s ease;
         }
         .timeline-box.is-active, .timeline-box:hover {
-          background-color: var(--accent, #F4BF4B);
-          border-color: black;
-          color: black;
+          background-color: var(--color-accent);
+          border-color: var(--color-struct);
+          color: var(--color-struct);
           transform: translate(-6px, -6px);
-          box-shadow: 8px 8px 0px #000;
+          box-shadow: 8px 8px 0px var(--color-struct);
           z-index: 20;
         }
         @media (min-width: 1024px) {
           .timeline-box.is-active, .timeline-box:hover {
             transform: translate(-10px, -10px);
-            box-shadow: 12px 12px 0px #000;
+            box-shadow: 12px 12px 0px var(--color-struct);
           }
         }
         .box-number {
-          background-color: black;
-          border: 1px solid var(--accent, #F4BF4B);
-          color: white;
+          background-color: var(--color-struct);
+          border: 1px solid var(--color-accent);
+          color: var(--color-canvas);
           transition: all 0.3s ease;
         }
         .timeline-box.is-active .box-number, .timeline-box:hover .box-number {
-          background-color: black;
-          border-color: black;
-          color: var(--accent, #F4BF4B);
+          background-color: var(--color-struct);
+          border-color: var(--color-struct);
+          color: var(--color-accent);
         }
         .timeline-desc {
-          color: rgba(255, 255, 255, 0.7);
+          color: var(--color-canvas);
+          opacity: 0.7;
         }
         .timeline-box.is-active .timeline-desc, .timeline-box:hover .timeline-desc {
-          color: rgba(0, 0, 0, 0.8);
+          color: var(--color-struct);
+          opacity: 0.8;
         }
         .timeline-accent-line {
-          background-color: var(--accent, #F4BF4B);
+          background-color: var(--color-accent);
         }
         .timeline-box.is-active .timeline-accent-line, .timeline-box:hover .timeline-accent-line {
-          background-color: black;
+          background-color: var(--color-struct);
         }
         .timeline-sub-line {
-          background-color: #00E5FF;
+          background-color: var(--color-relief);
         }
         .timeline-box.is-active .timeline-sub-line, .timeline-box:hover .timeline-sub-line {
-          background-color: black;
+          background-color: var(--color-struct);
         }
         .timeline-subtext {
-          color: #00E5FF;
+          color: var(--color-relief);
         }
         .timeline-box.is-active .timeline-subtext, .timeline-box:hover .timeline-subtext {
-          color: black;
+          color: var(--color-struct);
         }
       `}</style>
 
@@ -245,12 +247,12 @@ export function ServicesSection() {
           <div className="flex-1 max-w-4xl flex flex-col justify-between py-1">
             <div>
               <p className="mb-4 font-mono text-sm font-bold uppercase tracking-[0.4em] text-accent/80">{t('services.badge') !== 'services.badge' ? t('services.badge') : 'Services'}</p>
-              <h2 className="mb-8 font-sans text-6xl font-bold uppercase leading-[0.9] tracking-tighter text-white md:text-8xl lg:text-9xl">
+              <h2 className="mb-8 font-sans text-6xl font-bold uppercase leading-[0.9] tracking-tighter text-relief md:text-8xl lg:text-9xl">
                 {t('services.headlinePart1') !== 'services.headlinePart1' ? t('services.headlinePart1') : 'HOW WE'}<br />
-                <span className="text-transparent" style={{ WebkitTextStroke: '2px #F4BF4B' }}>{t('services.headlineHighlight') !== 'services.headlineHighlight' ? t('services.headlineHighlight') : 'HELP YOU WIN'}</span>
+                <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--color-canvas)' }}>{t('services.headlineHighlight') !== 'services.headlineHighlight' ? t('services.headlineHighlight') : 'HELP YOU WIN'}</span>
               </h2>
             </div>
-            <p className="font-sans text-2xl md:text-3xl font-medium text-accent leading-tight max-w-2xl mt-12 xl:mt-0">
+            <p className="font-sans text-2xl md:text-3xl font-medium text-canvas leading-tight max-w-2xl mt-12 xl:mt-0">
               {t('services.tagline') !== 'services.tagline' ? t('services.tagline') : 'Comprehensive execution for projects building on ENI.'}
             </p>
           </div>
@@ -258,7 +260,7 @@ export function ServicesSection() {
           {/* Body & Highlight Column */}
           <div className="flex-1 flex flex-col justify-between py-1 max-w-3xl">
             {/* Body Text Stacked */}
-            <div className="flex flex-col gap-6 text-white/70 font-mono text-xs md:text-sm leading-relaxed mb-12 xl:mb-0">
+            <div className="flex flex-col gap-6 text-relief/70 font-mono text-xs md:text-sm leading-relaxed mb-12 xl:mb-0">
               <p>
                 {t('services.body1') !== 'services.body1' ? t('services.body1') : 'ASEAN Labs does not offer a menu of optional services. We offer a coordinated operational system — all of it deployed for your project, accountable to your KPIs. When you work with us, you engage the full machine.'}
               </p>
@@ -268,13 +270,13 @@ export function ServicesSection() {
             </div>
 
             {/* Highlight Box - Interactive Easter Egg */}
-            <div className="border border-accent bg-black p-6 md:p-8 relative group cursor-crosshair overflow-hidden transition-colors duration-0 hover:bg-accent hover:border-black">
+            <div className="border border-accent bg-struct p-6 md:p-8 relative group cursor-crosshair overflow-hidden transition-colors duration-0 hover:bg-accent hover:border-struct">
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
-                  <h4 className="font-sans text-lg md:text-xl font-bold text-accent uppercase tracking-wide mb-3 group-hover:text-black transition-colors duration-0">
+                  <h4 className="font-sans text-lg md:text-xl font-bold text-canvas uppercase tracking-wide mb-3 group-hover:text-struct transition-colors duration-0">
                     {t('services.highlightTitle') !== 'services.highlightTitle' ? t('services.highlightTitle') : 'Paid. Structured. Accountable.'}
                   </h4>
-                  <p className="font-mono text-xs md:text-sm text-white/90 leading-relaxed group-hover:text-black/90 transition-colors duration-0">
+                  <p className="font-mono text-xs md:text-sm text-relief/90 leading-relaxed group-hover:text-struct transition-colors duration-0">
                     {t('services.highlightBody') !== 'services.highlightBody' ? t('services.highlightBody') : 'Not a retainer for access. Every engagement is priced, scoped, and contracted before anything begins.'}
                   </p>
                 </div>
@@ -282,8 +284,8 @@ export function ServicesSection() {
                 {/* Hidden Easter Egg Content - Execution Receipt */}
                 <div className="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 group-hover:mt-6 transition-all duration-300 ease-out">
                   <div className="overflow-hidden flex flex-col gap-2">
-                    <div className="w-full border-t-2 border-dashed border-black mb-2" />
-                    <div className="flex justify-between items-end font-mono text-[10px] text-black font-bold uppercase leading-tight">
+                    <div className="w-full border-t-2 border-dashed border-struct mb-2" />
+                    <div className="flex justify-between items-end font-mono text-[10px] text-struct font-bold uppercase leading-tight">
                       <div className="flex flex-col gap-[2px]">
                         <span>{'// STATUS: ACTIVE'}</span>
                         <span>{'// TARGET: ENI_MAINNET'}</span>
@@ -296,7 +298,7 @@ export function ServicesSection() {
                     </div>
                     {/* Scannable Barcode */}
                     <div className="flex h-16 w-full mt-3 justify-center items-end overflow-hidden">
-                      <div className="flex h-full gap-0 items-end bg-white px-4 py-1 origin-bottom">
+                      <div className="flex h-full gap-0 items-end bg-relief px-4 py-1 origin-bottom">
                         {(() => {
                           // Complete Code 39 encoding: each char = 9 elements (bars+spaces), 
                           // odd positions = bars, even = spaces, 1=narrow 2=wide
@@ -326,7 +328,7 @@ export function ServicesSection() {
                                 {pattern.split('').map((p, pIdx) => (
                                   <div 
                                     key={pIdx} 
-                                    className={`h-full ${pIdx % 2 === 0 ? 'bg-black' : 'bg-transparent'}`}
+                                    className={`h-full ${pIdx % 2 === 0 ? 'bg-struct' : 'bg-transparent'}`}
                                     style={{ width: p === '1' ? `${NARROW}px` : `${WIDE}px` }}
                                   />
                                 ))}
@@ -353,7 +355,7 @@ export function ServicesSection() {
         <div ref={gridRef} className="relative grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-32 lg:gap-y-24 pl-12 lg:pl-0 w-full mt-16 lg:mt-32">
           
           {/* Mobile Progress Line */}
-          <div className="lg:hidden absolute left-[15px] top-8 bottom-8 w-[2px] bg-[#F4BF4B]/10 z-0">
+          <div className="lg:hidden absolute left-[15px] top-8 bottom-8 w-[2px] bg-canvas/10 z-0">
             <div ref={mobileProgressRef} className="h-full w-full bg-accent origin-top scale-y-0" />
           </div>
 
@@ -394,17 +396,17 @@ export function ServicesSection() {
                 {i < 8 && (
                   <>
                     {isRightConnecting && (
-                      <div className="hidden lg:block absolute top-1/2 left-full w-32 h-[2px] bg-[#F4BF4B]/10 -translate-y-1/2 -z-10">
+                      <div className="hidden lg:block absolute top-1/2 left-full w-32 h-[2px] bg-canvas/10 -translate-y-1/2 -z-10">
                         <div ref={(el: HTMLDivElement | null) => { lineRefs.current[i] = el; }} className="h-full w-full bg-accent origin-left scale-x-0" />
                       </div>
                     )}
                     {isLeftConnecting && (
-                      <div className="hidden lg:block absolute top-1/2 right-full w-32 h-[2px] bg-[#F4BF4B]/10 -translate-y-1/2 -z-10">
+                      <div className="hidden lg:block absolute top-1/2 right-full w-32 h-[2px] bg-canvas/10 -translate-y-1/2 -z-10">
                         <div ref={(el: HTMLDivElement | null) => { lineRefs.current[i] = el; }} className="h-full w-full bg-accent origin-right scale-x-0" />
                       </div>
                     )}
                     {isBottomConnecting && (
-                      <div className="hidden lg:block absolute top-full left-1/2 w-[2px] h-24 bg-[#F4BF4B]/10 -translate-x-1/2 -z-10">
+                      <div className="hidden lg:block absolute top-full left-1/2 w-[2px] h-24 bg-canvas/10 -translate-x-1/2 -z-10">
                         <div ref={(el: HTMLDivElement | null) => { lineRefs.current[i] = el; }} className="h-full w-full bg-accent origin-top scale-y-0" />
                       </div>
                     )}

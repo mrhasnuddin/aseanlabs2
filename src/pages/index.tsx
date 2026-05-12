@@ -33,6 +33,24 @@ export default function Home() {
             start: 'top 75%',
             end: 'top 10%',
             scrub: 1,
+            onEnter: () => {
+              gsap.to(document.documentElement, { 
+                '--background': 'var(--color-struct)', 
+                '--rgb-background': 'var(--rgb-struct)',
+                '--foreground': 'var(--color-canvas)',
+                '--rgb-foreground': 'var(--rgb-canvas)',
+                duration: 0.5 
+              });
+            },
+            onLeaveBack: () => {
+              gsap.to(document.documentElement, { 
+                '--background': 'var(--color-canvas)', 
+                '--rgb-background': 'var(--rgb-canvas)',
+                '--foreground': 'var(--color-struct)',
+                '--rgb-foreground': 'var(--rgb-struct)',
+                duration: 0.5 
+              });
+            }
           },
           ease: 'power2.inOut'
         }
@@ -103,10 +121,12 @@ export default function Home() {
           id="about"
           className="relative"
           style={{ 
-            '--background': '#000000', 
-            '--foreground': '#F4BF4B',
-            backgroundColor: '#000000',
-            color: '#F4BF4B'
+            '--background': 'var(--color-struct)', 
+            '--rgb-background': 'var(--rgb-struct)',
+            '--foreground': 'var(--color-canvas)',
+            '--rgb-foreground': 'var(--rgb-canvas)',
+            backgroundColor: 'var(--color-struct)',
+            color: 'var(--color-canvas)'
           } as React.CSSProperties}
         >
           <StatsSection />
@@ -117,10 +137,12 @@ export default function Home() {
           id="foundation-section-wrapper"
           className="relative"
           style={{ 
-            '--background': '#F4BF4B', 
-            '--foreground': '#000000',
-            backgroundColor: '#F4BF4B',
-            color: '#000000'
+            '--background': 'var(--color-canvas)', 
+            '--rgb-background': 'var(--rgb-canvas)',
+            '--foreground': 'var(--color-struct)',
+            '--rgb-foreground': 'var(--rgb-struct)',
+            backgroundColor: 'var(--color-canvas)',
+            color: 'var(--color-struct)'
           } as React.CSSProperties}
         >
           <div id="integrations" className="absolute -top-24"></div>
@@ -130,10 +152,12 @@ export default function Home() {
           id="dao-section"
           className="relative"
           style={{ 
-            '--background': '#F4BF4B', 
-            '--foreground': '#000000',
-            backgroundColor: '#F4BF4B',
-            color: '#000000'
+            '--background': 'var(--color-canvas)', 
+            '--rgb-background': 'var(--rgb-canvas)',
+            '--foreground': 'var(--color-struct)',
+            '--rgb-foreground': 'var(--rgb-struct)',
+            backgroundColor: 'var(--color-canvas)',
+            color: 'var(--color-struct)'
           } as React.CSSProperties}
         >
           <div id="dao-as-a-service" className="absolute -top-24"></div>

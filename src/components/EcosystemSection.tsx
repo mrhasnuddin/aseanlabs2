@@ -411,7 +411,7 @@ export const EcosystemSection = () => {
     }
   };
   return (
-    <section className="relative w-full overflow-hidden bg-[#F4BF4B] font-mono md:h-[100vh]" id="ecosystem">
+    <section className="relative w-full overflow-hidden bg-canvas font-mono md:h-[100vh]" id="ecosystem">
       
       {/* Mobile View */}
       {isMobile ? (
@@ -425,8 +425,8 @@ export const EcosystemSection = () => {
           </div>
           
           <div className="sticky top-4 z-20 mb-6 animate-fade-in">
-            <div className="border-2 border-black bg-white shadow-[4px_4px_0_0_#000] flex">
-              <div className="p-3 border-r-2 border-black bg-gray-100 flex items-center justify-center">
+            <div className="border-2 border-struct bg-relief shadow-[4px_4px_0_0_#000] flex">
+              <div className="p-3 border-r-2 border-struct bg-gray-100 flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter">
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -446,7 +446,7 @@ export const EcosystemSection = () => {
           <div className="flex flex-wrap gap-2 mb-8 justify-center">
             <button 
               onClick={() => setSelectedTag(null)}
-              className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-black transition-colors shadow-[2px_2px_0_0_#000] ${!selectedTag ? 'bg-black text-white' : 'bg-white hover:bg-gray-100'}`}
+              className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-struct transition-colors shadow-[2px_2px_0_0_#000] ${!selectedTag ? 'bg-struct text-relief' : 'bg-relief hover:bg-gray-100'}`}
             >
               {t('ecosystem.allTags') !== 'ecosystem.allTags' ? t('ecosystem.allTags') : 'All'}
             </button>
@@ -454,7 +454,7 @@ export const EcosystemSection = () => {
               <button 
                 key={tag}
                 onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-                className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-black transition-colors shadow-[2px_2px_0_0_#000] ${selectedTag === tag ? 'bg-black text-white' : 'bg-white hover:bg-gray-100'}`}
+                className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-struct transition-colors shadow-[2px_2px_0_0_#000] ${selectedTag === tag ? 'bg-struct text-relief' : 'bg-relief hover:bg-gray-100'}`}
               >
                 {getTagTranslation(tag)}
               </button>
@@ -468,17 +468,17 @@ export const EcosystemSection = () => {
                 href={project.url} 
                 target="_blank" 
                 rel="noreferrer"
-                className="block border-2 border-black bg-white p-5 shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-1 hover:translate-y-1 transition-all"
+                className="block border-2 border-struct bg-relief p-5 shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-1 hover:translate-y-1 transition-all"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 relative border-2 border-black overflow-hidden shrink-0 bg-gray-50">
+                  <div className="w-16 h-16 relative border-2 border-struct overflow-hidden shrink-0 bg-gray-50">
                     <Image src={project.logo} alt={project.name} fill className="object-contain p-2" />
                   </div>
                   <h3 className="text-2xl font-black uppercase tracking-tight">{project.name}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-xs font-bold border-2 border-black px-2 py-1 bg-[#F4BF4B] uppercase tracking-wider shadow-[2px_2px_0_0_#000]">
+                    <span key={tag} className="text-xs font-bold border-2 border-struct px-2 py-1 bg-canvas uppercase tracking-wider shadow-[2px_2px_0_0_#000]">
                       {getTagTranslation(tag)}
                     </span>
                   ))}
@@ -507,16 +507,16 @@ export const EcosystemSection = () => {
           />
 
           {/* Centered Content */}
-          <div ref={centerPanelRef} className="z-10 text-center pointer-events-auto max-w-2xl px-6 flex flex-col items-center bg-[#F4BF4B]/95 p-8 border-2 border-black shadow-[8px_8px_0_0_#000] animate-fade-in">
-            <h2 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.95] tracking-tighter text-foreground text-balance mb-4">
+          <div ref={centerPanelRef} className="z-10 text-center pointer-events-auto max-w-2xl px-6 flex flex-col items-center bg-relief p-8 border-2 border-struct shadow-[8px_8px_0_0_var(--color-struct)] animate-fade-in">
+            <h2 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.95] tracking-tighter text-struct text-balance mb-4">
               {t('ecosystem.title1') !== 'ecosystem.title1' ? t('ecosystem.title1') : 'THRIVING'}<br />
-              <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--foreground)' }}>{t('ecosystem.title2') !== 'ecosystem.title2' ? t('ecosystem.title2') : 'ECOSYSTEM'}</span>
+              <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--color-struct)' }}>{t('ecosystem.title2') !== 'ecosystem.title2' ? t('ecosystem.title2') : 'ECOSYSTEM'}</span>
             </h2>
             <p className="font-mono text-sm sm:text-base lg:text-lg leading-relaxed text-foreground/80 mt-2 mb-8">{t('ecosystem.descDesktop') !== 'ecosystem.descDesktop' ? t('ecosystem.descDesktop') : 'A comprehensive collection of applications, protocols, and partners building the future of ASEAN onchain.'}</p>
             
             <div className="flex gap-4 w-full max-w-lg justify-center items-center">
-              <div className="flex-1 border-2 border-black bg-white shadow-[6px_6px_0_0_#000] flex focus-within:shadow-[2px_2px_0_0_#000] focus-within:translate-x-1 focus-within:translate-y-1 transition-all">
-                <div className="p-4 border-r-2 border-black bg-gray-100 flex items-center justify-center">
+              <div className="flex-1 border-2 border-struct bg-relief shadow-[6px_6px_0_0_#000] flex focus-within:shadow-[2px_2px_0_0_#000] focus-within:translate-x-1 focus-within:translate-y-1 transition-all">
+                <div className="p-4 border-r-2 border-struct bg-gray-100 flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -534,7 +534,7 @@ export const EcosystemSection = () => {
               {gravityActive && (
                 <button 
                   onClick={handleResetGravity}
-                  className="px-6 py-4 border-2 border-black bg-white shadow-[6px_6px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-tight text-lg active:bg-gray-100"
+                  className="px-6 py-4 border-2 border-struct bg-relief shadow-[6px_6px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-tight text-lg active:bg-gray-100"
                 >
                   {t('ecosystem.reset') !== 'ecosystem.reset' ? t('ecosystem.reset') : 'Reset'}
                 </button>
@@ -545,7 +545,7 @@ export const EcosystemSection = () => {
             <div className="mt-6 flex flex-wrap gap-2 justify-center">
               <button 
                 onClick={() => setSelectedTag(null)}
-                className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-black transition-colors shadow-[2px_2px_0_0_#000] ${!selectedTag ? 'bg-black text-white' : 'bg-white hover:bg-gray-100'}`}
+                className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-struct transition-colors shadow-[2px_2px_0_0_#000] ${!selectedTag ? 'bg-struct text-relief' : 'bg-relief hover:bg-gray-100'}`}
               >
                 {t('ecosystem.allTags') !== 'ecosystem.allTags' ? t('ecosystem.allTags') : 'All'}
               </button>
@@ -553,7 +553,7 @@ export const EcosystemSection = () => {
                 <button 
                   key={tag}
                   onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-                  className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-black transition-colors shadow-[2px_2px_0_0_#000] ${selectedTag === tag ? 'bg-black text-white' : 'bg-white hover:bg-gray-100'}`}
+                  className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-struct transition-colors shadow-[2px_2px_0_0_#000] ${selectedTag === tag ? 'bg-struct text-relief' : 'bg-relief hover:bg-gray-100'}`}
                 >
                   {getTagTranslation(tag)}
                 </button>
@@ -574,7 +574,7 @@ export const EcosystemSection = () => {
                   href={project.url}
                   target="_blank"
                   rel="noreferrer"
-                  className={`absolute top-0 left-0 w-20 h-20 border-2 border-black bg-white flex items-center justify-center shadow-[4px_4px_0_0_#000] cursor-grab active:cursor-grabbing hover:scale-110 transition-transform duration-100 ease-out z-20 ${!isVisible ? 'opacity-20 pointer-events-none' : 'opacity-100'}`}
+                  className={`absolute top-0 left-0 w-20 h-20 border-2 border-struct bg-relief flex items-center justify-center shadow-[4px_4px_0_0_#000] cursor-grab active:cursor-grabbing hover:scale-110 transition-transform duration-100 ease-out z-20 ${!isVisible ? 'opacity-20 pointer-events-none' : 'opacity-100'}`}
                   onPointerDown={(e) => handlePointerDown(e, index)}
                   onClick={handleLogoClick}
                   onMouseEnter={() => setHoveredProject(project)}
@@ -592,20 +592,20 @@ export const EcosystemSection = () => {
           {/* Fixed Tooltip */}
           <div 
             ref={tooltipRef}
-            className={`fixed top-0 left-0 z-50 pointer-events-none max-w-sm border-2 border-black bg-white p-5 shadow-[8px_8px_0_0_#000] transition-opacity duration-200 ${hoveredProject ? 'opacity-100' : 'opacity-0'}`}
+            className={`fixed top-0 left-0 z-50 pointer-events-none max-w-sm border-2 border-struct bg-relief p-5 shadow-[8px_8px_0_0_#000] transition-opacity duration-200 ${hoveredProject ? 'opacity-100' : 'opacity-0'}`}
           >
             {hoveredProject && (
               <>
                 <h3 className="text-2xl font-black uppercase tracking-tight mb-2">{hoveredProject.name}</h3>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {hoveredProject.tags.map(tag => (
-                    <span key={tag} className="text-xs font-bold border-2 border-black px-1.5 py-0.5 bg-[#F4BF4B] uppercase tracking-wider shadow-[2px_2px_0_0_#000]">
+                    <span key={tag} className="text-xs font-bold border-2 border-struct px-1.5 py-0.5 bg-canvas uppercase tracking-wider shadow-[2px_2px_0_0_#000]">
                       {getTagTranslation(tag)}
                     </span>
                   ))}
                 </div>
-                <p className="text-sm font-medium leading-snug mb-3 pb-3 border-b-2 border-black/10">{t(hoveredProject.descriptionKey) !== hoveredProject.descriptionKey ? t(hoveredProject.descriptionKey) : hoveredProject.defaultDescription}</p>
-                <div className="bg-gray-100 p-3 border-l-4 border-black">
+                <p className="text-sm font-medium leading-snug mb-3 pb-3 border-b-2 border-struct/10">{t(hoveredProject.descriptionKey) !== hoveredProject.descriptionKey ? t(hoveredProject.descriptionKey) : hoveredProject.defaultDescription}</p>
+                <div className="bg-gray-100 p-3 border-l-4 border-struct">
                   <p className="text-xs italic leading-tight text-gray-700">
                     {t(hoveredProject.testimonyKey) !== hoveredProject.testimonyKey ? t(hoveredProject.testimonyKey) : hoveredProject.defaultTestimony}
                   </p>

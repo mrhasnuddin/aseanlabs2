@@ -73,14 +73,14 @@ export function HeroAccents() {
         return (
           <span
             key={i}
-            className="absolute block text-white/30 will-change-transform"
+            className="absolute block text-relief/30 will-change-transform"
             style={{
               top: a.top,
               left: a.left,
               transform: `translate(-50%, -50%) rotate(${a.initialRotate}deg)`,
             }}
           >
-            <Cmp size={a.size} className="text-white/30 drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]" />
+            <Cmp size={a.size} className="text-relief/30 drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]" />
           </span>
         );
       })}

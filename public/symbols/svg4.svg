@@ -1,10 +1,10 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1546_2082)">
-<path d="M50 50C77.6141 50 100 72.3859 100 100H75C75 86.193 63.807 75 50 75C36.193 75 25 86.193 25 100H0C0 72.3859 22.3859 50 50 50ZM100 0C100 27.6141 77.6141 50 50 50C22.3859 50 0 27.6141 0 0H25C25 13.807 36.193 25 50 25C63.807 25 75 13.807 75 0H100Z" fill="#545454"/>
+<path d="M50 50C77.6141 50 100 72.3859 100 100H75C75 86.193 63.807 75 50 75C36.193 75 25 86.193 25 100H0C0 72.3859 22.3859 50 50 50ZM100 0C100 27.6141 77.6141 50 50 50C22.3859 50 0 27.6141 0 0H25C25 13.807 36.193 25 50 25C63.807 25 75 13.807 75 0H100Z" fill="currentColor"/>
 </g>
 <defs>
 <clipPath id="clip0_1546_2082">
-<rect width="100" height="100" fill="white"/>
+<rect width="100" height="100" fill="currentColor"/>
 </clipPath>
 </defs>
 </svg>

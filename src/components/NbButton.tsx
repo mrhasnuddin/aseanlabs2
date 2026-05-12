@@ -30,17 +30,17 @@ type LinkProps = CommonProps &
 
 const VARIANT_CLASSES: Record<Variant, string> = {
   'primary-yellow':
-    'bg-primary text-ink border-ink shadow-[6px_6px_0_0_#000000] hover:shadow-[8px_8px_0_0_#000000]',
+    'bg-canvas text-struct border-struct shadow-[6px_6px_0_0_var(--color-struct)] hover:shadow-[8px_8px_0_0_var(--color-struct)]',
   'primary-cyan':
-    'bg-cyan text-ink border-ink shadow-[6px_6px_0_0_#000000] hover:shadow-[8px_8px_0_0_#000000]',
+    'bg-accent text-struct border-struct shadow-[6px_6px_0_0_var(--color-struct)] hover:shadow-[8px_8px_0_0_var(--color-struct)]',
   'primary-black':
-    'bg-ink text-primary border-primary shadow-[6px_6px_0_0_#F4BF4B] hover:shadow-[8px_8px_0_0_#F4BF4B]',
+    'bg-struct text-canvas border-canvas shadow-[6px_6px_0_0_var(--color-canvas)] hover:shadow-[8px_8px_0_0_var(--color-canvas)]',
   'secondary-yellow':
-    'bg-ink text-primary border-primary shadow-[6px_6px_0_0_#000000] hover:shadow-[8px_8px_0_0_#000000]',
+    'bg-struct text-canvas border-canvas shadow-[6px_6px_0_0_var(--color-struct)] hover:shadow-[8px_8px_0_0_var(--color-struct)]',
   'secondary-cyan':
-    'bg-ink text-cyan border-cyan shadow-[6px_6px_0_0_#000000] hover:shadow-[8px_8px_0_0_#000000]',
+    'bg-struct text-accent border-accent shadow-[6px_6px_0_0_var(--color-struct)] hover:shadow-[8px_8px_0_0_var(--color-struct)]',
   'secondary-black':
-    'bg-primary text-ink border-ink shadow-[6px_6px_0_0_#F4BF4B] hover:shadow-[8px_8px_0_0_#F4BF4B]',
+    'bg-canvas text-struct border-struct shadow-[6px_6px_0_0_var(--color-canvas)] hover:shadow-[8px_8px_0_0_var(--color-canvas)]',
 };
 
 const SIZE_CLASSES: Record<Size, string> = {

@@ -39,7 +39,7 @@ export function LanguageSwitcher({ variant = 'nav' }: Props) {
               onClick={() => changeLanguage(loc)}
               className={`flex items-center justify-between border-2 px-3 py-2 text-left font-mono text-sm font-bold transition-colors ${
                 loc === locale
-                  ? 'border-ink bg-ink text-[#F4BF4B]'
+                  ? 'border-ink bg-ink text-canvas'
                   : 'border-ink/20 text-ink hover:border-ink hover:bg-ink/5'
               }`}
             >
@@ -59,8 +59,8 @@ export function LanguageSwitcher({ variant = 'nav' }: Props) {
         onClick={() => setIsOpen(!isOpen)}
         className={`inline-flex items-center justify-center gap-2 border-2 px-4 py-2 font-mono text-sm font-bold uppercase tracking-widest transition-colors duration-0 ${
           variant === 'footer'
-            ? 'border-black bg-transparent text-black hover:bg-black hover:text-[#F4BF4B]'
-            : 'border-ink bg-transparent text-ink hover:bg-ink hover:text-[#F4BF4B]'
+            ? 'border-struct bg-transparent text-struct hover:bg-struct hover:text-canvas'
+            : 'border-ink bg-transparent text-ink hover:bg-ink hover:text-canvas'
         }`}
       >
         <Globe size={14} />
@@ -71,7 +71,7 @@ export function LanguageSwitcher({ variant = 'nav' }: Props) {
       {isOpen && (
         <div 
           className={`absolute ${variant === 'footer' ? 'bottom-full mb-2' : 'top-full mt-2'} right-0 z-50 w-48 border-2 bg-background shadow-[4px_4px_0_0_#000] ${
-            variant === 'footer' ? 'border-black' : 'border-ink'
+            variant === 'footer' ? 'border-struct' : 'border-ink'
           }`}
         >
           <div className="flex flex-col py-1">
@@ -81,7 +81,7 @@ export function LanguageSwitcher({ variant = 'nav' }: Props) {
                 onClick={() => changeLanguage(loc)}
                 className={`flex w-full items-center justify-between px-4 py-2 text-left font-mono text-sm font-bold transition-colors ${
                   loc === locale
-                    ? 'bg-ink text-[#F4BF4B]'
+                    ? 'bg-ink text-canvas'
                     : 'text-ink hover:bg-ink/5'
                 }`}
               >

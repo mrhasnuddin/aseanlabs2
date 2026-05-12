@@ -23,7 +23,7 @@ export function PartnersSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative w-full overflow-hidden bg-background border-b-2 border-black py-24 flex flex-col items-center">
+    <section className="relative w-full overflow-hidden bg-background border-b-2 border-struct py-24 flex flex-col items-center">
       
       {/* Inline styles for Marquee Animations */}
       <style>{`
@@ -74,12 +74,12 @@ export function PartnersSection() {
                   rel="noopener noreferrer"
                   className="relative group block"
                 >
-                  <h3 className="text-5xl lg:text-6xl xl:text-[5rem] leading-none font-black font-sans uppercase tracking-tight text-foreground transition-all duration-200 group-hover:text-transparent group-hover:[-webkit-text-stroke:2px_#000] xl:group-hover:[-webkit-text-stroke:3px_#000] z-10 relative">
+                  <h3 className="text-5xl lg:text-6xl xl:text-[5rem] leading-none font-black font-sans uppercase tracking-tight text-foreground transition-all duration-200 group-hover:text-transparent group-hover:[-webkit-text-stroke:2px_var(--color-struct)] xl:group-hover:[-webkit-text-stroke:3px_var(--color-struct)] z-10 relative">
                     {partner.name}
                   </h3>
 
                   {/* Pop-up Image Card */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-40 md:w-[22rem] md:h-48 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 scale-75 group-hover:scale-100 z-[60] flex items-center justify-center p-6 md:p-8 rotate-0 group-hover:-rotate-3 group-hover:z-[60]">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-40 md:w-[22rem] md:h-48 bg-relief border-4 border-struct shadow-[8px_8px_0px_0px_var(--color-struct)] opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 scale-75 group-hover:scale-100 z-[60] flex items-center justify-center p-6 md:p-8 rotate-0 group-hover:-rotate-3 group-hover:z-[60]">
                     <div 
                       className={`relative w-full h-full ${partner.invert ? 'brightness-0' : ''}`}
                       style={partner.scale ? { transform: `scale(${partner.scale})` } : {}}
@@ -96,7 +96,7 @@ export function PartnersSection() {
                 
                 {/* Separator Slash */}
                 {index < PARTNERS.length - 1 && (
-                  <span className="text-5xl lg:text-6xl xl:text-[5rem] leading-none font-black text-foreground opacity-20 select-none px-4 lg:px-8">
+                  <span className="text-5xl lg:text-6xl xl:text-[5rem] leading-none font-black text-foreground/20 select-none px-4 lg:px-8">
                     /
                   </span>
                 )}
@@ -117,7 +117,7 @@ export function PartnersSection() {
                   href={partner.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 flex items-center justify-center w-48 aspect-[1.6/1] bg-white border-2 border-black mx-2 p-4 transition-transform active:scale-95 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                  className="flex-shrink-0 flex items-center justify-center w-48 aspect-[1.6/1] bg-relief border-2 border-struct mx-2 p-4 transition-transform active:scale-95 shadow-[4px_4px_0px_0px_var(--color-struct)]"
                 >
                   <div 
                     className={`relative w-full h-full ${partner.invert ? 'brightness-0' : ''}`}
@@ -144,7 +144,7 @@ export function PartnersSection() {
                   href={partner.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 flex items-center justify-center w-48 aspect-[1.6/1] bg-white border-2 border-black mx-2 p-4 transition-transform active:scale-95 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                  className="flex-shrink-0 flex items-center justify-center w-48 aspect-[1.6/1] bg-relief border-2 border-struct mx-2 p-4 transition-transform active:scale-95 shadow-[4px_4px_0px_0px_var(--color-struct)]"
                 >
                   <div 
                     className={`relative w-full h-full ${partner.invert ? 'brightness-0' : ''}`}

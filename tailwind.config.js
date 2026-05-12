@@ -7,14 +7,18 @@ module.exports = {
         cream: '#F5F2E7',
         ink: '#000000',
         cyan: '#00FFFF',
-        // Preset 1: Yellow / Black / Cyan
-        primary: '#F4BF4B',  // brand primary yellow — nav bar, CTA accents
-        accent: '#F4BF4B',   // primary yellow — page bg, fills
+        /* Semantic Color Roles (Dynamic based on data-preset) */
+        canvas: 'rgb(var(--rgb-canvas) / <alpha-value>)',
+        struct: 'rgb(var(--rgb-struct) / <alpha-value>)',
+        accent: 'rgb(var(--rgb-accent) / <alpha-value>)',
+        relief: 'rgb(var(--rgb-relief) / <alpha-value>)',
+
+        /* Legacy Aliases (to prevent breakage before full refactor) */
+        primary: 'rgb(var(--rgb-canvas) / <alpha-value>)',  
         mono: '#6B7AA1',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        // Theming alias — driven by CSS var so presets can override
-        'nav-bg': 'var(--nav-bg)',
+        background: 'rgb(var(--rgb-canvas) / <alpha-value>)',
+        foreground: 'rgb(var(--rgb-struct) / <alpha-value>)',
+        'nav-bg': 'rgb(var(--rgb-canvas) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['"Space Grotesk"', 'Helvetica', 'Arial', 'sans-serif'],

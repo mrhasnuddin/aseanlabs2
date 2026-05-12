@@ -166,16 +166,16 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
           const span = el.querySelector('[data-label-span]') as HTMLElement | null;
           const dot = el.querySelector('[data-label-dot]') as HTMLElement | null;
           if (span) {
-            span.style.background = isActive ? '#000' : '#F4BF4B';
-            span.style.color = isActive ? '#F4BF4B' : '#000';
-            span.style.border = isActive ? '1px solid #F4BF4B' : '1px solid transparent';
+            span.style.background = isActive ? 'var(--color-struct)' : 'var(--color-canvas)';
+            span.style.color = isActive ? 'var(--color-canvas)' : 'var(--color-struct)';
+            span.style.border = isActive ? '1px solid var(--color-canvas)' : '1px solid transparent';
             span.style.boxShadow = isActive
-              ? '0 0 10px rgba(244,191,75,0.7), 2px 2px 0 #F4BF4B'
+              ? '2px 2px 0 var(--color-canvas), 0 0 12px var(--color-canvas)'
               : '2px 2px 0 rgba(0,0,0,0.6)';
           }
           if (dot) {
-            dot.style.background = isActive ? '#F4BF4B' : '#00ccff';
-            dot.style.boxShadow = isActive ? '0 0 6px #F4BF4B' : 'none';
+            dot.style.background = isActive ? 'var(--color-canvas)' : 'var(--color-accent)';
+            dot.style.boxShadow = isActive ? '0 0 6px var(--color-canvas)' : 'none';
             dot.style.width = isActive ? '7px' : '5px';
             dot.style.height = isActive ? '7px' : '5px';
           }
@@ -230,17 +230,15 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
           left:   pos.endsWith('l')  ? 0 : undefined,
           right:  pos.endsWith('r')  ? 0 : undefined,
           width: 28, height: 28,
-          borderTop:    pos.startsWith('t') ? '3px solid #F4BF4B' : undefined,
-          borderBottom: pos.startsWith('b') ? '3px solid #F4BF4B' : undefined,
-          borderLeft:   pos.endsWith('l')  ? '3px solid #F4BF4B' : undefined,
-          borderRight:  pos.endsWith('r')  ? '3px solid #F4BF4B' : undefined,
+          borderTop:    pos.startsWith('t') ? '3px solid var(--color-canvas)' : undefined,
+          borderBottom: pos.startsWith('b') ? '3px solid var(--color-canvas)' : undefined,
+          borderLeft:   pos.endsWith('l')  ? '3px solid var(--color-canvas)' : undefined,
+          borderRight:  pos.endsWith('r')  ? '3px solid var(--color-canvas)' : undefined,
         }} />
       ))}
       {/* Outer scan-line ring — two concentric dashed rings for brutalist depth */}
-      <div className="absolute inset-[-18px] rounded-full pointer-events-none z-10"
-        style={{ border: '1px dashed rgba(244,191,75,0.25)' }} />
-      <div className="absolute inset-[-36px] rounded-full pointer-events-none z-10"
-        style={{ border: '1px solid rgba(244,191,75,0.10)' }} />
+      <div className="absolute inset-[-18px] rounded-full pointer-events-none z-10 border border-dashed border-canvas/25" />
+      <div className="absolute inset-[-36px] rounded-full pointer-events-none z-10 border border-canvas/10" />
       <div
         className="cursor-grab active:cursor-grabbing relative"
         style={{ width: GLOBE_PX, height: GLOBE_PX }}
@@ -276,8 +274,8 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
                   data-label-span
                   className="font-mono text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 leading-tight whitespace-nowrap"
                   style={{
-                    background: '#F4BF4B',
-                    color: '#000',
+                    background: 'var(--color-canvas)',
+                    color: 'var(--color-struct)',
                     border: '1px solid transparent',
                     boxShadow: '2px 2px 0 rgba(0,0,0,0.6)',
                     transition: 'background 0.2s, color 0.2s, box-shadow 0.2s',
@@ -290,7 +288,7 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
                   style={{
                     width: '5px', height: '5px',
                     borderRadius: '50%',
-                    background: '#00ccff',
+                    background: 'var(--color-accent)',
                     transition: 'background 0.2s, box-shadow 0.2s, width 0.2s, height 0.2s',
                   }}
                 />
@@ -346,7 +344,7 @@ export default function WhyUsPage() {
   }, []);
 
   return (
-    <div className="bg-black text-white overflow-hidden min-h-screen flex flex-col selection:bg-[#F4BF4B] selection:text-black">
+    <div className="bg-struct text-relief overflow-hidden min-h-screen flex flex-col selection:bg-canvas selection:text-struct">
       <Head>
         <title>{t('why.pageTitle') !== 'why.pageTitle' ? t('why.pageTitle') : 'Why Us — ASEAN Labs'}</title>
         <meta name="description" content={t('why.pageDesc') !== 'why.pageDesc' ? t('why.pageDesc') : "Southeast Asia is not an emerging market for Web3. It's an active one."} />
@@ -370,7 +368,7 @@ export default function WhyUsPage() {
             {/* Back Button */}
             <Link 
               href="/" 
-              className="group mb-12 inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-widest border border-[#F4BF4B] text-[#F4BF4B] px-6 py-3 transition-colors duration-200 hover:bg-[#F4BF4B] hover:text-black"
+              className="group mb-12 inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-widest border border-canvas text-canvas px-6 py-3 transition-colors duration-200 hover:bg-canvas hover:text-struct"
             >
               <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
               {t('why.backToHome') !== 'why.backToHome' ? t('why.backToHome') : 'Back to Home'}
@@ -378,26 +376,26 @@ export default function WhyUsPage() {
 
             {/* Header Section */}
             <header className="mb-24 flex flex-col gap-6">
-              <span className="font-mono text-lg md:text-xl font-bold uppercase tracking-[0.2em] text-[#F4BF4B]">
+              <span className="font-mono text-lg md:text-xl font-bold uppercase tracking-[0.2em] text-canvas">
                 {t('why.badge') !== 'why.badge' ? t('why.badge') : 'The Advantage'}
               </span>
-              <h1 className="font-sans text-5xl md:text-7xl font-black uppercase leading-[1.05] tracking-tighter max-w-5xl text-[#F4BF4B]">
+              <h1 className="font-sans text-5xl md:text-7xl font-black uppercase leading-[1.05] tracking-tighter max-w-5xl text-canvas">
                 {t('why.titlePart1') !== 'why.titlePart1' ? t('why.titlePart1') : 'Southeast Asia is not an emerging market for Web3.'}<br />
-                <span className="text-transparent" style={{ WebkitTextStroke: '2px #F4BF4B' }}>{t('why.titleHighlight') !== 'why.titleHighlight' ? t('why.titleHighlight') : "It's an active one."}</span>
+                <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--color-canvas)' }}>{t('why.titleHighlight') !== 'why.titleHighlight' ? t('why.titleHighlight') : "It's an active one."}</span>
               </h1>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-8">
-                <p className="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/90">
+                <p className="font-sans text-lg lg:text-xl font-medium leading-relaxed text-relief/90">
                   {t('why.desc1') !== 'why.desc1' ? t('why.desc1') : 'ASEAN Labs has spent years building here — not positioning. The distribution is structural. The community is verified. The language is native. The relationships exist at every layer: retail users, institutional partners, developer communities, regional KOLs.'}
                 </p>
-                <p className="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/70">
+                <p className="font-sans text-lg lg:text-xl font-medium leading-relaxed text-relief/70">
                   {t('why.desc2') !== 'why.desc2' ? t('why.desc2') : 'This cannot be replicated by a project arriving with a marketing budget and no context. When you work with ASEAN Labs, you enter a network of 100+ ecosystem projects, an event infrastructure that has run 150+ activations, and operators who know this market because they built it.'}
                 </p>
               </div>
             </header>
 
             {/* Advantage Grid Section */}
-            <div ref={advantagesRef} className="w-full mb-32 border-t-2 border-[#F4BF4B]/30 pt-16">
+            <div ref={advantagesRef} className="w-full mb-32 border-t-2 border-canvas/30 pt-16">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {ADVANTAGES.map((adv, index) => {
                   const numericValue = parseInt(adv.stat.replace(/,/g, ''));
@@ -406,20 +404,20 @@ export default function WhyUsPage() {
                   return (
                     <div 
                       key={index} 
-                      className="group bg-black border-2 border-[#F4BF4B] p-8 md:p-10 flex flex-col transition-transform duration-300 hover:-translate-y-1 shadow-[8px_8px_0_0_#F4BF4B]"
+                      className="group bg-struct border-2 border-canvas p-8 md:p-10 flex flex-col transition-transform duration-300 hover:-translate-y-1 shadow-[8px_8px_0_0_var(--color-canvas)]"
                     >
                       <div 
-                        className="stat-number text-5xl lg:text-6xl xl:text-[4.5rem] font-black font-sans text-[#F4BF4B] mb-6 tracking-tighter group-hover:scale-105 origin-left transition-transform duration-300"
+                        className="stat-number text-5xl lg:text-6xl xl:text-[4.5rem] font-black font-sans text-canvas mb-6 tracking-tighter group-hover:scale-105 origin-left transition-transform duration-300"
                         data-target={numericValue}
                         data-suffix={suffix}
                       >
                         0{suffix}
                       </div>
-                      <div className="w-12 h-1.5 bg-[#F4BF4B] mb-6" />
-                      <h3 className="font-sans text-2xl font-black uppercase tracking-tight text-white mb-4">
+                      <div className="w-12 h-1.5 bg-canvas mb-6" />
+                      <h3 className="font-sans text-2xl font-black uppercase tracking-tight text-relief mb-4">
                         {t(adv.titleKey) !== adv.titleKey ? t(adv.titleKey) : adv.title}
                       </h3>
-                      <p className="font-sans text-lg font-medium text-white/80 leading-relaxed">
+                      <p className="font-sans text-lg font-medium text-relief/80 leading-relaxed">
                         {t(adv.descKey) !== adv.descKey ? t(adv.descKey) : adv.description}
                       </p>
                     </div>
@@ -429,41 +427,41 @@ export default function WhyUsPage() {
             </div>
 
             {/* Regional Presence Section with Globe */}
-            <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-16 border-t-2 border-[#F4BF4B]/30 pt-16 mb-24">
+            <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-16 border-t-2 border-canvas/30 pt-16 mb-24">
               {/* Globe */}
               <div className="w-full lg:w-1/2 flex items-center justify-center relative">
                 {/* Decorative background glow behind globe */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#F4BF4B]/10 rounded-full blur-[100px] pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-canvas/10 rounded-full blur-[100px] pointer-events-none" />
                 <Globe activeRegion={activeRegion} t={t} />
               </div>
 
               {/* Regions List */}
               <div className="w-full lg:w-1/2 flex flex-col gap-10">
                 <div className="mb-4">
-                  <h2 className="font-sans text-4xl md:text-6xl font-black uppercase tracking-tighter text-[#F4BF4B] mb-4">
+                  <h2 className="font-sans text-4xl md:text-6xl font-black uppercase tracking-tighter text-canvas mb-4">
                     {t('why.regionTitle')}
                   </h2>
-                  <p className="font-sans text-lg font-medium text-white/80 leading-relaxed">
+                  <p className="font-sans text-lg font-medium text-relief/80 leading-relaxed">
                     {t('why.regionDesc')}
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-0 border-t border-b border-white/20">
+                <div className="flex flex-col gap-0 border-t border-b border-relief/20">
                   {REGIONS.map((region, index) => {
                     const isActive = activeRegion === region.country;
                     return (
                       <button 
                         key={index}
                         onClick={() => setActiveRegion(isActive ? null : region.country)}
-                        className={`group flex items-center justify-between py-6 border-b border-white/10 last:border-b-0 transition-colors px-4 -mx-4 cursor-pointer text-left
-                          ${isActive ? 'bg-[#F4BF4B]/10 border-l-4 border-l-[#F4BF4B]' : 'hover:bg-white/5 border-l-4 border-l-transparent'}`}
+                        className={`group flex items-center justify-between py-6 border-b border-relief/10 last:border-b-0 transition-colors px-4 -mx-4 cursor-pointer text-left
+                          ${isActive ? 'bg-canvas/10 border-l-4 border-l-canvas' : 'hover:bg-relief/5 border-l-4 border-l-transparent'}`}
                       >
                         <span className={`font-sans text-2xl md:text-3xl font-black uppercase tracking-wide transition-colors
-                          ${isActive ? 'text-[#F4BF4B]' : 'text-white group-hover:text-[#F4BF4B]'}`}>
+                          ${isActive ? 'text-canvas' : 'text-relief group-hover:text-canvas'}`}>
                           {t(region.countryKey) !== region.countryKey ? t(region.countryKey) : region.country}
                         </span>
                         <span className={`font-mono text-sm md:text-base font-bold tracking-widest transition-colors
-                          ${isActive ? 'text-[#F4BF4B]' : 'text-white/50 group-hover:text-white'}`}>
+                          ${isActive ? 'text-canvas' : 'text-relief/50 group-hover:text-relief'}`}>
                           {region.languages}
                         </span>
                       </button>

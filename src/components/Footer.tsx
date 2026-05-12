@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { NbButton } from './NbButton';
 import { useTranslation } from '@/hooks/useTranslation';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 
 const FOOTER_COLUMNS = [
   {
@@ -51,12 +52,12 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative w-full bg-[#F4BF4B] font-sans pb-10">
+    <footer className="relative w-full bg-canvas font-sans pb-10">
       <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10 flex flex-col gap-16 pt-20">
         
         {/* Top Banner (Black Bar) */}
-        <div className="w-full bg-[#000000] border-2 border-[#000000] px-6 py-6 md:px-8 md:py-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <h2 className="text-[#F4BF4B] font-sans text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-center md:text-left">
+        <div className="w-full bg-struct border-2 border-struct px-6 py-6 md:px-8 md:py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <h2 className="text-canvas font-sans text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-center md:text-left">
             {t('footer.bannerTitle') !== 'footer.bannerTitle' ? t('footer.bannerTitle') : 'ASEAN LABS IS HERE'}
           </h2>
           <NbButton 
@@ -71,13 +72,13 @@ export function Footer() {
         </div>
 
         {/* Links Grid and Logo */}
-        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 border-b-2 border-[#000000]/10 pb-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 border-b-2 border-struct/10 pb-16">
           
           {/* Columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16 xl:gap-24 flex-1">
             {FOOTER_COLUMNS.map((col) => (
               <div key={col.titleKey} className="flex flex-col gap-6">
-                <h4 className="text-[#000000]/60 font-mono text-xs font-bold uppercase tracking-widest">
+                <h4 className="text-struct/60 font-mono text-xs font-bold uppercase tracking-widest">
                   {t(col.titleKey) !== col.titleKey ? t(col.titleKey) : col.defaultTitle}
                 </h4>
                 <ul className="flex flex-col gap-4">
@@ -88,14 +89,14 @@ export function Footer() {
                           href={link.href} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-[#000000] font-sans text-lg lg:text-xl font-medium tracking-tight uppercase hover:text-[#00E5FF] transition-colors"
+                          className="text-struct font-sans text-lg lg:text-xl font-medium tracking-tight uppercase hover:text-accent transition-colors"
                         >
                           {t(link.labelKey) !== link.labelKey ? t(link.labelKey) : link.defaultLabel}
                         </a>
                       ) : (
                         <Link 
                           href={link.href}
-                          className="text-[#000000] font-sans text-lg lg:text-xl font-medium tracking-tight uppercase hover:text-[#00E5FF] transition-colors"
+                          className="text-struct font-sans text-lg lg:text-xl font-medium tracking-tight uppercase hover:text-accent transition-colors"
                         >
                           {t(link.labelKey) !== link.labelKey ? t(link.labelKey) : link.defaultLabel}
                         </Link>
@@ -109,11 +110,11 @@ export function Footer() {
 
           {/* Right Logo (Namada style circle) */}
           <div className="hidden lg:flex items-start justify-end shrink-0">
-            <div className="w-44 h-44 border-[6px] border-[#000000] rounded-full flex items-center justify-center p-6">
+            <div className="w-44 h-44 border-[6px] border-struct rounded-full flex items-center justify-center p-6 text-struct">
               <img 
                 src="/symbols/aseanlabs svg 2.svg" 
                 alt="ASEAN Labs" 
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain text-struct"
               />
             </div>
           </div>
@@ -121,15 +122,16 @@ export function Footer() {
 
         {/* Bottom Bar: Copyright & Legal */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
-          <span className="text-[#000000] font-mono text-xs font-bold uppercase tracking-widest text-center">
+          <span className="text-struct font-mono text-xs font-bold uppercase tracking-widest text-center">
             © {currentYear} {t('footer.copyright') !== 'footer.copyright' ? t('footer.copyright') : 'ASEAN LABS'}
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-6 md:gap-y-3">
+            <ThemeSwitcher />
             <LanguageSwitcher variant="footer" />
-            <Link href="/privacy-policy" className="text-[#000000] font-mono text-xs font-bold uppercase tracking-widest hover:underline underline-offset-4 text-center">
+            <Link href="/privacy-policy" className="text-struct font-mono text-xs font-bold uppercase tracking-widest hover:underline underline-offset-4 text-center">
               {t('footer.privacyPolicy') !== 'footer.privacyPolicy' ? t('footer.privacyPolicy') : 'PRIVACY POLICY'}
             </Link>
-            <Link href="/terms-of-service" className="text-[#000000] font-mono text-xs font-bold uppercase tracking-widest hover:underline underline-offset-4 text-center">
+            <Link href="/terms-of-service" className="text-struct font-mono text-xs font-bold uppercase tracking-widest hover:underline underline-offset-4 text-center">
               {t('footer.termsOfService') !== 'footer.termsOfService' ? t('footer.termsOfService') : 'TERMS OF SERVICE'}
             </Link>
           </div>

@@ -211,7 +211,7 @@ export function StatsSection() {
         <div ref={textRef} className="flex flex-col gap-12 lg:flex-row lg:gap-24">
           <h2 className="flex-1 text-balance font-sans text-4xl font-bold uppercase leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
             {t('stats.headlinePart1') !== 'stats.headlinePart1' ? t('stats.headlinePart1') : 'Built for '}
-            <span className="text-transparent" style={{ WebkitTextStroke: '1.5px #F4BF4B' }}>{t('stats.headlineHighlight') !== 'stats.headlineHighlight' ? t('stats.headlineHighlight') : 'builders'}</span>
+            <span className="text-transparent" style={{ WebkitTextStroke: '1.5px var(--color-canvas)' }}>{t('stats.headlineHighlight') !== 'stats.headlineHighlight' ? t('stats.headlineHighlight') : 'builders'}</span>
             {t('stats.headlinePart2') !== 'stats.headlinePart2' ? t('stats.headlinePart2') : ' who are done making the standard mistakes.'}
           </h2>
           <div className="flex-1 space-y-6 font-mono text-sm leading-relaxed text-foreground/80 md:text-base">

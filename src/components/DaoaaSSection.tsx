@@ -84,7 +84,7 @@ export function DaoaaSSection() {
           </div>
 
           {/* Bottom Section: Features Checklist */}
-          <div className="flex flex-col gap-8 w-full border-t-[3px] border-black pt-16">
+          <div className="flex flex-col gap-8 w-full border-t-[3px] border-struct pt-16">
             <h3 className="font-sans text-xl lg:text-2xl font-bold uppercase tracking-widest text-foreground">
               {t('daoaas.producesTitle') !== 'daoaas.producesTitle' ? t('daoaas.producesTitle') : 'What this produces:'}
             </h3>
