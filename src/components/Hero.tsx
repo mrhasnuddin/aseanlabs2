@@ -85,7 +85,7 @@ export function Hero() {
           {t('hero.subhead') !== 'hero.subhead' ? t('hero.subhead') : "Asean Labs takes serious projects from concept to deployed product, driving real users and verifiable activity. We are not a VC or a marketing agency—we are a paid execution partner operating inside Southeast Asia's most active Web3 ecosystem."}
         </p>
 
-        <div ref={ctasRef} className="mt-2 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-8">
+        <div ref={ctasRef} className="mt-2 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8">
           <NbButton
             href="https://scan.eniac.network/"
             external

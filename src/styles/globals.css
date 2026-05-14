@@ -66,6 +66,7 @@
   body {
     background-color: var(--color-canvas);
     color: var(--color-struct);
+    overflow-x: hidden;
     @apply transition-colors duration-300;
   }
 

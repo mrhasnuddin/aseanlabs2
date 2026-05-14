@@ -61,6 +61,14 @@ const ABOUT_ITEMS = [
     defaultDesc: 'Brand guidelines, logos, and visual assets for ASEAN Labs.',
     href: '/brand',
   },
+  {
+    labelKey: 'nav.linktree',
+    descKey: 'nav.desc.linktree',
+    defaultLabel: 'Linktree',
+    defaultDesc: 'Our social links, communities, and official channels.',
+    href: LINKTREE_HREF,
+    external: true,
+  },
 ];
 
 const PRODUCT_ITEMS = [
@@ -266,22 +274,13 @@ export function Nav() {
           <WordmarkScramble className="hidden font-geist text-base font-bold tracking-[0.18em] text-ink sm:inline-block" />
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           <div className="nav-child-animate"><NavDropdownTrigger label={t('nav.about') !== 'nav.about' ? t('nav.about') : 'About'} {...triggerProps('about')} /></div>
           <div className="nav-child-animate"><NavDropdownTrigger label={t('nav.product') !== 'nav.product' ? t('nav.product') : 'Product'} {...triggerProps('product')} /></div>
           <div className="nav-child-animate"><NavDropdownTrigger label={t('nav.network') !== 'nav.network' ? t('nav.network') : 'Network'} {...triggerProps('network')} /></div>
-          <Link
-            href={LINKTREE_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            onMouseEnter={scheduleClose}
-            className="nav-child-animate inline-flex items-center rounded-nb px-3 py-2 font-sans text-sm font-medium uppercase tracking-wide text-ink transition-colors duration-150 hover:text-ink/70 focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-ink"
-          >
-            Linktree
-          </Link>
         </div>
 
-        <div className="nav-child-animate hidden items-center gap-3 md:flex">
+        <div className="nav-child-animate hidden items-center gap-3 lg:flex">
           <LanguageSwitcher variant="nav" />
           <NbButton href={ENI_HREF} external variant="primary-yellow" size="md">
             {t('nav.eniNetwork') !== 'nav.eniNetwork' ? t('nav.eniNetwork') : 'ENI Network'}
@@ -289,7 +288,7 @@ export function Nav() {
           </NbButton>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="flex h-10 w-10 items-center justify-center border-2 border-foreground text-foreground bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
@@ -324,23 +323,27 @@ export function Nav() {
                 : MENU_DATA[menuId].defaultLabel;
 
               return (
-                <div key={menuId} className="flex flex-col border-b border-foreground/10 pb-4">
+                <div key={menuId} className="flex flex-col">
                   <button 
                     onClick={() => toggleMobileSection(menuId)}
-                    className="flex items-center justify-between py-2 text-left"
+                    className={`flex items-center justify-between border-nb px-5 py-4 text-left transition-all duration-150 ${
+                      isOpen 
+                        ? 'bg-struct text-canvas border-struct translate-x-[2px] translate-y-[2px]' 
+                        : 'bg-canvas text-struct border-struct shadow-[4px_4px_0_0_#000]'
+                    }`}
                   >
-                    <span className="font-mono text-xs font-bold uppercase tracking-widest text-foreground/50">{label}</span>
-                    <ChevronDown size={16} className={`text-foreground/50 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                    <span className="font-mono text-sm font-bold uppercase tracking-widest">{label}</span>
+                    <ChevronDown size={20} className={`transition-transform duration-200 ${isOpen ? 'rotate-180 text-canvas' : 'text-struct'}`} />
                   </button>
                   
-                  <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] mt-4 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                  <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mb-4' : 'grid-rows-[0fr] opacity-0'}`}>
                     <div className="overflow-hidden">
-                      <div className="flex flex-col gap-4">
+                      <div className="flex flex-col border-x-nb border-b-nb border-struct bg-struct/5">
                         {items.map((item) => (
                           <Link 
                             key={item.href} 
                             href={item.href} 
-                            className="break-words text-2xl font-bold text-foreground leading-tight" 
+                            className="px-5 py-5 break-words text-2xl font-bold uppercase tracking-widest text-foreground hover:bg-struct hover:text-canvas transition-colors duration-150 border-b border-struct/10 last:border-b-0 leading-tight" 
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {item.label}
@@ -357,7 +360,6 @@ export function Nav() {
               <NbButton href={ENI_HREF} external variant="primary-yellow" size="lg" className="w-full justify-center !py-4 text-xl">
                 {t('nav.eniNetwork') !== 'nav.eniNetwork' ? t('nav.eniNetwork') : 'ENI Network'} <span aria-hidden="true" className="ml-2">→</span>
               </NbButton>
-              <Link href={LINKTREE_HREF} target="_blank" className="font-sans text-xl font-medium text-foreground underline underline-offset-4" onClick={() => setIsMobileMenuOpen(false)}>Linktree</Link>
             </div>
 
             <div className="mt-4 border-t border-foreground/10 pt-8">
