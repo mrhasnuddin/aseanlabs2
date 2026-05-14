@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en" className="scroll-smooth snap-y snap-proximity">
       <Head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta
           name="description"
           content="ASEAN Labs — the execution layer for ENI builders. A paid execution partner for serious Web3 projects in Southeast Asia."

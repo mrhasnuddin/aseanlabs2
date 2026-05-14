@@ -10,6 +10,7 @@ import {
 } from '@/components/NavDropdown';
 import { useTranslation } from '@/hooks/useTranslation';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { ChevronDown } from 'lucide-react';
 
 const ENI_HREF = 'https://scan.eniac.network/';
 const LINKTREE_HREF = 'https://linktr.ee/aseanlabs';
@@ -120,6 +121,7 @@ const MENU_DATA: Record<MenuId, { labelKey: string; defaultLabel: string; items:
 export function Nav() {
   const [openMenu, setOpenMenu] = useState<MenuId | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileSection, setOpenMobileSection] = useState<MenuId | null>(null);
   const [isHidden, setIsHidden] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -242,6 +244,10 @@ export function Nav() {
     panelId,
   });
 
+  const toggleMobileSection = (id: MenuId) => {
+    setOpenMobileSection(prev => prev === id ? null : id);
+  };
+
   return (
     <nav
       ref={navRef}
@@ -308,34 +314,54 @@ export function Nav() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[-1] flex h-[100dvh] flex-col overflow-y-auto bg-background px-5 pb-20 pt-[100px] md:hidden">
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-3">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-foreground/50">{t('nav.about') !== 'nav.about' ? t('nav.about') : 'About'}</span>
-              {getTranslatedItems(ABOUT_ITEMS).map((item) => (
-                <Link key={item.href} href={item.href} className="text-2xl font-bold text-foreground" onClick={() => setIsMobileMenuOpen(false)}>{item.label}</Link>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-foreground/50">{t('nav.product') !== 'nav.product' ? t('nav.product') : 'Product'}</span>
-              {getTranslatedItems(PRODUCT_ITEMS).map((item) => (
-                <Link key={item.href} href={item.href} className="text-2xl font-bold text-foreground" onClick={() => setIsMobileMenuOpen(false)}>{item.label}</Link>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-foreground/50">{t('nav.network') !== 'nav.network' ? t('nav.network') : 'Network'}</span>
-              {getTranslatedItems(NETWORK_ITEMS).map((item) => (
-                <Link key={item.href} href={item.href} className="text-2xl font-bold text-foreground" onClick={() => setIsMobileMenuOpen(false)}>{item.label}</Link>
-              ))}
-            </div>
-            
-            <LanguageSwitcher variant="mobile" />
+        <div className="fixed inset-0 z-[-1] flex h-[100dvh] flex-col overflow-y-auto overflow-x-hidden bg-background px-5 pb-20 pt-[100px] md:hidden">
+          <div className="flex flex-col gap-6">
+            {(['about', 'product', 'network'] as const).map((menuId) => {
+              const isOpen = openMobileSection === menuId;
+              const items = getTranslatedItems(MENU_DATA[menuId].items);
+              const label = t(MENU_DATA[menuId].labelKey) !== MENU_DATA[menuId].labelKey 
+                ? t(MENU_DATA[menuId].labelKey) 
+                : MENU_DATA[menuId].defaultLabel;
 
-            <div className="mt-2 flex flex-col gap-6 border-t border-foreground/10 pt-8">
+              return (
+                <div key={menuId} className="flex flex-col border-b border-foreground/10 pb-4">
+                  <button 
+                    onClick={() => toggleMobileSection(menuId)}
+                    className="flex items-center justify-between py-2 text-left"
+                  >
+                    <span className="font-mono text-xs font-bold uppercase tracking-widest text-foreground/50">{label}</span>
+                    <ChevronDown size={16} className={`text-foreground/50 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] mt-4 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                    <div className="overflow-hidden">
+                      <div className="flex flex-col gap-4">
+                        {items.map((item) => (
+                          <Link 
+                            key={item.href} 
+                            href={item.href} 
+                            className="break-words text-2xl font-bold text-foreground leading-tight" 
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            <div className="mt-2 flex flex-col gap-6 pt-2">
               <NbButton href={ENI_HREF} external variant="primary-yellow" size="lg" className="w-full justify-center !py-4 text-xl">
                 {t('nav.eniNetwork') !== 'nav.eniNetwork' ? t('nav.eniNetwork') : 'ENI Network'} <span aria-hidden="true" className="ml-2">→</span>
               </NbButton>
               <Link href={LINKTREE_HREF} target="_blank" className="font-sans text-xl font-medium text-foreground underline underline-offset-4" onClick={() => setIsMobileMenuOpen(false)}>Linktree</Link>
+            </div>
+
+            <div className="mt-4 border-t border-foreground/10 pt-8">
+              <LanguageSwitcher variant="mobile" />
             </div>
           </div>
         </div>
