@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Nav } from '@/components/Nav';
@@ -106,6 +106,183 @@ function ColorSwatch({ color }: { color: typeof PRESETS[0]['colors'][0] }) {
   );
 }
 
+const SYMBOL_COUNT = 6;
+type PhysicsNode = {
+  id: string;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  isDragging: boolean;
+};
+
+function FloatingSymbols() {
+  const { t } = useTranslation();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const nodesRef = useRef<PhysicsNode[]>([]);
+  const symbolsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const animationFrameRef = useRef<number>();
+  const dragTargetRef = useRef<{ index: number; offsetX: number; offsetY: number } | null>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const width = containerRef.current.clientWidth;
+    const height = containerRef.current.clientHeight;
+    
+    nodesRef.current = Array.from({ length: SYMBOL_COUNT }).map((_, i) => {
+      const radius = 32; // w-16 h-16 = 64px, radius = 32
+      return {
+        id: `sym-${i}`,
+        x: radius + Math.random() * Math.max(width - radius * 2, 0),
+        y: radius + Math.random() * Math.max(height - radius * 2, 0),
+        vx: (Math.random() - 0.5) * 3,
+        vy: (Math.random() - 0.5) * 3,
+        radius,
+        isDragging: false
+      };
+    });
+
+    const updatePhysics = () => {
+      if (!containerRef.current) return;
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+
+      nodesRef.current.forEach((node) => {
+        if (node.isDragging) return;
+        node.x += node.vx;
+        node.y += node.vy;
+
+        if (node.x - node.radius < 0) { node.x = node.radius; node.vx *= -1; }
+        else if (node.x + node.radius > width) { node.x = width - node.radius; node.vx *= -1; }
+        
+        if (node.y - node.radius < 0) { node.y = node.radius; node.vy *= -1; }
+        else if (node.y + node.radius > height) { node.y = height - node.radius; node.vy *= -1; }
+      });
+
+      for (let i = 0; i < nodesRef.current.length; i++) {
+        for (let j = i + 1; j < nodesRef.current.length; j++) {
+          const n1 = nodesRef.current[i];
+          const n2 = nodesRef.current[j];
+          const dx = n2.x - n1.x;
+          const dy = n2.y - n1.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const minD = n1.radius + n2.radius;
+
+          if (dist < minD && dist > 0) {
+            const overlap = minD - dist;
+            const nx = dx / dist;
+            const ny = dy / dist;
+            const massRatio = 0.5;
+            
+            if (!n1.isDragging) {
+              n1.x -= nx * overlap * massRatio;
+              n1.y -= ny * overlap * massRatio;
+              n1.vx -= nx * overlap * 0.05;
+              n1.vy -= ny * overlap * 0.05;
+            }
+            if (!n2.isDragging) {
+              n2.x += nx * overlap * massRatio;
+              n2.y += ny * overlap * massRatio;
+              n2.vx += nx * overlap * 0.05;
+              n2.vy += ny * overlap * 0.05;
+            }
+          }
+        }
+      }
+
+      nodesRef.current.forEach(node => {
+        const speed = Math.sqrt(node.vx*node.vx + node.vy*node.vy);
+        if (speed > 2.5 && !node.isDragging) {
+          node.vx *= 0.95;
+          node.vy *= 0.95;
+        }
+      });
+
+      nodesRef.current.forEach((node, i) => {
+        const el = symbolsRef.current[i];
+        if (el) {
+          el.style.transform = `translate(${node.x - node.radius}px, ${node.y - node.radius}px)`;
+        }
+      });
+      animationFrameRef.current = requestAnimationFrame(updatePhysics);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(updatePhysics);
+    return () => { if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current); };
+  }, []);
+
+  const handlePointerDown = (e: React.PointerEvent, index: number) => {
+    if (!containerRef.current) return;
+    e.preventDefault();
+    const node = nodesRef.current[index];
+    node.isDragging = true;
+    const rect = containerRef.current.getBoundingClientRect();
+    dragTargetRef.current = {
+      index,
+      offsetX: e.clientX - rect.left - node.x,
+      offsetY: e.clientY - rect.top - node.y
+    };
+    node.vx = 0;
+    node.vy = 0;
+  };
+
+  const handlePointerMove = useCallback((e: PointerEvent) => {
+    if (!dragTargetRef.current || !containerRef.current) return;
+    const { index, offsetX, offsetY } = dragTargetRef.current;
+    const node = nodesRef.current[index];
+    const rect = containerRef.current.getBoundingClientRect();
+    const newX = e.clientX - rect.left - offsetX;
+    const newY = e.clientY - rect.top - offsetY;
+    node.vx = newX - node.x;
+    node.vy = newY - node.y;
+    node.x = newX;
+    node.y = newY;
+  }, []);
+
+  const handlePointerUp = useCallback(() => {
+    if (dragTargetRef.current) {
+      const node = nodesRef.current[dragTargetRef.current.index];
+      node.isDragging = false;
+      dragTargetRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerup', handlePointerUp);
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+    };
+  }, [handlePointerMove, handlePointerUp]);
+
+  return (
+    <div 
+      ref={containerRef}
+      className="border-2 border-struct bg-struct p-8 relative overflow-hidden h-[300px] md:h-[400px] text-canvas touch-none shadow-[8px_8px_0_0_var(--color-struct)]"
+    >
+      <span className="absolute top-4 left-4 font-mono text-xs font-bold uppercase tracking-widest opacity-70 z-10">{t('brand.graphicAssetsTitle') !== 'brand.graphicAssetsTitle' ? t('brand.graphicAssetsTitle') : 'Graphic Assets'}</span>
+      {[1, 2, 3, 4, 5, 6].map((num, i) => (
+        <div 
+          key={num}
+          ref={el => { symbolsRef.current[i] = el; }}
+          className="absolute top-0 left-0 w-16 h-16 flex items-center justify-center cursor-grab active:cursor-grabbing hover:scale-110 transition-transform duration-100 ease-out z-20"
+          onPointerDown={(e) => handlePointerDown(e, i)}
+          draggable={false}
+        >
+          <img 
+            src={`/symbols/svg${num}.svg`} 
+            alt={`Symbol ${num}`} 
+            className="w-16 h-16 object-contain pointer-events-none invert brightness-0" 
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function BrandIdentityPage() {
   const { t } = useTranslation();
 
@@ -207,26 +384,27 @@ export default function BrandIdentityPage() {
                   <h2 className="font-sans text-4xl md:text-5xl font-black uppercase tracking-tighter">{t('brand.logosTitle') !== 'brand.logosTitle' ? t('brand.logosTitle') : 'Logos'}</h2>
                 </div>
                 <a 
-                  href="#" 
+                  href="/Brand Kit/AseanLabs Logo.7z" 
+                  download
                   className="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-widest border border-struct bg-struct text-canvas px-6 py-3 transition-colors duration-0 hover:bg-transparent hover:text-struct"
                 >
                   <Download size={16} /> {t('brand.downloadLogoPack') !== 'brand.downloadLogoPack' ? t('brand.downloadLogoPack') : 'Download Logo Pack'}
                 </a>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="border-2 border-struct bg-struct p-8 flex flex-col items-center justify-center min-h-[300px] relative text-canvas">
+                <div className="border-2 border-struct bg-struct p-8 flex flex-col items-center justify-center min-h-[300px] relative text-canvas text-center overflow-hidden">
                   <span className="absolute top-4 left-4 font-mono text-xs font-bold uppercase tracking-widest opacity-70">{t('brand.symbolLabel') !== 'brand.symbolLabel' ? t('brand.symbolLabel') : 'Symbol'}</span>
-                  <img src="/symbols/aseanlabs svg 2.svg" alt="ASEAN Labs Symbol" className="w-32 h-32 object-contain text-canvas" />
+                  <img src="/symbols/aseanlabs svg 2.svg" alt="ASEAN Labs Symbol" className="w-24 h-24 md:w-32 md:h-32 object-contain invert brightness-0 shrink-0" />
                 </div>
-                <div className="border-2 border-struct bg-struct p-8 flex flex-col items-center justify-center min-h-[300px] relative text-canvas">
+                <div className="border-2 border-struct bg-struct p-8 flex flex-col items-center justify-center min-h-[300px] relative text-canvas text-center overflow-hidden">
                   <span className="absolute top-4 left-4 font-mono text-xs font-bold uppercase tracking-widest opacity-70">{t('brand.wordmarkLabel') !== 'brand.wordmarkLabel' ? t('brand.wordmarkLabel') : 'Wordmark'}</span>
-                  <h3 className="font-sans text-5xl font-black uppercase tracking-widest text-canvas">ASEAN LABS</h3>
+                  <h3 className="font-sans text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-widest text-canvas whitespace-nowrap">ASEAN LABS</h3>
                 </div>
-                <div className="border-2 border-struct bg-struct p-8 flex flex-col items-center justify-center min-h-[300px] relative lg:col-span-2 text-canvas">
+                <div className="border-2 border-struct bg-struct p-8 flex flex-col items-center justify-center min-h-[300px] relative lg:col-span-2 text-canvas text-center overflow-hidden">
                   <span className="absolute top-4 left-4 font-mono text-xs font-bold uppercase tracking-widest opacity-70">{t('brand.combinedLabel') !== 'brand.combinedLabel' ? t('brand.combinedLabel') : 'Combined Lockup'}</span>
-                  <div className="flex items-center gap-6">
-                    <img src="/symbols/aseanlabs svg 2.svg" alt="ASEAN Labs Symbol" className="w-20 h-20 object-contain text-canvas" />
-                    <h3 className="font-sans text-4xl md:text-6xl font-black uppercase tracking-widest text-canvas">ASEAN LABS</h3>
+                  <div className="flex items-center justify-center gap-3 sm:gap-6 w-full">
+                    <img src="/symbols/aseanlabs svg 2.svg" alt="ASEAN Labs Symbol" className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain invert brightness-0 shrink-0" />
+                    <h3 className="font-sans text-2xl sm:text-4xl md:text-6xl font-black uppercase tracking-widest text-canvas whitespace-nowrap">ASEAN LABS</h3>
                   </div>
                 </div>
               </div>
@@ -324,25 +502,24 @@ export default function BrandIdentityPage() {
             </section>
 
             <section className="mb-32 animate-fade-in">
-              <div className="flex items-center gap-6 mb-12 border-b-2 border-struct pb-4">
-                <span className="font-mono text-4xl font-bold text-struct/50">06</span>
-                <h2 className="font-sans text-4xl md:text-5xl font-black uppercase tracking-tighter">{t('brand.graphicAssetsTitle') !== 'brand.graphicAssetsTitle' ? t('brand.graphicAssetsTitle') : 'Graphic Assets'}</h2>
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b-2 border-struct pb-4">
+                <div className="flex items-center gap-6">
+                  <span className="font-mono text-4xl font-bold text-struct/50">06</span>
+                  <h2 className="font-sans text-4xl md:text-5xl font-black uppercase tracking-tighter">{t('brand.graphicAssetsTitle') !== 'brand.graphicAssetsTitle' ? t('brand.graphicAssetsTitle') : 'Graphic Assets'}</h2>
+                </div>
+                <a 
+                  href="/Brand Kit/Symbols.7z" 
+                  download
+                  className="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-widest border border-struct bg-struct text-canvas px-6 py-3 transition-colors duration-0 hover:bg-transparent hover:text-struct"
+                >
+                  <Download size={16} /> {t('brand.downloadGraphicAssets') !== 'brand.downloadGraphicAssets' ? t('brand.downloadGraphicAssets') : 'Download Graphic Assets'}
+                </a>
               </div>
               <p className="font-sans text-xl leading-relaxed w-full mb-12 text-struct">
                 {t('brand.graphicAssetsDesc') !== 'brand.graphicAssetsDesc' ? t('brand.graphicAssetsDesc') : 'Our signature graphic assets include heavy solid borders, sharp offset shadows, and dynamic SVG abstract symbols that react to user interaction. We favor abstract geometric representation over literal illustrations.'}
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[1, 2, 3, 4, 5, 6].map((num) => (
-                  <div key={num} className="border-2 border-struct bg-canvas aspect-square flex items-center justify-center hover:bg-struct group transition-colors">
-                    <img 
-                      src={`/symbols/svg${num}.svg`} 
-                      alt={`Symbol ${num}`} 
-                      className="w-16 h-16 md:w-20 md:h-20 object-contain text-struct group-hover:text-canvas transition-all duration-300" 
-                    />
-                  </div>
-                ))}
-              </div>
+              <FloatingSymbols />
             </section>
 
           </div>
