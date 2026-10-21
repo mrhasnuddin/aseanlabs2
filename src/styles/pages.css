@@ -1,0 +1,925 @@
+/* Secondary pages: the homepage system applied to guides, standards and legal copy. */
+.al-page-intro {
+  position: relative;
+  isolation: isolate;
+  padding-block: var(--al-space-8) var(--al-space-16);
+}
+/* Full-bleed grid behind the intro; html clips the overhang, so no horizontal scroll. */
+.al-page-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--al-texture-grid) center top;
+  mask-image: radial-gradient(40% 70% at 100% 0, #000, transparent), radial-gradient(40% 70% at 0 100%, #000, transparent);
+  pointer-events: none;
+}
+/* The intro closes on a full-bleed hatch seam framed by two rules, whatever section follows. */
+.al-page-intro::after {
+  content: '';
+  position: absolute;
+  inset: auto calc(50% - 50vw) 0;
+  box-sizing: content-box;
+  height: 14px;
+  border-block: var(--al-border);
+  background: var(--al-yellow) var(--al-texture-hatch) left top repeat-x;
+  pointer-events: none;
+}
+/* Sections without their own top padding would butt against the seam. */
+.al-page .al-page-intro + :not(.al-section, .al-legal-layout) {
+  margin-top: var(--al-space-12);
+}
+.al-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--al-space-3);
+  margin: 0 0 var(--al-space-8);
+  padding: 0;
+  list-style: none;
+  font: var(--al-text-label) / var(--al-leading-ui) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+  text-transform: uppercase;
+  color: var(--al-muted);
+}
+.al-breadcrumb li + li::before {
+  content: '/';
+  margin-right: var(--al-space-3);
+}
+.al-breadcrumb [aria-current] {
+  color: var(--al-ink);
+}
+.al-page-intro .al-eyebrow {
+  margin-bottom: var(--al-space-4);
+}
+.al-page-intro h1 {
+  max-width: 18em;
+  margin-inline: auto;
+  font-size: var(--al-text-display);
+  line-height: var(--al-leading-display);
+  letter-spacing: var(--al-tracking-display);
+}
+.al-page-intro h1 > .al-page-highlight {
+  display: block;
+  color: var(--al-muted);
+}
+/* Like the homepage hero: the orbit is the centre line and the heading stacks under it. */
+.al-page-intro-main {
+  text-align: center;
+}
+.al-page-motif {
+  width: clamp(176px, 112px + 18vw, 264px);
+  margin: 0 auto var(--al-space-8);
+  color: var(--al-ink);
+}
+.al-page-motif svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+/* One paragraph stays centred under the heading; two or more become left-aligned columns under a rule. */
+.al-page-lead {
+  max-width: 40rem;
+  margin: var(--al-space-6) auto 0;
+  text-align: center;
+}
+.al-page-lead:has(> p + p) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--al-space-6) var(--al-space-16);
+  max-width: 64rem;
+  margin-top: var(--al-space-12);
+  padding-top: var(--al-space-6);
+  border-top: var(--al-border);
+  text-align: start;
+  position: relative;
+}
+/* Body copy stays on solid yellow: the grid stops at the rule above the two-column lead. */
+.al-page-lead:has(> p + p)::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(50% - 50vw) calc(-1 * var(--al-space-16));
+  z-index: -1;
+  background: var(--al-yellow);
+}
+.al-page-lead p {
+  font-size: var(--al-text-lead);
+  line-height: var(--al-leading-lead);
+  color: var(--al-muted);
+}
+.al-copy {
+  width: var(--al-control);
+  height: var(--al-control);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: var(--al-border-strong);
+  background: none;
+  transition:
+    background var(--al-fast),
+    color var(--al-fast);
+}
+
+/* Why us */
+.al-advantages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0 0 var(--al-section);
+  list-style: none;
+}
+.al-advantage {
+  padding: var(--al-space-8) var(--al-space-8) 0;
+  border-top: var(--al-border-strong);
+  border-left: var(--al-border);
+}
+.al-advantage:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.al-advantage > span {
+  display: block;
+  font-size: var(--al-text-display);
+  line-height: var(--al-leading-display);
+  letter-spacing: var(--al-tracking-display);
+  font-variant-numeric: tabular-nums;
+}
+.al-advantage .al-small-label {
+  margin-top: var(--al-space-4);
+}
+.al-advantage > p:last-child {
+  max-width: 24rem;
+  margin-top: var(--al-space-3);
+  line-height: var(--al-leading-body);
+  color: var(--al-muted);
+}
+.al-regions-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--al-space-16);
+  align-items: center;
+}
+.al-globe {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.al-globe:active {
+  cursor: grabbing;
+}
+.al-globe-ring {
+  position: absolute;
+  inset: -14px;
+  width: calc(100% + 28px);
+  height: calc(100% + 28px);
+  overflow: visible;
+  color: var(--al-ink);
+  pointer-events: none;
+}
+.al-globe canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.al-globe-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.al-globe-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;
+  transform: translate(-50%, calc(-100% - 6px));
+}
+.al-globe-label > span:first-child {
+  padding: 1px 5px;
+  border: var(--al-border-strong);
+  background: var(--al-yellow);
+  font: var(--al-text-label) / var(--al-leading-ui) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.al-globe-label > span:last-child {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--al-ink);
+}
+.al-globe-label.is-active > span:first-child {
+  background: var(--al-ink);
+  color: var(--al-yellow);
+}
+.al-globe-label.is-active > span:last-child {
+  width: 9px;
+  height: 9px;
+  border: var(--al-border-strong);
+  background: var(--al-cyan);
+}
+.al-regions .al-section-heading {
+  margin-bottom: 0;
+}
+.al-region-list {
+  margin: var(--al-space-8) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--al-border-strong);
+}
+.al-region-list li {
+  border-bottom: var(--al-border-strong);
+}
+.al-region-list button {
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--al-space-4);
+  padding: var(--al-space-3) var(--al-space-4);
+  border: 0;
+  background: none;
+  font-size: var(--al-text-lead);
+  letter-spacing: var(--al-tracking-heading);
+  text-align: left;
+}
+.al-region-list button > span:last-child {
+  font: var(--al-text-label) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+  color: var(--al-muted);
+}
+.al-region-list button[aria-pressed='true'] {
+  background: #17191414;
+  box-shadow: inset 3px 0 0 var(--al-ink);
+}
+
+/* Ordered steps: process, wallet guides. */
+.al-process-steps {
+  padding-bottom: var(--al-section);
+}
+/* The steps run straight into the next section with no seam, so one section gap is enough. */
+.al-process-steps + .al-section {
+  padding-top: 0;
+}
+.al-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.al-step {
+  position: relative;
+  padding-inline: var(--al-space-4);
+  text-align: center;
+}
+/* Each step draws the line from its node to the next, so it runs first node to last. */
+.al-step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 100%;
+  border-top: var(--al-border-strong);
+}
+.al-step-node {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto var(--al-space-8);
+  border: var(--al-border-strong);
+  border-radius: 50%;
+  background: var(--al-yellow);
+  font: var(--al-text-label) var(--al-mono);
+}
+/* A ring pings out of each node in turn (--i), so a pulse travels 01 to 05 along the line. */
+.al-step-node::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: var(--al-border-strong);
+  border-radius: 50%;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .al-step-node::after {
+    animation: al-step-ping 3.2s var(--al-ease) calc(var(--i, 0) * var(--al-normal)) infinite;
+  }
+  /* The node fills ink while its ring pings, so the fill travels along the line with the pulse. */
+  .al-step-node {
+    animation: al-step-fill 3.2s var(--al-ease) calc(var(--i, 0) * var(--al-normal)) infinite;
+  }
+}
+@keyframes al-step-fill {
+  0%,
+  34%,
+  100% {
+    background: var(--al-yellow);
+    color: var(--al-ink);
+  }
+  4%,
+  22% {
+    background: var(--al-ink);
+    color: var(--al-yellow);
+  }
+}
+/* .al-motion pauses descendants, but `*` does not reach pseudo-elements. */
+.al-motion.is-paused .al-step-node::after,
+.al-tab-hidden .al-motion .al-step-node::after {
+  animation-play-state: paused;
+}
+@keyframes al-step-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  30%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.al-step h3 {
+  margin-bottom: var(--al-space-3);
+  font-size: var(--al-text-lead);
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-step p {
+  max-width: 28rem;
+  line-height: var(--al-leading-body);
+  color: var(--al-muted);
+}
+.al-step strong,
+.al-process-step strong {
+  font-weight: 500;
+  color: var(--al-ink);
+}
+.al-process-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--al-space-8);
+}
+.al-page .al-process-grid {
+  margin-top: 0;
+}
+
+/* Onboarding */
+.al-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--al-space-16);
+  align-items: start;
+}
+.al-split .al-section-heading {
+  margin-bottom: 0;
+}
+.al-spec {
+  margin: 0;
+  border-top: var(--al-border-strong);
+}
+.al-spec > div {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.3fr) minmax(0, 1fr);
+  gap: var(--al-space-6);
+  align-items: start;
+  padding-block: var(--al-space-4);
+  border-bottom: var(--al-border);
+}
+.al-spec dt {
+  padding-top: var(--al-space-3);
+  font: var(--al-text-label) / var(--al-leading-ui) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+  text-transform: uppercase;
+  color: var(--al-muted);
+}
+.al-spec dd {
+  margin: 0;
+  min-width: 0;
+}
+.al-spec-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--al-space-4);
+  font: 500 var(--al-text-body) / var(--al-leading-ui) var(--al-mono);
+  overflow-wrap: anywhere;
+}
+.al-spec-backups {
+  margin-top: var(--al-space-4);
+}
+.al-spec-backups ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--al-space-2);
+  margin: var(--al-space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.al-spec-backups li {
+  display: flex;
+  align-items: center;
+  gap: var(--al-space-3);
+  padding-left: var(--al-space-3);
+  border: var(--al-border);
+  font: var(--al-text-label) var(--al-mono);
+  overflow-wrap: anywhere;
+}
+.al-spec-backups .al-copy {
+  flex: none;
+  border-width: 0 0 0 1px;
+  border-color: var(--al-rule);
+}
+.al-wallet-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: var(--al-space-12);
+  border-top: var(--al-border-strong);
+  border-left: var(--al-border-strong);
+}
+.al-wallet-tabs button {
+  display: flex;
+  align-items: center;
+  gap: var(--al-space-4);
+  min-width: 0;
+  padding: var(--al-space-6);
+  border: 0;
+  border-right: var(--al-border-strong);
+  border-bottom: var(--al-border-strong);
+  background: none;
+  text-align: left;
+}
+.al-wallet-tabs img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.al-wallet-tabs strong {
+  display: block;
+  font-size: var(--al-text-lead);
+  font-weight: 400;
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-wallet-tabs small {
+  display: block;
+  margin-top: var(--al-space-1);
+  font: var(--al-text-label) / var(--al-leading-ui) var(--al-mono);
+  color: var(--al-muted);
+}
+.al-wallet-tabs button[aria-pressed='true'] {
+  background: #17191414;
+  box-shadow: inset 0 -4px 0 var(--al-ink);
+}
+.al-wallet-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--al-space-4);
+  margin-top: var(--al-space-12);
+  padding-top: var(--al-space-6);
+  border-top: var(--al-border);
+  color: var(--al-muted);
+}
+.al-wallet-foot .al-button {
+  color: var(--al-ink);
+}
+
+/* Brand */
+.al-brand-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--al-space-4) var(--al-space-6);
+  margin-bottom: var(--al-space-12);
+}
+.al-brand-heading > span {
+  font: var(--al-text-label) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+}
+.al-brand-heading h2 {
+  font-size: var(--al-text-h2);
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-brand-heading .al-button {
+  margin-left: auto;
+  align-self: center;
+}
+.al-brand-note {
+  max-width: var(--al-measure);
+  line-height: var(--al-leading-body);
+  color: var(--al-muted);
+}
+.al-brand-note + *,
+* + .al-brand-note {
+  margin-top: var(--al-space-8);
+}
+.al-trait-label {
+  display: block;
+  margin-bottom: var(--al-space-4);
+}
+.al-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: var(--al-border-strong);
+  border-left: var(--al-border-strong);
+}
+.al-logo-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 300px;
+  padding: var(--al-space-16) var(--al-space-6);
+  border-right: var(--al-border-strong);
+  border-bottom: var(--al-border-strong);
+}
+.al-logo-tile > .al-small-label {
+  position: absolute;
+  top: var(--al-space-4);
+  left: var(--al-space-6);
+}
+.al-logo-tile-wide {
+  grid-column: span 2;
+}
+.al-logo-tile-ink {
+  background: var(--al-ink);
+  color: var(--al-yellow);
+}
+.al-logo-symbol {
+  display: block;
+}
+.al-logo-wordmark {
+  font-size: clamp(30px, 4.6vw, 72px);
+  gap: 0.3em;
+}
+.al-logo-wordmark > span {
+  gap: 0.14em;
+}
+.al-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--al-space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.al-swatch button {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: var(--al-border-strong);
+}
+.al-swatch button > span {
+  position: absolute;
+  right: var(--al-space-3);
+  bottom: var(--al-space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--al-space-2);
+  padding: 6px var(--al-space-2);
+  border: var(--al-border-strong);
+  background: var(--al-yellow);
+  color: var(--al-ink);
+  font: var(--al-text-label) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+  text-transform: uppercase;
+}
+.al-swatch h3 {
+  margin-top: var(--al-space-4);
+  font-size: var(--al-text-lead);
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-swatch p {
+  margin-top: var(--al-space-1);
+  font: var(--al-text-label) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+  color: var(--al-muted);
+}
+.al-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--al-space-12);
+}
+.al-type-card {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--al-space-6);
+  border-top: var(--al-border-strong);
+}
+.al-type-name {
+  margin: var(--al-space-3) 0 var(--al-space-4);
+  font-size: var(--al-text-display);
+  line-height: var(--al-leading-display);
+  letter-spacing: var(--al-tracking-display);
+}
+.al-type-card > p {
+  max-width: var(--al-measure);
+  line-height: var(--al-leading-body);
+  color: var(--al-muted);
+}
+.al-type-samples {
+  display: grid;
+  gap: var(--al-space-6);
+  margin: var(--al-space-8) 0 var(--al-space-12);
+}
+.al-type-samples > div > :first-child {
+  margin-bottom: var(--al-space-2);
+  color: var(--al-muted);
+}
+.al-type-display {
+  font-size: var(--al-text-h3);
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-type-mono .al-type-name,
+.al-type-mono .al-type-display {
+  font-family: var(--al-mono);
+  letter-spacing: -0.02em;
+}
+.al-type-card .al-button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+.al-symbol-field {
+  position: relative;
+  height: 400px;
+  border: var(--al-border-strong);
+  overflow: hidden;
+}
+.al-symbol-field > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  cursor: grab;
+  touch-action: none;
+}
+.al-symbol-field > div:active {
+  cursor: grabbing;
+}
+
+/* Legal */
+.al-legal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--al-space-16);
+  padding-top: var(--al-space-12);
+  padding-bottom: var(--al-section);
+}
+.al-legal-aside {
+  position: sticky;
+  top: 112px;
+  align-self: start;
+  max-width: 22rem;
+  line-height: var(--al-leading-body);
+  color: var(--al-muted);
+}
+.al-legal {
+  max-width: 44rem;
+  line-height: var(--al-leading-body);
+}
+.al-legal > p:first-child {
+  font-size: var(--al-text-lead);
+  line-height: var(--al-leading-lead);
+}
+.al-legal h2 {
+  margin: var(--al-space-12) 0 var(--al-space-3);
+  padding-top: var(--al-space-6);
+  border-top: var(--al-border-strong);
+  font-size: var(--al-text-h3);
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-legal p + p,
+.al-legal ul + p {
+  margin-top: var(--al-space-4);
+}
+.al-legal ul {
+  margin: var(--al-space-3) 0 0;
+  padding-left: 20px;
+  list-style: square;
+}
+.al-legal li + li {
+  margin-top: var(--al-space-2);
+}
+.al-legal strong {
+  font-weight: 600;
+}
+.al-legal .al-legal-note {
+  margin-top: var(--al-space-6);
+  padding: var(--al-space-4) var(--al-space-6);
+  background: #1719140f;
+  box-shadow: inset 3px 0 0 var(--al-ink);
+  font-weight: 500;
+}
+.al-legal hr {
+  margin: var(--al-space-16) 0 0;
+  border: 0;
+  border-top: var(--al-border);
+}
+.al-legal-contact {
+  margin-top: var(--al-space-6);
+}
+.al-legal-contact > div {
+  display: flex;
+  align-items: center;
+  gap: var(--al-space-6);
+}
+.al-legal-contact a {
+  border-bottom: 1px solid currentColor;
+  font-size: var(--al-text-h3);
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-legal-contact p {
+  margin-top: var(--al-space-6);
+  font: var(--al-text-label) / var(--al-leading-ui) var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+  text-transform: uppercase;
+  color: var(--al-muted);
+}
+
+/* ---- Interface motion (page-only; keyframe al-pop-in and the reduced-motion reset live in home.css) ----
+   Selection fades instead of snapping, copy confirmations pop in, and a newly picked
+   wallet's steps rise in turn. */
+.al-region-list button,
+.al-wallet-tabs button {
+  transition:
+    background-color var(--al-fast),
+    box-shadow var(--al-normal) var(--al-ease);
+}
+/* Step keys are per wallet (titleKey), so switching remounts the steps and replays this. */
+#wallet-steps .al-step {
+  animation: al-pop-in var(--al-normal) var(--al-ease) calc(var(--i, 0) * 40ms) backwards;
+}
+/* Plays when data-copied is set; the return to the copy icon after 2s stays instant. */
+.al-copy[data-copied] > svg,
+.al-swatch button[data-copied] > span {
+  animation: al-copied var(--al-normal) var(--al-ease);
+}
+.al-swatch button > span {
+  --al-copied-scale: 0.92;
+  transform-origin: bottom right;
+}
+@keyframes al-copied {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+    transform: scale(var(--al-copied-scale, 0.5));
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .al-copy:hover {
+    background: var(--al-ink);
+    color: var(--al-yellow);
+  }
+  .al-breadcrumb a:hover {
+    color: var(--al-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .al-region-list button:hover,
+  .al-wallet-tabs button:hover {
+    background: #1719140a;
+  }
+  .al-swatch button {
+    transition:
+      transform var(--al-fast) var(--al-ease),
+      box-shadow var(--al-fast) var(--al-ease);
+  }
+  .al-swatch button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--al-shadow);
+  }
+}
+@media (max-width: 1100px) {
+  .al-regions-layout,
+  .al-split,
+  .al-legal-layout {
+    gap: var(--al-space-12);
+  }
+  .al-process-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* Five columns get too narrow below 1100px; the timeline turns vertical. */
+  .al-steps {
+    grid-template-columns: 1fr;
+  }
+  .al-step {
+    padding: 0 0 var(--al-space-8) 72px;
+    text-align: start;
+  }
+  .al-step:not(:last-child)::before {
+    top: 0;
+    bottom: 0;
+    left: 22px;
+    width: 0;
+    border-top: 0;
+    border-left: var(--al-border-strong);
+  }
+  .al-step-node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+  .al-step h3 {
+    padding-top: 10px;
+  }
+  .al-wallet-tabs button {
+    padding: var(--al-space-4);
+    gap: var(--al-space-3);
+  }
+}
+@media (max-width: 800px) {
+  .al-breadcrumb ol {
+    margin-bottom: var(--al-space-6);
+  }
+  .al-page-intro {
+    padding-bottom: var(--al-space-12);
+  }
+  .al-page-lead:has(> p + p) {
+    grid-template-columns: 1fr;
+    margin-top: var(--al-space-8);
+  }
+  .al-page-motif {
+    margin-bottom: var(--al-space-6);
+  }
+  .al-advantages {
+    grid-template-columns: 1fr;
+  }
+  .al-advantage,
+  .al-advantage:first-child {
+    padding: var(--al-space-6) 0 var(--al-space-8);
+    border-left: 0;
+  }
+  .al-regions-layout,
+  .al-split {
+    grid-template-columns: 1fr;
+    gap: var(--al-space-8);
+  }
+  .al-globe {
+    max-width: 440px;
+  }
+  .al-wallet-tabs {
+    grid-template-columns: 1fr;
+  }
+  .al-spec > div {
+    grid-template-columns: 1fr;
+    gap: var(--al-space-2);
+  }
+  .al-spec dt {
+    padding-top: 0;
+  }
+  .al-logo-grid,
+  .al-type-grid {
+    grid-template-columns: 1fr;
+  }
+  .al-logo-tile-wide {
+    grid-column: span 1;
+  }
+  .al-swatches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .al-legal-layout {
+    grid-template-columns: 1fr;
+    gap: var(--al-space-8);
+  }
+  .al-legal-aside {
+    position: static;
+  }
+}
+@media (max-width: 520px) {
+  .al-process-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .al-region-list button {
+    padding-inline: var(--al-space-3);
+  }
+  .al-brand-heading .al-button {
+    margin-left: 0;
+  }
+  .al-logo-tile {
+    min-height: 220px;
+  }
+  .al-symbol-field {
+    height: 320px;
+  }
+}

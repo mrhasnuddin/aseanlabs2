@@ -1,383 +1,175 @@
 import Link from 'next/link';
-import { useEffect, useId, useRef, useState } from 'react';
-import { LogoMark } from '@/components/icons';
-import { NbButton } from '@/components/NbButton';
-import { WordmarkScramble } from '@/components/WordmarkScramble';
-import {
-  NavDropdownTrigger,
-  NavMegaPanel,
-  type NavItem,
-} from '@/components/NavDropdown';
-import { useTranslation } from '@/hooks/useTranslation';
+import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
+import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
+import { LogoMark } from '@/components/icons/BrandSymbols';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
-import { ChevronDown } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
-const ENI_HREF = 'https://scan.eniac.network/';
-const LINKTREE_HREF = 'https://linktr.ee/aseanlabs';
-const HOVER_CLOSE_DELAY = 220;
-
-type MenuId = 'about' | 'product' | 'network';
-
-const ABOUT_ITEMS = [
+const groups = [
   {
-    labelKey: 'nav.aboutUs',
-    descKey: 'nav.desc.aboutUs',
-    defaultLabel: 'About Us',
-    defaultDesc: 'Who ASEAN Labs is, why we exist, and how we work with builders.',
-    href: '/#about',
+    key: 'nav.about',
+    links: [
+      ['nav.aboutUs', '/#about'],
+      ['nav.whyUs', '/why-us'],
+      ['nav.process', '/process'],
+      ['nav.brand', '/brand'],
+    ],
   },
   {
-    labelKey: 'nav.process',
-    descKey: 'nav.desc.process',
-    defaultLabel: 'Process',
-    defaultDesc: 'How we qualify, build, and deliver results for every engagement.',
-    href: '/process',
+    key: 'nav.product',
+    links: [
+      ['nav.coreCapabilities', '/#capabilities'],
+      ['nav.integrations', '/#integrations'],
+      ['nav.daoaas', '/#dao-as-a-service'],
+      ['nav.howXplanWorks', '/how-xplan-works'],
+    ],
   },
   {
-    labelKey: 'nav.socialProof',
-    descKey: 'nav.desc.socialProof',
-    defaultLabel: 'Social Proof',
-    defaultDesc: 'Teams, projects, and partners that have shipped through us.',
-    href: '/#social-proof',
-  },
-  {
-    labelKey: 'nav.whyUs',
-    descKey: 'nav.desc.whyUs',
-    defaultLabel: 'Why Us',
-    defaultDesc: 'Why top protocols and builders choose ASEAN Labs as their execution partner.',
-    href: '/why-us',
-  },
-  {
-    labelKey: 'nav.howXplanWorks',
-    descKey: 'nav.desc.howXplanWorks',
-    defaultLabel: 'How XPlan Works',
-    defaultDesc: 'Every action verified. Every reward earned. Every metric on-chain.',
-    href: '/how-xplan-works',
-  },
-  {
-    labelKey: 'nav.brand',
-    descKey: 'nav.desc.brand',
-    defaultLabel: 'Visual Identity',
-    defaultDesc: 'Brand guidelines, logos, and visual assets for ASEAN Labs.',
-    href: '/brand',
-  },
-  {
-    labelKey: 'nav.linktree',
-    descKey: 'nav.desc.linktree',
-    defaultLabel: 'Linktree',
-    defaultDesc: 'Our social links, communities, and official channels.',
-    href: LINKTREE_HREF,
-    external: true,
+    key: 'nav.network',
+    links: [
+      ['nav.ecosystem', '/#ecosystem'],
+      ['nav.eniMainnet', 'https://scan.eniac.network/'],
+      ['nav.walletTutorial', '/onboard'],
+    ],
   },
 ];
-
-const PRODUCT_ITEMS = [
-  {
-    labelKey: 'nav.coreCapabilities',
-    descKey: 'nav.desc.coreCapabilities',
-    defaultLabel: 'Core Capabilities',
-    defaultDesc: 'Incubation, launch, and ecosystem services we deliver end-to-end.',
-    href: '/#capabilities',
-  },
-  {
-    labelKey: 'nav.integrations',
-    descKey: 'nav.desc.integrations',
-    defaultLabel: 'Integrations',
-    defaultDesc: 'Tools, infrastructure, and partners we plug into your stack.',
-    href: '/#integrations',
-  },
-  {
-    labelKey: 'nav.daoaas',
-    descKey: 'nav.desc.daoaas',
-    defaultLabel: 'DAOaaS',
-    defaultDesc: 'Launch your DAO, manage treasury, and scale your governance.',
-    href: '/#dao-as-a-service',
-  },
-];
-
-const NETWORK_ITEMS = [
-  {
-    labelKey: 'nav.eniMainnet',
-    descKey: 'nav.desc.eniMainnet',
-    defaultLabel: 'ENI Mainnet',
-    defaultDesc: 'The execution-ready Layer 1 we build on, with on-chain accountability.',
-    href: 'https://scan.eniac.network/',
-    external: true,
-  },
-  {
-    labelKey: 'nav.ecosystem',
-    descKey: 'nav.desc.ecosystem',
-    defaultLabel: 'Ecosystem',
-    defaultDesc: 'Projects and infrastructure shipping across the ENI network.',
-    href: '/#ecosystem',
-  },
-  {
-    labelKey: 'nav.walletTutorial',
-    descKey: 'nav.desc.walletTutorial',
-    defaultLabel: 'Wallet Tutorial',
-    defaultDesc: 'Learn how to set up your wallet and connect to the ENI Mainnet.',
-    href: '/onboard',
-  },
-];
-
-const MENU_DATA: Record<MenuId, { labelKey: string; defaultLabel: string; items: typeof ABOUT_ITEMS }> = {
-  about: { labelKey: 'nav.about', defaultLabel: 'About', items: ABOUT_ITEMS },
-  product: { labelKey: 'nav.product', defaultLabel: 'Product', items: PRODUCT_ITEMS },
-  network: { labelKey: 'nav.network', defaultLabel: 'Network', items: NETWORK_ITEMS },
-};
 
 export function Nav() {
-  const [openMenu, setOpenMenu] = useState<MenuId | null>(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMobileSection, setOpenMobileSection] = useState<MenuId | null>(null);
-  const [isHidden, setIsHidden] = useState(false);
-  const navRef = useRef<HTMLElement | null>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastScrollY = useRef(0);
-  const panelId = useId();
   const { t } = useTranslation();
-
-  const getTranslatedItems = (items: typeof ABOUT_ITEMS): NavItem[] => {
-    return items.map(item => ({
-      ...item,
-      label: t(item.labelKey) !== item.labelKey ? t(item.labelKey) : item.defaultLabel,
-      description: t(item.descKey) !== item.descKey ? t(item.descKey) : item.defaultDesc,
-    }));
-  };
-
-  const cancelClose = () => {
-    if (closeTimer.current) {
-      clearTimeout(closeTimer.current);
-      closeTimer.current = null;
-    }
-  };
-
-  const scheduleClose = () => {
-    cancelClose();
-    closeTimer.current = setTimeout(() => setOpenMenu(null), HOVER_CLOSE_DELAY);
-  };
+  const router = useRouter();
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    return () => cancelClose();
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) setIsMobileMenuOpen(false);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (!openMenu) return;
-    const onDown = (e: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(e.target as Node)) {
-        setOpenMenu(null);
+    const close = (event: PointerEvent) => {
+      if (!root.current?.contains(event.target as Node)) {
+        setOpenGroup(null);
+        setMobileOpen(false);
       }
     };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpenMenu(null);
+    const escape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      const trigger = root.current?.querySelector<HTMLButtonElement>('[aria-expanded="true"]');
+      setOpenGroup(null);
+      setMobileOpen(false);
+      trigger?.focus();
     };
-    document.addEventListener('mousedown', onDown);
-    document.addEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', close);
+    document.addEventListener('keydown', escape);
     return () => {
-      document.removeEventListener('mousedown', onDown);
-      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('pointerdown', close);
+      document.removeEventListener('keydown', escape);
     };
-  }, [openMenu]);
-
-  useEffect(() => {
-    import('@/lib/gsap').then(({ gsap }) => {
-      const children = navRef.current?.querySelectorAll('.nav-child-animate');
-      if (children && children.length > 0) {
-        gsap.from(children, {
-          y: -10,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: 'power2.out',
-          clearProps: 'all',
-        });
-      }
-    });
   }, []);
 
-  // Body scroll lock for mobile menu
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isMobileMenuOpen]);
-
-  // Hide nav on scroll down
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (openMenu !== null || isMobileMenuOpen) {
-        lastScrollY.current = currentScrollY;
-        return;
-      }
-
-      if (currentScrollY > lastScrollY.current && currentScrollY > 88) {
-        setIsHidden(true);
-      } else if (currentScrollY < lastScrollY.current) {
-        setIsHidden(false);
-      }
-
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [openMenu, isMobileMenuOpen]);
-
-  const triggerProps = (id: MenuId) => ({
-    isOpen: openMenu === id,
-    onActivate: () => {
-      cancelClose();
-      setOpenMenu(id);
-    },
-    onDeactivate: scheduleClose,
-    onClickToggle: () => {
-      cancelClose();
-      setOpenMenu((prev) => (prev === id ? null : id));
-    },
-    panelId,
-  });
-
-  const toggleMobileSection = (id: MenuId) => {
-    setOpenMobileSection(prev => prev === id ? null : id);
-  };
+    setMobileOpen(false);
+    setOpenGroup(null);
+  }, [router.asPath]);
 
   return (
-    <nav
-      ref={navRef}
-      aria-label="Primary"
-      className={`fixed inset-x-0 top-0 z-50 h-[88px] border-b border-foreground bg-nav-bg transition-transform duration-300 ease-in-out ${isHidden ? '-translate-y-full' : 'translate-y-0'
-        }`}
-    >
-      <div className={`mx-auto flex h-full w-full max-w-[1480px] items-center justify-between gap-6 px-5 transition-colors duration-200 md:px-10 ${isMobileMenuOpen ? 'bg-background' : 'bg-transparent'}`}>
-        <Link
-          href="/"
-          aria-label="ASEAN Labs home"
-          className="nav-child-animate inline-flex items-center gap-3 text-ink"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          <LogoMark size={36} className="text-ink shrink-0" />
-          <WordmarkScramble className="hidden font-geist text-base font-bold tracking-[0.18em] text-ink sm:inline-block" />
+    <header className="al-header" ref={root}>
+      <div className="al-header-inner">
+        <Link href="/" className="al-wordmark">
+          <LogoMark size={29} className="al-nav-symbol" aria-hidden="true" />
+          <span>
+            ASEAN<span className="al-wordmark-labs">LABS</span>
+          </span>
         </Link>
-
-        <div className="hidden items-center gap-1 lg:flex">
-          <div className="nav-child-animate"><NavDropdownTrigger label={t('nav.about') !== 'nav.about' ? t('nav.about') : 'About'} {...triggerProps('about')} /></div>
-          <div className="nav-child-animate"><NavDropdownTrigger label={t('nav.product') !== 'nav.product' ? t('nav.product') : 'Product'} {...triggerProps('product')} /></div>
-          <div className="nav-child-animate"><NavDropdownTrigger label={t('nav.network') !== 'nav.network' ? t('nav.network') : 'Network'} {...triggerProps('network')} /></div>
-        </div>
-
-        <div className="nav-child-animate hidden items-center gap-3 lg:flex">
-          <LanguageSwitcher variant="nav" />
-          <NbButton href={ENI_HREF} external variant="primary-yellow" size="md">
-            {t('nav.eniNetwork') !== 'nav.eniNetwork' ? t('nav.eniNetwork') : 'ENI Network'}
-            <span aria-hidden="true" className="ml-1">→</span>
-          </NbButton>
-        </div>
-
-        <div className="flex items-center gap-2 lg:hidden">
+        <nav className="al-desktop-nav" aria-label={t('home.mainNavigation')}>
+          {groups.map((group) => (
+            <div className="al-nav-group" key={group.key}>
+              <button
+                type="button"
+                aria-expanded={openGroup === group.key}
+                aria-controls={`nav-${group.key}`}
+                onClick={() => setOpenGroup(openGroup === group.key ? null : group.key)}
+              >
+                {t(group.key)}
+                <ChevronDown size={13} aria-hidden="true" />
+              </button>
+              {openGroup === group.key && (
+                <div
+                  className="al-nav-dropdown"
+                  id={`nav-${group.key}`}
+                  onBlur={(event) => {
+                    if (!event.currentTarget.parentElement?.contains(event.relatedTarget))
+                      setOpenGroup(null);
+                  }}
+                >
+                  {group.links.map(([key, href]) => (
+                    <Link
+                      key={key}
+                      href={href}
+                      onClick={() => setOpenGroup(null)}
+                      {...(href.startsWith('https')
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                    >
+                      {t(key)}
+                      <ArrowUpRight size={15} aria-hidden="true" />
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+          <Link href="https://linktr.ee/aseanlabs" target="_blank" rel="noopener noreferrer">
+            {t('footer.colCommunity')}
+          </Link>
+        </nav>
+        <div className="al-header-actions">
+          <div className="al-header-language">
+            <LanguageSwitcher />
+          </div>
+          <a href="mailto:contact@aseanlabs.io" className="al-button al-button-sm al-header-contact">
+            {t('home.contact')}
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </a>
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex h-10 w-10 items-center justify-center border-2 border-foreground text-foreground bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
-            aria-label="Toggle Menu"
-            aria-expanded={isMobileMenuOpen}
+            type="button"
+            className="al-menu-toggle"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
+            aria-label={t(mobileOpen ? 'home.closeMenu' : 'home.openMenu')}
           >
-            {isMobileMenuOpen ? (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            ) : (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            )}
+            {mobileOpen ? <X size={25} /> : <Menu size={25} />}
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[-1] flex h-[100dvh] flex-col overflow-y-auto overflow-x-hidden bg-background px-5 pb-20 pt-[100px] md:hidden">
-          <div className="flex flex-col gap-6">
-            {(['about', 'product', 'network'] as const).map((menuId) => {
-              const isOpen = openMobileSection === menuId;
-              const items = getTranslatedItems(MENU_DATA[menuId].items);
-              const label = t(MENU_DATA[menuId].labelKey) !== MENU_DATA[menuId].labelKey 
-                ? t(MENU_DATA[menuId].labelKey) 
-                : MENU_DATA[menuId].defaultLabel;
-
-              return (
-                <div key={menuId} className="flex flex-col">
-                  <button 
-                    onClick={() => toggleMobileSection(menuId)}
-                    className={`flex items-center justify-between border-nb px-5 py-4 text-left transition-all duration-150 ${
-                      isOpen 
-                        ? 'bg-struct text-canvas border-struct translate-x-[2px] translate-y-[2px]' 
-                        : 'bg-canvas text-struct border-struct shadow-[4px_4px_0_0_#000]'
-                    }`}
-                  >
-                    <span className="font-mono text-sm font-bold uppercase tracking-widest">{label}</span>
-                    <ChevronDown size={20} className={`transition-transform duration-200 ${isOpen ? 'rotate-180 text-canvas' : 'text-struct'}`} />
-                  </button>
-                  
-                  <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mb-4' : 'grid-rows-[0fr] opacity-0'}`}>
-                    <div className="overflow-hidden">
-                      <div className="flex flex-col border-x-nb border-b-nb border-struct bg-struct/5">
-                        {items.map((item) => (
-                          <Link 
-                            key={item.href} 
-                            href={item.href} 
-                            className="px-5 py-5 break-words text-2xl font-bold uppercase tracking-widest text-foreground hover:bg-struct hover:text-canvas transition-colors duration-150 border-b border-struct/10 last:border-b-0 leading-tight" 
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-
-            <div className="mt-2 flex flex-col gap-6 pt-2">
-              <NbButton href={ENI_HREF} external variant="primary-yellow" size="lg" className="w-full justify-center !py-4 text-xl">
-                {t('nav.eniNetwork') !== 'nav.eniNetwork' ? t('nav.eniNetwork') : 'ENI Network'} <span aria-hidden="true" className="ml-2">→</span>
-              </NbButton>
+      {mobileOpen && (
+        <nav
+          className="al-mobile-nav"
+          id="mobile-navigation"
+          aria-label={t('home.mainNavigation')}
+          onBlur={(event) => {
+            if (!root.current?.contains(event.relatedTarget)) setMobileOpen(false);
+          }}
+        >
+          {groups.map((group) => (
+            <div key={group.key}>
+              <p>{t(group.key)}</p>
+              {group.links.map(([key, href]) => (
+                <Link
+                  key={key}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  {...(href.startsWith('https')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                >
+                  {t(key)}
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </Link>
+              ))}
             </div>
-
-            <div className="mt-4 border-t border-foreground/10 pt-8">
-              <LanguageSwitcher variant="mobile" />
-            </div>
-          </div>
-        </div>
+          ))}
+          <LanguageSwitcher variant="mobile" />
+        </nav>
       )}
-
-      <NavMegaPanel
-        panelId={panelId}
-        title={openMenu ? (t(MENU_DATA[openMenu].labelKey) !== MENU_DATA[openMenu].labelKey ? t(MENU_DATA[openMenu].labelKey) : MENU_DATA[openMenu].defaultLabel) : null}
-        items={openMenu ? getTranslatedItems(MENU_DATA[openMenu].items) : []}
-        isOpen={openMenu !== null}
-        onMouseEnter={cancelClose}
-        onMouseLeave={scheduleClose}
-        onItemClick={() => setOpenMenu(null)}
-      />
-    </nav>
+    </header>
   );
 }
