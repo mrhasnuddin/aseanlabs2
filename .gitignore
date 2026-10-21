@@ -9,3 +9,7 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# Internal revamp notes (kept locally, not published)
+REVAMP_HANDOFF.md
+docs/research/
