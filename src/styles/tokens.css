@@ -1,0 +1,74 @@
+/* ASEAN Labs: solid color, geometric form, deliberate movement. */
+:root {
+  --al-yellow: #f4bf4b;
+  --al-ink: #171914;
+  --al-black: #000000;
+  --al-paper: #f5f2e7;
+  --al-white: #ffffff;
+  --al-cyan: #00e5ff;
+  /* Secondary text: ink at 72% over the yellow canvas (5.4:1), warmer than a neutral grey. */
+  --al-muted: #554724;
+  --al-rule: #9c792e;
+  --al-sand: #efe5c9;
+  --al-stone: #eee9da;
+  --al-surface: var(--al-yellow);
+  --al-text: var(--al-ink);
+  --al-action: var(--al-yellow);
+  --al-font: 'Space Grotesk', Helvetica, Arial, sans-serif;
+  --al-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Type: seven roles, fluid between 390px and 1440px viewports (Gravity/Galxe proportions). */
+  --al-text-display: clamp(2.375rem, 2.096rem + 1.143vw, 3.125rem); /* 38 → 50px */
+  --al-text-h2: clamp(1.75rem, 1.518rem + 0.952vw, 2.375rem); /* 28 → 38px */
+  --al-text-h3: clamp(1.25rem, 1.064rem + 0.762vw, 1.75rem); /* 20 → 28px */
+  --al-text-lead: clamp(1.125rem, 1.079rem + 0.19vw, 1.25rem); /* 18 → 20px */
+  --al-text-body: 1rem; /* 16px */
+  --al-text-ui: 0.875rem; /* 14px: navigation, buttons, metadata */
+  --al-text-label: 0.75rem; /* 12px: mono labels; nothing smaller */
+  --al-leading-display: 1.1;
+  --al-leading-heading: 1.2;
+  --al-leading-ui: 1.4;
+  --al-leading-lead: 1.5;
+  --al-leading-body: 1.6;
+  /* Large type stays regular; small type gets medium so it holds up on the bright canvas. */
+  --al-weight-regular: 400;
+  --al-weight-medium: 500;
+  --al-weight-bold: 600; /* section titles (h2) */
+  --al-tracking-display: -0.02em;
+  --al-tracking-heading: -0.01em;
+  --al-tracking-label: 0.08em;
+  --al-measure: 36rem;
+
+  --al-space-1: 4px;
+  --al-space-2: 8px;
+  --al-space-3: 12px;
+  --al-space-4: 16px;
+  --al-space-6: 24px;
+  --al-space-8: 32px;
+  --al-space-12: 48px;
+  --al-space-16: 64px;
+  --al-space-24: 96px;
+  --al-section: clamp(5rem, 4.257rem + 3.048vw, 7rem); /* 80 → 112px block padding */
+  --al-gutter: clamp(1.5rem, 0.2rem + 5.333vw, 5rem); /* 24 → 80px */
+  --al-max-width: 1600px;
+  --al-control: 44px;
+  --al-button: 48px;
+  --al-button-sm: 40px;
+  --al-border: 1px solid var(--al-rule);
+  --al-border-strong: 1px solid var(--al-ink);
+  --al-radius: 0px;
+  --al-shadow: 4px 4px 0 var(--al-ink);
+  --al-fast: 160ms;
+  --al-normal: 240ms;
+  --al-reveal: 650ms;
+  --al-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --al-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --al-word-stagger: 40ms; /* heading word reveal */
+  --al-count: 1600ms; /* figure count-up */
+  --al-marquee: 48s; /* one full logo loop */
+  /* Texture: ink tiles on the yellow canvas. Grid behind page openings only, hatch only on section seams. */
+  --al-texture-grid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 19v10M19 24h10' stroke='%23171914' stroke-opacity='.2'/%3E%3C/svg%3E");
+  --al-texture-hatch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Cpath d='M-1 1l2-2M0 7l7-7M0 14L14 0M7 14l7-7M13 15l2-2' stroke='%23171914' stroke-opacity='.28'/%3E%3C/svg%3E");
+  --al-z-header: 40;
+  --al-z-panel: 50;
+}

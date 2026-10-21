@@ -1,40 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import { Nav } from '@/components/Nav';
-import { Footer } from '@/components/Footer';
-import { ArrowLeft } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useEffect, useRef, useState } from 'react';
 import createGlobe from 'cobe';
+import { PageIntro, PageShell } from '@/components/PageLayout';
+import { CountUp, Reveal, SplitText } from '@/components/home/Motion';
+import { WhyMotif } from '@/components/home/CapabilityArtwork';
 import { useTranslation } from '@/hooks/useTranslation';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 const ADVANTAGES = [
-  {
-    stat: '10,000+',
-    title: 'VERIFIED MEMBERS IN THE ACTIVE LAYER',
-    description: "Not followers — verified participants generating on-chain behavior across Southeast Asia's core markets.",
-    titleKey: 'why.adv1Title',
-    descKey: 'why.adv1Desc'
-  },
-  {
-    stat: '150+',
-    title: 'EVENTS. 5,000+ IN-PERSON ATTENDEES',
-    description: 'A track record that is public and verifiable — not a slide in a deck.',
-    titleKey: 'why.adv2Title',
-    descKey: 'why.adv2Desc'
-  },
-  {
-    stat: '7',
-    title: 'NATIVE LANGUAGE OPERATIONS',
-    description: "English, Chinese, Malay, Thai, Japanese, Korean, and Mandarin — not translated. Native. That's what real regional distribution requires.",
-    titleKey: 'why.adv3Title',
-    descKey: 'why.adv3Desc'
-  }
+  ['10,000+', 'why.adv1'],
+  ['150+', 'why.adv2'],
+  ['7', 'why.adv3'],
 ];
 
 const REGIONS = [
@@ -52,6 +26,9 @@ const GLOBE_PX = 560;
 const DEFAULT_PHI = -3.39;  // phi = -(π/2 + lon_rad); centers on ~104°E (ASEAN core)
 const DEFAULT_THETA = 0.28; // Tilt to show the region well
 const SPRING_K = 0.04;      // Magnet spring strength (0-1)
+const INK: [number, number, number] = [0.09, 0.1, 0.08];
+const YELLOW: [number, number, number] = [0.96, 0.75, 0.29];
+const CYAN: [number, number, number] = [0, 0.9, 1];
 
 // Arc connections between ASEAN countries
 const ARCS: Array<{ from: [number, number]; to: [number, number] }> = [
@@ -90,7 +67,8 @@ function projectGlobePoint(
   };
 }
 
-export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any }) {
+function Globe({ activeRegion }: { activeRegion: string | null }) {
+  const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const labelsRef = useRef<HTMLDivElement>(null);
   const pointerInteracting = useRef<number | null>(null);
@@ -103,15 +81,11 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
   // Keep refs in sync with props/state
   useEffect(() => {
     activeRegionRef.current = activeRegion;
-    if (activeRegion) {
-      const region = REGIONS.find(r => r.country === activeRegion);
-      if (region) {
-        // Correct formula: phi = -(PI/2 + lon_rad) — centers longitude on the globe face
-        targetPhiRef.current = -(Math.PI / 2 + region.location[1] * Math.PI / 180);
-      }
-    } else {
-      targetPhiRef.current = DEFAULT_PHI;
-    }
+    const region = REGIONS.find((r) => r.country === activeRegion);
+    // Correct formula: phi = -(PI/2 + lon_rad) — centers longitude on the globe face
+    targetPhiRef.current = region
+      ? -(Math.PI / 2 + region.location[1] * Math.PI / 180)
+      : DEFAULT_PHI;
   }, [activeRegion]);
 
   useEffect(() => {
@@ -120,11 +94,11 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
     let globe: ReturnType<typeof createGlobe> | undefined;
     let animFrameId: number;
     let cancelled = false;
+    // Reduced motion jumps straight to the selected region instead of easing.
+    const spring = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : SPRING_K;
 
     const initRafId = requestAnimationFrame(() => {
       if (cancelled || !canvasRef.current) return;
-
-      const ARC_COLOR: [number, number, number] = [0.96, 0.75, 0.29];
 
       globe = createGlobe(canvasRef.current, {
         devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
@@ -132,19 +106,19 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
         height: GLOBE_PX,
         phi: phiRef.current,
         theta: DEFAULT_THETA,
-        dark: 1,
-        diffuse: 1.2,
+        dark: 0,
+        diffuse: 1.1,
         mapSamples: 16000,
-        mapBrightness: 6,
-        baseColor: [0.12, 0.12, 0.12],
-        markerColor: [0.1, 0.8, 1],
-        glowColor: [0.9, 0.75, 0.2],
+        mapBrightness: 3,
+        baseColor: YELLOW,
+        markerColor: INK,
+        glowColor: YELLOW,
         markers: REGIONS.map((r) => ({
           location: r.location as [number, number],
           size: 0.04,
         })),
-        arcs: ARCS.map((a) => ({ ...a, color: ARC_COLOR })),
-        arcColor: ARC_COLOR,
+        arcs: ARCS.map((a) => ({ ...a, color: INK })),
+        arcColor: INK,
         arcWidth: 1,
         arcHeight: 0.4,
       } as any);
@@ -161,24 +135,7 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
           el.style.left = `${pos.x * 100}%`;
           el.style.top = `${pos.y * 100}%`;
           el.style.opacity = pos.visible ? '1' : '0';
-
-          const isActive = region.country === active;
-          const span = el.querySelector('[data-label-span]') as HTMLElement | null;
-          const dot = el.querySelector('[data-label-dot]') as HTMLElement | null;
-          if (span) {
-            span.style.background = isActive ? 'var(--color-struct)' : 'var(--color-canvas)';
-            span.style.color = isActive ? 'var(--color-canvas)' : 'var(--color-struct)';
-            span.style.border = isActive ? '1px solid var(--color-canvas)' : '1px solid transparent';
-            span.style.boxShadow = isActive
-              ? '2px 2px 0 var(--color-canvas), 0 0 12px var(--color-canvas)'
-              : '2px 2px 0 rgba(0,0,0,0.6)';
-          }
-          if (dot) {
-            dot.style.background = isActive ? 'var(--color-canvas)' : 'var(--color-accent)';
-            dot.style.boxShadow = isActive ? '0 0 6px var(--color-canvas)' : 'none';
-            dot.style.width = isActive ? '7px' : '5px';
-            dot.style.height = isActive ? '7px' : '5px';
-          }
+          el.classList.toggle('is-active', region.country === active);
         });
       };
 
@@ -187,7 +144,7 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
 
         // No auto-rotate. Spring/magnet: ease toward targetPhi (country or default)
         if (pointerInteracting.current === null) {
-          phiRef.current += (targetPhiRef.current - phiRef.current) * SPRING_K;
+          phiRef.current += (targetPhiRef.current - phiRef.current) * spring;
         }
 
         const active = activeRegionRef.current;
@@ -198,10 +155,7 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
           markers: REGIONS.map((r) => ({
             location: r.location as [number, number],
             size: r.country === active ? 0.08 : 0.04,
-            color: (r.country === active
-              ? [0.96, 0.75, 0.29]   // gold — active
-              : [0.1, 0.8, 1]        // cyan — default
-            ) as [number, number, number],
+            color: r.country === active ? CYAN : INK,
           })),
         });
 
@@ -217,85 +171,42 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
       cancelAnimationFrame(animFrameId);
       globe?.destroy();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="flex justify-center items-center relative">
-      {/* Brutalist corner ticks framing the globe */}
-      {(['tl','tr','bl','br'] as const).map((pos) => (
-        <div key={pos} className="absolute pointer-events-none z-30" style={{
-          top:    pos.startsWith('t') ? 0 : undefined,
-          bottom: pos.startsWith('b') ? 0 : undefined,
-          left:   pos.endsWith('l')  ? 0 : undefined,
-          right:  pos.endsWith('r')  ? 0 : undefined,
-          width: 28, height: 28,
-          borderTop:    pos.startsWith('t') ? '3px solid var(--color-canvas)' : undefined,
-          borderBottom: pos.startsWith('b') ? '3px solid var(--color-canvas)' : undefined,
-          borderLeft:   pos.endsWith('l')  ? '3px solid var(--color-canvas)' : undefined,
-          borderRight:  pos.endsWith('r')  ? '3px solid var(--color-canvas)' : undefined,
-        }} />
-      ))}
-      {/* Outer scan-line ring — two concentric dashed rings for brutalist depth */}
-      <div className="absolute inset-[-18px] rounded-full pointer-events-none z-10 border border-dashed border-canvas/25" />
-      <div className="absolute inset-[-36px] rounded-full pointer-events-none z-10 border border-canvas/10" />
-      <div
-        className="cursor-grab active:cursor-grabbing relative"
-        style={{ width: GLOBE_PX, height: GLOBE_PX }}
-        onPointerDown={(e) => {
-          (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    <div
+      className="al-globe al-motion"
+      aria-hidden="true"
+      onPointerDown={(e) => {
+        (e.target as HTMLElement).setPointerCapture(e.pointerId);
+        pointerInteracting.current = e.clientX;
+      }}
+      onPointerUp={() => { pointerInteracting.current = null; }}
+      onPointerOut={() => { pointerInteracting.current = null; }}
+      onPointerMove={(e) => {
+        if (pointerInteracting.current !== null) {
+          const delta = e.clientX - pointerInteracting.current;
           pointerInteracting.current = e.clientX;
-        }}
-        onPointerUp={() => { pointerInteracting.current = null; }}
-        onPointerOut={() => { pointerInteracting.current = null; }}
-        onPointerMove={(e) => {
-          if (pointerInteracting.current !== null) {
-            const delta = e.clientX - pointerInteracting.current;
-            pointerInteracting.current = e.clientX;
-            phiRef.current += delta * 0.004;
-          }
-        }}
-      >
-        <canvas
-          ref={canvasRef}
-          style={{ width: '100%', height: '100%', display: 'block' }}
-        />
-
-        {/* Country labels — positions updated via direct DOM manipulation each frame */}
-        <div ref={labelsRef} className="absolute inset-0 pointer-events-none" style={{ zIndex: 20 }}>
-          {REGIONS.map((region) => (
-            <div
-              key={region.country}
-              className="absolute"
-              style={{ transform: 'translate(-50%, calc(-100% - 8px))', opacity: 0 }}
-            >
-              <div className="flex flex-col items-center" style={{ gap: '3px' }}>
-                <span
-                  data-label-span
-                  className="font-mono text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 leading-tight whitespace-nowrap"
-                  style={{
-                    background: 'var(--color-canvas)',
-                    color: 'var(--color-struct)',
-                    border: '1px solid transparent',
-                    boxShadow: '2px 2px 0 rgba(0,0,0,0.6)',
-                    transition: 'background 0.2s, color 0.2s, box-shadow 0.2s',
-                  }}
-                >
-                  {t(region.countryKey) !== region.countryKey ? t(region.countryKey) : region.country}
-                </span>
-                <div
-                  data-label-dot
-                  style={{
-                    width: '5px', height: '5px',
-                    borderRadius: '50%',
-                    background: 'var(--color-accent)',
-                    transition: 'background 0.2s, box-shadow 0.2s, width 0.2s, height 0.2s',
-                  }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+          phiRef.current += delta * 0.004;
+        }
+      }}
+    >
+      {/* Outer orbit: a dotted ring that turns slowly with one cyan node riding on it. */}
+      <svg className="al-globe-ring" viewBox="0 0 100 100" fill="none">
+        <g className="al-spin" style={{ animationDuration: '80s' }}>
+          <circle cx="50" cy="50" r="49.5" stroke="currentColor" strokeOpacity=".55" strokeWidth=".17" strokeDasharray=".17 1.2" />
+          <circle cx="50" cy=".5" r="1.3" fill="var(--al-cyan)" stroke="currentColor" strokeWidth=".3" />
+        </g>
+      </svg>
+      <canvas ref={canvasRef} />
+      {/* Country labels — positions updated via direct DOM manipulation each frame */}
+      <div ref={labelsRef} className="al-globe-labels">
+        {REGIONS.map((region) => (
+          <div key={region.country} className="al-globe-label">
+            <span>{t(region.countryKey)}</span>
+            <span />
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -303,178 +214,67 @@ export function Globe({ activeRegion, t }: { activeRegion: string | null, t: any
 
 export default function WhyUsPage() {
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
-  const advantagesRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    // Mount reveal transition
-    gsap.fromTo('#page-wrapper',
-      { clipPath: 'circle(0% at 50% 0%)' },
-      {
-        clipPath: 'circle(150% at 50% 0%)',
-        duration: 1.2,
-        ease: 'power3.inOut'
-      }
-    );
-
-    // Counter animation for stat numbers
-    const ctx = gsap.context(() => {
-      const numElements = advantagesRef.current?.querySelectorAll('.stat-number');
-      numElements?.forEach((el) => {
-        const target = parseInt(el.getAttribute('data-target') || '0');
-        const suffix = el.getAttribute('data-suffix') || '';
-        const obj = { val: 0 };
-
-        gsap.to(obj, {
-          val: target,
-          duration: 2,
-          ease: 'power4.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 90%',
-          },
-          onUpdate: () => {
-            el.textContent = Math.floor(obj.val).toLocaleString() + suffix;
-          }
-        });
-      });
-    }, advantagesRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <div className="bg-struct text-relief overflow-hidden min-h-screen flex flex-col selection:bg-canvas selection:text-struct">
-      <Head>
-        <title>{t('why.pageTitle') !== 'why.pageTitle' ? t('why.pageTitle') : 'Why Us — ASEAN Labs'}</title>
-        <meta name="description" content={t('why.pageDesc') !== 'why.pageDesc' ? t('why.pageDesc') : "Southeast Asia is not an emerging market for Web3. It's an active one."} />
-      </Head>
+    <PageShell title={t('why.pageTitle')} description={t('why.pageDesc')}>
+      <PageIntro
+        crumb={t('nav.whyUs')}
+        eyebrow={t('why.badge')}
+        title={t('why.titlePart1')}
+        highlight={t('why.titleHighlight')}
+        motif={<WhyMotif />}
+      >
+        <p>{t('why.desc1')}</p>
+        <p>{t('why.desc2')}</p>
+      </PageIntro>
 
-      <Nav />
+      <section className="al-container" aria-label={t('why.badge')}>
+        <Reveal>
+          <ul className="al-advantages">
+            {ADVANTAGES.map(([stat, key]) => (
+              <li className="al-advantage" key={key}>
+                <span>
+                  <CountUp value={stat} />
+                </span>
+                <p className="al-small-label">{t(`${key}Title`)}</p>
+                <p>{t(`${key}Desc`)}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </section>
 
-      <div id="page-wrapper" className="flex-grow">
-        {/* Background Dot Grid */}
-        <div 
-          className="fixed inset-0 pointer-events-none opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(rgba(244, 191, 75, 0.4) 1px, transparent 1px)`,
-            backgroundSize: '24px 24px',
-            backgroundPosition: '12px 12px',
-          }}
-        />
-
-        <main className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-10 py-20 lg:py-32 flex flex-col items-center">
-          <div className="w-full">
-            {/* Back Button */}
-            <Link 
-              href="/" 
-              className="group mb-12 inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-widest border border-canvas text-canvas px-6 py-3 transition-colors duration-200 hover:bg-canvas hover:text-struct"
-            >
-              <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
-              {t('why.backToHome') !== 'why.backToHome' ? t('why.backToHome') : 'Back to Home'}
-            </Link>
-
-            {/* Header Section */}
-            <header className="mb-24 flex flex-col gap-6">
-              <span className="font-mono text-lg md:text-xl font-bold uppercase tracking-[0.2em] text-canvas">
-                {t('why.badge') !== 'why.badge' ? t('why.badge') : 'The Advantage'}
-              </span>
-              <h1 className="font-sans text-5xl md:text-7xl font-black uppercase leading-[1.05] tracking-tighter max-w-5xl text-canvas">
-                {t('why.titlePart1') !== 'why.titlePart1' ? t('why.titlePart1') : 'Southeast Asia is not an emerging market for Web3.'}<br />
-                <span className="text-transparent" style={{ WebkitTextStroke: '2px var(--color-canvas)' }}>{t('why.titleHighlight') !== 'why.titleHighlight' ? t('why.titleHighlight') : "It's an active one."}</span>
-              </h1>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-8">
-                <p className="font-sans text-lg lg:text-xl font-medium leading-relaxed text-relief/90">
-                  {t('why.desc1') !== 'why.desc1' ? t('why.desc1') : 'ASEAN Labs has spent years building here — not positioning. The distribution is structural. The community is verified. The language is native. The relationships exist at every layer: retail users, institutional partners, developer communities, regional KOLs.'}
-                </p>
-                <p className="font-sans text-lg lg:text-xl font-medium leading-relaxed text-relief/70">
-                  {t('why.desc2') !== 'why.desc2' ? t('why.desc2') : 'This cannot be replicated by a project arriving with a marketing budget and no context. When you work with ASEAN Labs, you enter a network of 100+ ecosystem projects, an event infrastructure that has run 150+ activations, and operators who know this market because they built it.'}
-                </p>
-              </div>
-            </header>
-
-            {/* Advantage Grid Section */}
-            <div ref={advantagesRef} className="w-full mb-32 border-t-2 border-canvas/30 pt-16">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {ADVANTAGES.map((adv, index) => {
-                  const numericValue = parseInt(adv.stat.replace(/,/g, ''));
-                  const suffix = adv.stat.includes('+') ? '+' : '';
-                  
-                  return (
-                    <div 
-                      key={index} 
-                      className="group bg-struct border-2 border-canvas p-8 md:p-10 flex flex-col transition-transform duration-300 hover:-translate-y-1 shadow-[8px_8px_0_0_var(--color-canvas)]"
+      <section className="al-section al-regions" aria-labelledby="regions-title">
+        <div className="al-container al-regions-layout">
+          <Globe activeRegion={activeRegion} />
+          <div>
+            <Reveal className="al-section-heading">
+              <h2 id="regions-title">
+                <SplitText text={t('why.regionTitle')} />
+              </h2>
+              <p>{t('why.regionDesc')}</p>
+            </Reveal>
+            <ul className="al-region-list">
+              {REGIONS.map((region) => {
+                const isActive = activeRegion === region.country;
+                return (
+                  <li key={region.country}>
+                    <button
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() => setActiveRegion(isActive ? null : region.country)}
                     >
-                      <div 
-                        className="stat-number text-5xl lg:text-6xl xl:text-[4.5rem] font-black font-sans text-canvas mb-6 tracking-tighter group-hover:scale-105 origin-left transition-transform duration-300"
-                        data-target={numericValue}
-                        data-suffix={suffix}
-                      >
-                        0{suffix}
-                      </div>
-                      <div className="w-12 h-1.5 bg-canvas mb-6" />
-                      <h3 className="font-sans text-2xl font-black uppercase tracking-tight text-relief mb-4">
-                        {t(adv.titleKey) !== adv.titleKey ? t(adv.titleKey) : adv.title}
-                      </h3>
-                      <p className="font-sans text-lg font-medium text-relief/80 leading-relaxed">
-                        {t(adv.descKey) !== adv.descKey ? t(adv.descKey) : adv.description}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Regional Presence Section with Globe */}
-            <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-16 border-t-2 border-canvas/30 pt-16 mb-24">
-              {/* Globe */}
-              <div className="w-full lg:w-1/2 flex items-center justify-center relative">
-                {/* Decorative background glow behind globe */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-canvas/10 rounded-full blur-[100px] pointer-events-none" />
-                <Globe activeRegion={activeRegion} t={t} />
-              </div>
-
-              {/* Regions List */}
-              <div className="w-full lg:w-1/2 flex flex-col gap-10">
-                <div className="mb-4">
-                  <h2 className="font-sans text-4xl md:text-6xl font-black uppercase tracking-tighter text-canvas mb-4">
-                    {t('why.regionTitle')}
-                  </h2>
-                  <p className="font-sans text-lg font-medium text-relief/80 leading-relaxed">
-                    {t('why.regionDesc')}
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-0 border-t border-b border-relief/20">
-                  {REGIONS.map((region, index) => {
-                    const isActive = activeRegion === region.country;
-                    return (
-                      <button 
-                        key={index}
-                        onClick={() => setActiveRegion(isActive ? null : region.country)}
-                        className={`group flex items-center justify-between py-6 border-b border-relief/10 last:border-b-0 transition-colors px-4 -mx-4 cursor-pointer text-left
-                          ${isActive ? 'bg-canvas/10 border-l-4 border-l-canvas' : 'hover:bg-relief/5 border-l-4 border-l-transparent'}`}
-                      >
-                        <span className={`font-sans text-2xl md:text-3xl font-black uppercase tracking-wide transition-colors
-                          ${isActive ? 'text-canvas' : 'text-relief group-hover:text-canvas'}`}>
-                          {t(region.countryKey) !== region.countryKey ? t(region.countryKey) : region.country}
-                        </span>
-                        <span className={`font-mono text-sm md:text-base font-bold tracking-widest transition-colors
-                          ${isActive ? 'text-canvas' : 'text-relief/50 group-hover:text-relief'}`}>
-                          {region.languages}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
+                      <span>{t(region.countryKey)}</span>
+                      <span>{region.languages}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
-        </main>
-      </div>
-      <Footer />
-    </div>
+        </div>
+      </section>
+    </PageShell>
   );
 }
