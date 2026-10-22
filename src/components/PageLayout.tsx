@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Check, Copy } from 'lucide-react';
+import { CheckIcon, CopyIcon } from '@radix-ui/react-icons';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { SplitText } from '@/components/home/Motion';
@@ -107,7 +107,7 @@ export function CopyButton({ value, label }: { value: string; label: string }) {
       data-copied={copied || undefined}
       aria-label={`${t('brand.clickToCopy')}: ${label}`}
     >
-      {copied ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
+      {copied ? <CheckIcon width={16} height={16} aria-hidden="true" /> : <CopyIcon width={16} height={16} aria-hidden="true" />}
       <span className="sr-only" aria-live="polite">
         {copied ? t('brand.copied') : ''}
       </span>

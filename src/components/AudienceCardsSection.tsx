@@ -5,7 +5,6 @@ import { EcosystemIcon } from './icons/EcosystemIcon';
 import { BuilderIcon } from './icons/BuilderIcon';
 import { EnterpriseIcon } from './icons/EnterpriseIcon';
 import { NbButton } from './NbButton';
-import { Copy, Check } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
 if (typeof window !== 'undefined') {

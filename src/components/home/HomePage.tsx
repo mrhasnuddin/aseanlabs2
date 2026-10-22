@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ArrowUpRight, ChevronDown, Plus, Search } from 'lucide-react';
+import { ArrowRightIcon, ArrowTopRightIcon, ChevronDownIcon, MagnifyingGlassIcon, PlusIcon } from '@radix-ui/react-icons';
 import { Hourglass, Sparkle, Clover } from '@/components/icons/BrandSymbols';
 import { useTranslation } from '@/hooks/useTranslation';
 import { PROJECTS } from '@/data/ecosystem';
@@ -43,7 +43,7 @@ export function HeroSection() {
             <p className="al-hero-description">{t('home.heroBody')}</p>
             <a href={CONTACT} className="al-button">
               {t('home.contact')}
-              <ArrowUpRight size={18} aria-hidden="true" />
+              <ArrowTopRightIcon width={18} height={18} aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -52,7 +52,7 @@ export function HeroSection() {
           {links.map(([id, label]) => (
             <a key={id} href={`#${id}`}>
               <span>{t(label)}</span>
-              <ArrowRight size={17} aria-hidden="true" />
+              <ArrowRightIcon width={17} height={17} aria-hidden="true" />
             </a>
           ))}
         </nav>
@@ -177,7 +177,7 @@ function CapabilitiesSection() {
                   aria-controls={`cap-detail-${cap.id}`}
                 >
                   <span>{t(open ? 'home.closeDetails' : 'home.viewDetails')}</span>
-                  <Plus size={18} aria-hidden="true" />
+                  <PlusIcon className="al-plus" width={18} height={18} aria-hidden="true" />
                 </button>
                 <div id={`cap-detail-${cap.id}`} className="al-cap-detail al-collapse">
                   <div>
@@ -190,7 +190,7 @@ function CapabilitiesSection() {
                       ))}
                       <a href={CONTACT} className="al-text-link">
                         {t('home.contact')}
-                        <ArrowUpRight size={16} aria-hidden="true" />
+                        <ArrowTopRightIcon width={16} height={16} aria-hidden="true" />
                       </a>
                     </div>
                   </div>
@@ -229,7 +229,7 @@ function NetworkSection() {
             className="al-text-link"
           >
             {t('home.exploreEni')}
-            <ArrowUpRight size={17} aria-hidden="true" />
+            <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />
           </a>
         </Reveal>
         <div className="al-network-art" aria-hidden="true">
@@ -253,7 +253,7 @@ function AudienceSection() {
           <p>{t('home.audienceBody')}</p>
           <Link href="/why-us" className="al-text-link">
             {t('nav.whyUs')}
-            <ArrowRight size={17} aria-hidden="true" />
+            <ArrowRightIcon width={17} height={17} aria-hidden="true" />
           </Link>
         </Reveal>
         <div className="al-audience-list">
@@ -270,7 +270,7 @@ function AudienceSection() {
                   >
                     <span className="al-audience-index">0{index + 1}</span>
                     <span>{t(`audience.${kind}Title`)}</span>
-                    <Plus size={22} aria-hidden="true" />
+                    <PlusIcon className="al-plus" width={22} height={22} aria-hidden="true" />
                   </button>
                 </h3>
                 <div id={`audience-${kind}`} className="al-audience-detail al-collapse">
@@ -284,7 +284,7 @@ function AudienceSection() {
                         className="al-text-link"
                       >
                         {t(kind === 'ecosystem' ? 'home.exploreEcosystem' : 'home.contact')}
-                        <ArrowUpRight size={16} aria-hidden="true" />
+                        <ArrowTopRightIcon width={16} height={16} aria-hidden="true" />
                       </a>
                     </div>
                   </div>
@@ -320,7 +320,7 @@ function GrowthSection() {
           <div className="al-growth-links">
             <Link href="/how-xplan-works" className="al-button">
               {t('nav.howXplanWorks')}
-              <ArrowRight size={17} aria-hidden="true" />
+              <ArrowRightIcon width={17} height={17} aria-hidden="true" />
             </Link>
             <a
               href="https://daoaas.io/"
@@ -329,7 +329,7 @@ function GrowthSection() {
               className="al-text-link"
             >
               DAOaaS
-              <ArrowUpRight size={17} aria-hidden="true" />
+              <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />
             </a>
           </div>
         </Reveal>
@@ -364,7 +364,7 @@ function ProcessSection() {
         </div>
         <Link href="/process" className="al-button al-process-link">
           {t('home.fullProcess')}
-          <ArrowRight size={17} aria-hidden="true" />
+          <ArrowRightIcon width={17} height={17} aria-hidden="true" />
         </Link>
       </div>
     </section>
@@ -397,7 +397,7 @@ function EcosystemSection() {
         </Reveal>
         <div className="al-ecosystem-controls">
           <label className="al-search">
-            <Search size={18} aria-hidden="true" />
+            <MagnifyingGlassIcon width={18} height={18} aria-hidden="true" />
             <span className="sr-only">{t('ecosystem.searchPlaceholder')}</span>
             <input
               type="search"
@@ -425,7 +425,7 @@ function EcosystemSection() {
                 </option>
               ))}
             </select>
-            <ChevronDown size={18} aria-hidden="true" />
+            <ChevronDownIcon width={18} height={18} aria-hidden="true" />
           </label>
           <span className="al-result-count" aria-live="polite">
             {filtered.length} {t('home.projectsLabel')}
@@ -443,7 +443,7 @@ function EcosystemSection() {
             >
               <div className="al-project-top">
                 <Image src={project.logo} alt="" width={48} height={48} sizes="44px" />
-                <ArrowUpRight size={18} aria-hidden="true" />
+                <ArrowTopRightIcon width={18} height={18} aria-hidden="true" />
               </div>
               <h3>{project.name}</h3>
               <p>{project.tags.join(' / ')}</p>
@@ -462,7 +462,7 @@ function EcosystemSection() {
               }}
             >
               {t('ecosystem.reset')}
-              <ArrowRight size={16} aria-hidden="true" />
+              <ArrowRightIcon width={16} height={16} aria-hidden="true" />
             </button>
           </div>
         )}
@@ -474,7 +474,7 @@ function EcosystemSection() {
             aria-expanded={expanded}
           >
             {t(expanded ? 'home.showLess' : 'home.showAllProjects')}
-            <Plus size={17} aria-hidden="true" />
+            <PlusIcon className="al-plus" width={17} height={17} aria-hidden="true" />
           </button>
         )}
       </div>

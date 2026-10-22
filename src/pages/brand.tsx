@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { Check, Copy, Download } from 'lucide-react';
+import { CheckIcon, CopyIcon, DownloadIcon } from '@radix-ui/react-icons';
 import { ALL_ACCENT_SYMBOLS, LogoMark } from '@/components/icons/BrandSymbols';
 import { PageIntro, PageShell, useCopy } from '@/components/PageLayout';
 import { Reveal, SplitText } from '@/components/home/Motion';
@@ -26,7 +26,7 @@ function ColorSwatch({ name, hex }: { name: string; hex: string }) {
         aria-label={`${t('brand.clickToCopy')}: ${name} ${hex}`}
       >
         <span aria-hidden="true">
-          {copied ? <Check size={12} /> : <Copy size={12} />}
+          {copied ? <CheckIcon width={12} height={12} /> : <CopyIcon width={12} height={12} />}
           {t(copied ? 'brand.copied' : 'brand.clickToCopy')}
         </span>
       </button>
@@ -234,7 +234,7 @@ function DownloadLink({ href, label }: { href: string; label: string }) {
   return (
     <a href={href} download className="al-button">
       {label}
-      <Download size={17} aria-hidden="true" />
+      <DownloadIcon width={17} height={17} aria-hidden="true" />
     </a>
   );
 }
@@ -323,7 +323,7 @@ export default function BrandIdentityPage() {
               </div>
             </div>
             <DownloadLink
-              href="https://fonts.google.com/download?family=Space+Grotesk"
+              href="https://fonts.google.com/specimen/Lexend"
               label={t('brand.downloadFont')}
             />
           </div>
@@ -342,7 +342,7 @@ export default function BrandIdentityPage() {
               </div>
             </div>
             <DownloadLink
-              href="https://fonts.google.com/download?family=IBM+Plex+Mono"
+              href="https://fonts.google.com/specimen/Roboto+Mono"
               label={t('brand.downloadFont')}
             />
           </div>

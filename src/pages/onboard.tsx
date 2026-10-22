@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 import { CopyButton, PageIntro, PageShell } from '@/components/PageLayout';
 import { Reveal, SplitText } from '@/components/home/Motion';
 import { WalletMotif } from '@/components/home/CapabilityArtwork';
@@ -193,7 +193,7 @@ export default function OnboardPage() {
                 className="al-button"
               >
                 {t('onboard.getWallet').replace('{wallet}', wallet.name)}
-                <ArrowUpRight size={17} aria-hidden="true" />
+                <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />
               </a>
             </div>
           </div>

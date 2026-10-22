@@ -21,8 +21,8 @@ module.exports = {
         'nav-bg': 'rgb(var(--rgb-canvas) / <alpha-value>)',
       },
       fontFamily: {
-        sans: ['"Space Grotesk"', 'Helvetica', 'Arial', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', '"Courier New"', 'Courier', 'monospace'],
+        sans: ['var(--al-font)'],
+        mono: ['var(--al-mono)'],
         geist: ['Geist', 'Helvetica', 'Arial', 'sans-serif'],
       },
       boxShadow: {

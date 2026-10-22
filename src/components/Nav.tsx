@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
+import { ArrowTopRightIcon, ChevronDownIcon, Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { LogoMark } from '@/components/icons/BrandSymbols';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -88,7 +88,7 @@ export function Nav() {
                 onClick={() => setOpenGroup(openGroup === group.key ? null : group.key)}
               >
                 {t(group.key)}
-                <ChevronDown size={13} aria-hidden="true" />
+                <ChevronDownIcon width={13} height={13} aria-hidden="true" />
               </button>
               {openGroup === group.key && (
                 <div
@@ -109,7 +109,7 @@ export function Nav() {
                         : {})}
                     >
                       {t(key)}
-                      <ArrowUpRight size={15} aria-hidden="true" />
+                      <ArrowTopRightIcon width={15} height={15} aria-hidden="true" />
                     </Link>
                   ))}
                 </div>
@@ -126,7 +126,7 @@ export function Nav() {
           </div>
           <a href="mailto:contact@aseanlabs.io" className="al-button al-button-sm al-header-contact">
             {t('home.contact')}
-            <ArrowUpRight size={15} aria-hidden="true" />
+            <ArrowTopRightIcon width={15} height={15} aria-hidden="true" />
           </a>
           <button
             type="button"
@@ -136,7 +136,7 @@ export function Nav() {
             aria-controls="mobile-navigation"
             aria-label={t(mobileOpen ? 'home.closeMenu' : 'home.openMenu')}
           >
-            {mobileOpen ? <X size={25} /> : <Menu size={25} />}
+            {mobileOpen ? <Cross1Icon width={25} height={25} /> : <HamburgerMenuIcon width={25} height={25} />}
           </button>
         </div>
       </div>
@@ -162,7 +162,7 @@ export function Nav() {
                     : {})}
                 >
                   {t(key)}
-                  <ArrowUpRight size={16} aria-hidden="true" />
+                  <ArrowTopRightIcon width={16} height={16} aria-hidden="true" />
                 </Link>
               ))}
             </div>

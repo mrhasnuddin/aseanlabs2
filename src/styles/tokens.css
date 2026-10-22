@@ -14,8 +14,9 @@
   --al-surface: var(--al-yellow);
   --al-text: var(--al-ink);
   --al-action: var(--al-yellow);
-  --al-font: 'Space Grotesk', Helvetica, Arial, sans-serif;
-  --al-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  /* Fallbacks only: _app.tsx sets Lexend and Roboto Mono through next/font. */
+  --al-font: Helvetica, Arial, sans-serif;
+  --al-mono: 'Courier New', monospace;
 
   /* Type: seven roles, fluid between 390px and 1440px viewports (Gravity/Galxe proportions). */
   --al-text-display: clamp(2.375rem, 2.096rem + 1.143vw, 3.125rem); /* 38 → 50px */

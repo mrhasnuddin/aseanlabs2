@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUp, ArrowUpRight } from 'lucide-react';
+import { ArrowTopRightIcon, ArrowUpIcon } from '@radix-ui/react-icons';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -57,7 +57,7 @@ export function Footer() {
             </p>
             <a href="mailto:contact@aseanlabs.io" className="al-button">
               contact@aseanlabs.io
-              <ArrowUpRight size={17} aria-hidden="true" />
+              <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />
             </a>
           </div>
           {columns.map((column) => (
@@ -73,7 +73,7 @@ export function Footer() {
                         : {})}
                     >
                       {t(key)}
-                      {href.startsWith('https') && <ArrowUpRight size={14} aria-hidden="true" />}
+                      {href.startsWith('https') && <ArrowTopRightIcon width={14} height={14} aria-hidden="true" />}
                     </Link>
                   </li>
                 ))}
@@ -88,7 +88,7 @@ export function Footer() {
             <Link href="/terms-of-service">{t('footer.termsOfService')}</Link>
             <LanguageSwitcher variant="footer" />
             <a href="#top" className="al-back-top" aria-label={t('home.backToTop')}>
-              <ArrowUp size={18} aria-hidden="true" />
+              <ArrowUpIcon width={18} height={18} aria-hidden="true" />
             </a>
           </div>
         </div>

@@ -33,7 +33,7 @@ The existing Tailwind color aliases remain for secondary pages. New components m
 
 `--al-surface` resolves to `--al-yellow`. All page and section backgrounds, header/footer, menus, capability cards, expanded details, and directory controls use this canvas. Distinguish sections through spacing, typography, and ink rules rather than alternate background bands. Cyan and paper are limited to small illustration details. Ink action fills and subtle ink hover tints remain available for clear interaction feedback.
 
-Use Space Grotesk for headings, navigation and body text. Use IBM Plex Mono for small functional labels, numerical steps, and illustration annotations. Fonts are self-hosted under `public/fonts/`; preserve the included license notices.
+Use Lexend for headings, navigation and body text; it was chosen for reading ease across all eight languages. Use Roboto Mono for small functional labels, numerical steps, and illustration annotations. Both load through `next/font/google` in `_app.tsx`, which self-hosts them at build time with Latin, Latin Extended and Vietnamese subsets, and set `--al-font` / `--al-mono`. The ASEAN LABS wordmark stays in Space Grotesk because it is the logotype; only its Latin file remains in `public/fonts/` with its license notice. Icons come from `@radix-ui/react-icons`; don't add a second icon set.
 
 Type uses seven roles from `tokens.css`, measured against Gravity and Galxe and fluid between 390px and 1440px viewports:
 

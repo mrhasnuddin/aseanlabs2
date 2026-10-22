@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Palette } from 'lucide-react';
+import { ColorWheelIcon } from '@radix-ui/react-icons';
 
 export function ThemeSwitcher() {
   const { preset, setPreset } = useTheme();
@@ -8,7 +8,7 @@ export function ThemeSwitcher() {
   return (
     <div className="flex items-center gap-4">
       <span className="font-mono text-xs font-bold uppercase tracking-widest text-struct flex items-center gap-2">
-        <Palette size={14} /> Theme
+        <ColorWheelIcon width={14} height={14} /> Theme
       </span>
       <div className="flex bg-struct border-2 border-struct p-1 rounded-sm shadow-nb-sm">
         <button

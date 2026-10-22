@@ -1,10 +1,14 @@
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { Lexend, Roboto_Mono } from 'next/font/google';
 import '@/styles/globals.css';
 import '@/styles/tokens.css';
 import '@/styles/home.css';
 import '@/styles/pages.css';
+
+const lexend = Lexend({ subsets: ['latin', 'latin-ext', 'vietnamese'], display: 'swap' });
+const robotoMono = Roboto_Mono({ subsets: ['latin', 'latin-ext', 'vietnamese'], display: 'swap' });
 
 export default function App({ Component, pageProps }: AppProps) {
   const { locale = 'en', asPath } = useRouter();
@@ -26,5 +30,16 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => document.removeEventListener('visibilitychange', sync);
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      {/* html:root outranks the :root fallbacks in tokens.css whatever order the styles load in. */}
+      <style jsx global>{`
+        html:root {
+          --al-font: ${lexend.style.fontFamily}, Helvetica, Arial, sans-serif;
+          --al-mono: ${robotoMono.style.fontFamily}, 'Courier New', monospace;
+        }
+      `}</style>
+      <Component {...pageProps} />
+    </>
+  );
 }

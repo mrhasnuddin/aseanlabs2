@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDownIcon, GlobeIcon } from '@radix-ui/react-icons';
 import { LOCALE_NAMES, LOCALE_SHORT, useTranslation } from '@/hooks/useTranslation';
 
 interface Props {
@@ -71,9 +71,9 @@ export function LanguageSwitcher({ variant = 'nav' }: Props) {
         aria-label={`${t('nav.language')}: ${LOCALE_NAMES[locale] || locale}`}
         onClick={() => setOpen(!open)}
       >
-        <Globe size={16} aria-hidden="true" />
+        <GlobeIcon width={16} height={16} aria-hidden="true" />
         <span>{variant === 'nav' ? LOCALE_SHORT[locale] : LOCALE_NAMES[locale]}</span>
-        <ChevronDown size={14} aria-hidden="true" />
+        <ChevronDownIcon width={14} height={14} aria-hidden="true" />
       </button>
       {open && links}
     </div>

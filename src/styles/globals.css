@@ -24,8 +24,8 @@
     --sym:        var(--color-struct);
 
     /* Typography tokens */
-    --font-sans: 'Space Grotesk', Helvetica, Arial, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+    --font-sans: var(--al-font);
+    --font-mono: var(--al-mono);
   }
 
   /* Preset 1: Neo-Brutalist */
@@ -71,7 +71,7 @@
   }
 
   body {
-    font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
+    font-family: var(--al-font);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
