@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://aseanlabs.io</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/why-us</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/why-us"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/why-us"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/why-us"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/why-us"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/why-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/why-us"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/process</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/process"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/process"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/process"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/process"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/process"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/process"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/process"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/onboard</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/onboard"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/onboard"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/onboard"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/onboard"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/onboard"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/onboard"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/how-xplan-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/how-xplan-works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/how-xplan-works"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/brand</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/brand"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/brand"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/brand"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/brand"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/brand"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/brand"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/brand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/brand"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
+  </url>
+</urlset>

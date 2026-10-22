@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { CheckIcon, CopyIcon } from '@radix-ui/react-icons';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
+import { Seo } from '@/components/Seo';
 import { SplitText } from '@/components/home/Motion';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -18,13 +18,7 @@ export function PageShell({
   const { t } = useTranslation();
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-      </Head>
+      <Seo title={title} description={description} />
       <a className="al-skip-link" href="#main-content">
         {t('home.skipContent')}
       </a>

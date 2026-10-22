@@ -6,6 +6,7 @@ export default class Document extends NextDocument {
       <Html lang={this.props.__NEXT_DATA__.locale || 'en'}>
         <Head>
           <meta charSet="utf-8" />
+          <meta name="theme-color" content="#F4BF4B" />
           {/* Marks JS support before first paint so load animations start hidden instead of flashing. */}
           <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
           <link rel="icon" href="/symbols/aseanlabs%20svg%201.svg" type="image/svg+xml" />
