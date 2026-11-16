@@ -63,9 +63,9 @@ export function ProjectIntake() {
         {PACKAGES.map((item, index) => <li key={item.id}>
           <span className={styles.index}>0{index + 1}</span>
           <h3>{item.name}</h3>
-          <p className={styles.description}>{item.id === 'opencrew' ? <><a href="https://open-crew.vercel.app/" target="_blank" rel="noopener noreferrer">OpenCrew<ArrowTopRightIcon aria-hidden="true" /></a> {t('intake.opencrewPartner')}</> : item.description}</p>
+          <p className={styles.description}>{item.id === 'opencrew' ? <><a href="https://open-crew.vercel.app/" target="_blank" rel="noopener noreferrer">OpenCrew<ArrowTopRightIcon aria-hidden="true" /></a> {t('intake.opencrewPartner')}</> : t(`intake.${item.id}Desc`)}</p>
           <div className={styles.price}><strong>{item.price}</strong><span>USDT</span></div>
-          <p className={styles.duration}>{item.duration}</p>
+          <p className={styles.duration}>{t(`intake.${item.id}Duration`)}</p>
           <button type="button" className="al-text-link" onClick={() => choosePackage(item.id)} aria-label={`${t('intake.discuss')} — ${item.name}`}>
             {t('intake.discuss')}<ArrowRightIcon aria-hidden="true" />
           </button>
@@ -93,8 +93,8 @@ export function ProjectIntake() {
           <div className={styles.field}>
             <label htmlFor="intake-package">{t('intake.package')}</label>
             <div className={styles.selectWrap}><select id="intake-package" name="package" ref={packageField} value={selected} onChange={(event) => setSelected(event.target.value)} required>
-              {PACKAGES.map((item) => <option key={item.id} value={item.id}>{item.name} · {item.price} USDT / {item.duration.toLowerCase()}</option>)}
-              {EXTRA_OPTIONS.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
+              {PACKAGES.map((item) => <option key={item.id} value={item.id}>{item.name} · {item.price} USDT / {t(`intake.${item.id}Duration`).toLowerCase()}</option>)}
+              {EXTRA_OPTIONS.map((item) => <option key={item.id} value={item.id}>{t(`intake.${item.id}Option`)}</option>)}
             </select><ChevronDownIcon aria-hidden="true" /></div>
           </div>
           <div className={styles.field}><label htmlFor="intake-brief">{t('intake.brief')}</label><p id="intake-brief-hint">{t('intake.briefHint')}</p><textarea id="intake-brief" name="brief" rows={5} maxLength={3000} required aria-describedby="intake-brief-hint" /></div>
