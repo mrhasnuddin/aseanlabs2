@@ -11,18 +11,20 @@ import styles from '@/components/events/Events.module.css';
 export default function EventRecap({ event, related }: { event: EventRecord; related: EventRecord[] }) {
   const { t } = useTranslation();
   const photos = eventPhotos(event);
-  return <PageShell title={`${event.title} | ASEAN Labs`} description={event.excerpt} article shareImage={photos[0]}>
+  const text = (field: string) => t(`events.${event.slug}.${field}`);
+  const alt = (n: number) => `${event.title} — ${t('events.photoAlt')} ${n}`;
+  return <PageShell title={`${event.title} | ASEAN Labs`} description={text('excerpt')} article shareImage={{ ...photos[0], alt: alt(1) }}>
     <article>
       <PageIntro crumb={event.title} parents={[{ label: t('events.nav'), href: '/events' }]} title={event.title} motif={<EventsMotif />}>
-        <p>{event.excerpt}</p>
+        <p>{text('excerpt')}</p>
       </PageIntro>
       <div className={`al-container al-section ${styles.article}`}>
-      <div className={styles.heroPhoto}><Image {...photos[0]} priority sizes="(max-width: 1600px) 100vw, 1440px" /></div>
+      <div className={styles.heroPhoto}><Image {...photos[0]} alt={alt(1)} priority sizes="(max-width: 1600px) 100vw, 1440px" /></div>
       <div className={styles.articleBody}>
-        <aside className={styles.facts}><p className="al-small-label">{t('events.ourRole')}</p><p>{event.role}</p><p className="al-small-label">{t('events.location')}</p><p>{event.location}</p></aside>
-        <div className={styles.prose}><h2>{t('events.overview')}</h2>{event.participationNote && <p className={styles.participation}>{event.participationNote}</p>}{event.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<EventCredits slug={event.slug} /></div>
+        <aside className={styles.facts}><p className="al-small-label">{t('events.ourRole')}</p><p>{text('role')}</p><p className="al-small-label">{t('events.location')}</p><p>{text('location')}</p></aside>
+        <div className={styles.prose}><h2>{t('events.overview')}</h2>{event.note && <p className={styles.participation}>{text('note')}</p>}{['p1', 'p2'].map((p) => <p key={p}>{text(p)}</p>)}<EventCredits slug={event.slug} /></div>
       </div>
-      <section className={styles.gallery} aria-labelledby="event-gallery-title"><h2 id="event-gallery-title">{t('events.gallery')}</h2><div className={styles.galleryGrid}>{photos.slice(1).map((photo) => <figure key={photo.src}><Image {...photo} sizes="(max-width: 700px) 100vw, 70vw" /><figcaption>{event.title} · {event.location}</figcaption></figure>)}</div></section>
+      <section className={styles.gallery} aria-labelledby="event-gallery-title"><h2 id="event-gallery-title">{t('events.gallery')}</h2><div className={styles.galleryGrid}>{photos.slice(1).map((photo, i) => <figure key={photo.src}><Image {...photo} alt={alt(i + 2)} sizes="(max-width: 700px) 100vw, 70vw" /><figcaption>{event.title} · {text('location')}</figcaption></figure>)}</div></section>
       <section className={styles.related} aria-labelledby="related-events-title"><h2 id="related-events-title">{t('events.more')}</h2><div className={styles.relatedGrid}>{related.map((item) => <EventCard key={item.slug} event={item} />)}</div></section>
       </div>
     </article>
