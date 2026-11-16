@@ -7,10 +7,16 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { PROJECTS } from '@/data/ecosystem';
 import { PARTNERS } from '@/data/partners';
 import { OrbitArtwork } from './OrbitArtwork';
-import { CapabilityArtwork, GrowthArtwork, NetworkArtwork } from './CapabilityArtwork';
+import { CapabilityArtwork, NetworkArtwork } from './CapabilityArtwork';
+import { TeamAvatar } from './TeamAvatar';
 import { CountUp, Reveal, SplitText } from './Motion';
 
 const CONTACT = 'mailto:contact@aseanlabs.io';
+const TEAM = [
+  { id: 'dean', name: 'Dean', href: 'https://www.linkedin.com/in/hasnuddin/' },
+  { id: 'leo', name: 'Leo', href: 'https://www.linkedin.com/in/amir-leo-bb49b0325/' },
+  { id: 'irhas', name: 'Irhas', href: 'https://www.linkedin.com/in/muhamad-syazwan-bahrom-162029147/' },
+] as const;
 const CAPABILITIES = [
   { id: 'strategy', title: 'strategy', services: ['02'], kind: 'strategy' },
   { id: 'creative', title: 'creative', services: ['03', '04'], kind: 'creative' },
@@ -165,7 +171,7 @@ function CapabilitiesSection() {
                   <p>{t(`home.${cap.title}Body`)}</p>
                   <div className="al-cap-meta">
                     {cap.services.map((n) => (
-                      <span key={n}>{n === '07' ? 'DAOaaS' : t(`services.svc${n}Title`)}</span>
+                      <span key={n}>{t(`services.svc${n}Title`)}</span>
                     ))}
                   </div>
                 </div>
@@ -210,25 +216,13 @@ function NetworkSection() {
     <section id="integrations" className="al-network" aria-labelledby="network-title">
       <div className="al-container al-network-layout" id="foundation-section-wrapper">
         <Reveal className="al-network-copy">
-          <a
-            href="https://eni.top/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="al-eni-lockup"
-          >
-            <Image src="/partners/mono/eni.svg" alt="ENI" width={104} height={32} />
-          </a>
+          <p className="al-eyebrow">Multi-chain · EVM</p>
           <h2 id="network-title">
             <SplitText text={t('home.networkTitle')} />
           </h2>
           <p>{t('home.networkBody')}</p>
-          <a
-            href="https://eni.top/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="al-text-link"
-          >
-            {t('home.exploreEni')}
+          <a href={CONTACT} className="al-text-link">
+            {t('home.networkCta')}
             <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />
           </a>
         </Reveal>
@@ -298,41 +292,40 @@ function AudienceSection() {
   );
 }
 
-function GrowthSection() {
+/* Who does the work: three stepped cards (ink, paper, outline), each with a collection-style avatar. */
+function TeamSection() {
   const { t } = useTranslation();
   return (
-    <section id="dao-as-a-service" className="al-growth" aria-labelledby="growth-title">
-      <div className="al-container al-growth-layout" id="dao-section">
-        <div className="al-growth-visual">
-          <GrowthArtwork />
-          <div className="al-growth-path">
-            <span>{t('home.participate')}</span>
-            <span>{t('home.verify')}</span>
-            <span>{t('home.reward')}</span>
-          </div>
-        </div>
-        <Reveal className="al-growth-copy">
-          <p className="al-eyebrow">DAOaaS</p>
-          <h2 id="growth-title">
-            <SplitText text={t('home.growthTitle')} />
+    <section id="team" className="al-section al-team" aria-labelledby="team-title">
+      <div className="al-container">
+        <Reveal className="al-section-heading">
+          <h2 id="team-title">
+            <SplitText text={t('home.teamTitle')} />
           </h2>
-          <p>{t('home.growthBody')}</p>
-          <div className="al-growth-links">
-            <Link href="/how-xplan-works" className="al-button">
-              {t('nav.howXplanWorks')}
-              <ArrowRightIcon width={17} height={17} aria-hidden="true" />
-            </Link>
-            <a
-              href="https://daoaas.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="al-text-link"
-            >
-              DAOaaS
-              <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />
-            </a>
-          </div>
+          <p>{t('home.teamBody')}</p>
         </Reveal>
+        <ul className="al-team-grid">
+          {TEAM.map((member) => (
+            <li key={member.id} className="al-team-card">
+              <TeamAvatar id={member.id} />
+              <div className="al-team-body">
+                <p className="al-small-label">{t(`team.${member.id}Role`)}</p>
+                <h3>{member.name}</h3>
+                <p>{t(`team.${member.id}Bio`)}</p>
+              </div>
+              <a
+                href={member.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="al-button"
+                aria-label={`${member.name}, LinkedIn`}
+              >
+                LinkedIn
+                <ArrowTopRightIcon width={18} height={18} aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -489,11 +482,11 @@ export function HomePage() {
         <HeroSection />
         <ProofSection />
         <AboutSection />
-        <CapabilitiesSection />
-        <NetworkSection />
         <AudienceSection />
-        <GrowthSection />
+        <CapabilitiesSection />
         <ProcessSection />
+        <TeamSection />
+        <NetworkSection />
         <EcosystemSection />
       </main>
     </div>

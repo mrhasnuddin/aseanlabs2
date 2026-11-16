@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import type { SymbolProps } from '@/components/icons/BrandSymbols';
-import { Burst, Chevrons, Clover, Hourglass, Iris, Sparkle } from '@/components/icons/BrandSymbols';
+import { Clover, Hourglass, Iris, Sparkle } from '@/components/icons/BrandSymbols';
 
 type Kind = 'strategy' | 'creative' | 'development' | 'community' | 'expansion';
 
@@ -227,33 +227,19 @@ export function CapabilityArtwork({ kind }: { kind: Kind }) {
   );
 }
 
-/* ENI's own logo, from public/partners/mono/eni.svg (viewBox 312.29 x 96.28), drawn in currentColor. */
-function EniLogo(props: React.SVGProps<SVGGElement>) {
-  return (
-    <g fill="currentColor" {...props}>
-      <path d="M125.66,16.71c-5.69,5.25-8.53,13.91-8.53,25.96v11.13c0,12.05,2.84,20.71,8.53,25.96,5.69,4.94,15.55,7.42,29.58,7.42h35.07v-11.13h0s-35.16,0-35.16,0c-9.43-.01-15.85-1.55-19.25-4.63-3.66-2.97-5.54-8.54-5.68-16.69h55.3v-12.98h-55.3c.13-8.15,2.02-13.72,5.68-16.69,3.4-3.08,9.82-4.62,19.25-4.63h35.16V9.29h-35.07c-14.03,0-23.89,2.48-29.58,7.42Z" />
-      <polygon points="270.19 68.63 220 9.29 204.95 9.29 204.95 87.17 218.33 87.17 218.33 24.59 270.19 87.17 283.01 87.17 283.01 9.29 270.19 9.29 270.19 68.63" />
-      <rect x="297.65" y="9.29" width="14.64" height="77.88" />
-      <path d="M0,62.47v30.31c0,2.24,2.07,3.9,4.26,3.42l68.36-15.16c3.66-.81,3.66-6.02,0-6.83L4.26,59.05c-2.19-.48-4.26,1.18-4.26,3.42Z" />
-      <path d="M72.58,15.23L4.26,.08C2.07-.4,0,1.26,0,3.5v30.31c0,2.24,2.07,3.9,4.26,3.42l68.33-15.16c3.66-.81,3.66-6.02,0-6.83Z" />
-      <path d="M83.76,29.57L15.42,44.72c-3.66,.81-3.66,6.02,0,6.83l68.35,15.15c2.19,.48,4.26-1.18,4.26-3.42v-30.3c0-2.24-2.08-3.9-4.27-3.42Z" />
-    </g>
-  );
-}
-
-/* ENI at the centre (the logo stays still); EVM, AppChains and builders feed into it. Nodes sit on
-   the r=170 ring around (300,210) at -90, 150 and 30 degrees. */
-const ENI_FEEDS = [
-  { label: 'EVM', x: 300, y: 40, d: 'M300 49V168', lx: 300, ly: 24, accent: true },
-  { label: 'APPCHAINS', x: 152.78, y: 295, d: 'M160.6 290.5L222 252', lx: 152.78, ly: 326 },
-  { label: 'BUILDERS', x: 447.22, y: 295, d: 'M439.4 290.5L378 252', lx: 447.22, ly: 326 },
+/* EVM at the centre; chains, wallets and tooling feed into it. Nodes sit on the r=170 ring around
+   (300,210) at -90, 150 and 30 degrees. */
+const CHAIN_FEEDS = [
+  { label: 'CHAINS', x: 300, y: 40, d: 'M300 49V168', lx: 300, ly: 24, accent: true },
+  { label: 'WALLETS', x: 152.78, y: 295, d: 'M160.6 290.5L222 252', lx: 152.78, ly: 326 },
+  { label: 'TOOLING', x: 447.22, y: 295, d: 'M439.4 290.5L378 252', lx: 447.22, ly: 326 },
 ];
 export function NetworkArtwork() {
   return (
     <svg viewBox="0 0 600 420" fill="none" className="al-motion">
       <circle cx="300" cy="210" r="170" stroke="currentColor" strokeOpacity=".45" strokeDasharray="1 7" className="al-spin" />
       <circle cx="300" cy="210" r="122" stroke="currentColor" strokeOpacity=".18" />
-      {ENI_FEEDS.map(({ label, x, y, d, lx, ly, accent }, i) => (
+      {CHAIN_FEEDS.map(({ label, x, y, d, lx, ly, accent }, i) => (
         <g key={label}>
           <path d={d} stroke="currentColor" />
           <Flow d={d} delay={i * 0.9} duration={2.6} />
@@ -262,37 +248,10 @@ export function NetworkArtwork() {
         </g>
       ))}
       <rect x="186" y="168" width="228" height="84" fill="currentColor" />
-      <EniLogo transform="translate(220 185.35) scale(0.5124)" className="al-art-inverse" />
+      <text x="300" y="227" textAnchor="middle" className="al-network-mark">
+        EVM
+      </text>
     </svg>
-  );
-}
-
-export function GrowthArtwork() {
-  const people = [[-20, -18], [16, -22], [-26, 14], [8, 10], [30, 6]];
-  return (
-    <div className="al-cap-art al-growth-art al-motion" aria-hidden="true">
-      <svg viewBox="0 0 600 250" fill="none">
-        <circle cx="100" cy="115" r="70" stroke="currentColor" strokeOpacity=".4" strokeDasharray="2 6" className="al-spin" />
-        <circle cx="100" cy="115" r="54" fill="currentColor" />
-        {people.map(([dx, dy], i) => (
-          <circle key={i} cx={100 + dx} cy={115 + dy} r="8" fill="var(--al-yellow)" />
-        ))}
-        <circle cx="300" cy="115" r="70" stroke="currentColor" strokeOpacity=".4" strokeDasharray="10 6" className="al-spin-rev" />
-        <path d="M300 63 352 115 300 167 248 115Z" fill="currentColor" />
-        <path d="m282 115 12 12 24-26" stroke="var(--al-cyan)" strokeWidth="2.5" />
-        <circle cx="500" cy="115" r="54" fill="currentColor" />
-        <g className="al-spin">
-          <Burst size={62} x={469} y={84} {...inverse} />
-        </g>
-        {['M160 115H238', 'M362 115H440'].map((d, i) => (
-          <g key={d}>
-            <path d={d} stroke="currentColor" />
-            <path d={`M${i ? 432 : 230} 109l8 6-8 6`} stroke="currentColor" />
-            <Flow d={d} delay={i * 1.6} duration={3.2} />
-          </g>
-        ))}
-      </svg>
-    </div>
   );
 }
 
@@ -328,50 +287,6 @@ export function PageMotif({
 }
 
 // DAOaaS round mark traced from public/partners/DAOaaS C 3.png into a 100-unit box; the triangle is a cut-out.
-const DAOAAS_MARK = 'M46.1 0.1L40.3 0.9L35.3 2.2L31.1 3.7L26 6.1L18.3 11.3L12.4 17.0L7 24.5L4.8 28.6L2.9 33.3L1.6 37.4L0.4 43.6L0 48.4L0.1 53.5L0.8 59.0L2 64.1L3.6 68.6L6.4 74.5L9.1 78.8L12.7 83.3L19.2 89.4L25.7 93.7L29.7 95.7L36 98.0L44.5 99.7L48.9 100.0L55.7 99.7L64.9 97.7L73.6 94.1L80.3 89.8L84.6 86.1L88.1 82.4L90.9 78.8L93.9 73.9L97.6 65.3L99.6 56.5L100 52.0L99.9 46.3L98.4 37.3L94.8 27.7L92 22.7L88.8 18.4L82.8 12.2L79.7 9.7L74.7 6.5L70.8 4.5L65.7 2.5L57.3 0.5L53.7 0.1ZM22.6 76.2L42.6 41.3L47.7 49.5L48.1 51.1L38.2 68.3L83.8 68.5L68.1 76.4ZM43.9 17.5L64 51.9L53.3 52.1L52.3 51.1L51.9 49.9L49.6 46.4L49.2 45.1L45.2 38.8L43.2 34.8L42.6 34.7L40.5 37.9L40.1 39.2L39.3 39.9L38.9 41.2L37.7 42.7L37.3 44.0L36.1 45.5L35.7 46.8L34.6 48.3L34.2 49.6L33.4 50.2L33 51.5L31.8 53.0L31.4 54.3L30.2 55.8L29.8 57.1L28.6 58.6L28.2 59.9L27 61.4L26.6 62.7L25.8 63.4L25.4 64.6L24.2 66.1L23.8 67.4L22.6 68.9L20.7 73.0L20 73.6L19.8 70.7L20.2 69.5L20.2 64.5L20.6 63.6L20.6 58.6L20.9 58.3L21 56.2L22.5 53.9L22.9 52.6L23.7 51.9L24.1 50.6L25.3 49.2L25.7 47.9L26.9 46.4L28.9 42.3L29.7 41.6L30.5 39.5L31.3 38.8L31.7 37.5L32.9 36.0L33.3 34.8L34.1 34.0L36.4 29.2L37.2 28.5L37.6 27.2L38.8 25.7L39.2 24.4L40 23.6L42.4 18.9L43.2 18.2L43.4 17.5ZM47.3 15.9L50.6 17.9L51.3 18.7L51.8 18.7L52.5 19.5L53 19.5L53.7 20.3L54.2 20.3L54.9 21.1L55.4 21.1L61.9 25.7L68.7 37.9L69.5 38.7L70.3 40.7L71.1 41.5L71.5 42.8L72.7 44.3L73.1 45.6L74.3 47.1L74.7 48.4L78.6 54.6L79 55.9L80.2 57.4L80.6 58.7L81.8 60.2L82.2 61.5L83.4 63.0L84.2 64.5L84 65.2L44.1 65.0L46 61.0L46.8 60.3L47.2 59.0L48 58.3L49.4 55.6L69.8 55.5L68.6 53.0L67.4 51.5L67 50.2L65.8 48.8L65.4 47.5L64.3 46.0L63.9 44.7L59.9 38.4L59.5 37.1L58.3 35.7L57.5 33.7L56.7 32.9L56.3 31.6L53.9 28.1L51.5 23.3L50.7 22.5L50.3 21.3L47.2 16.3Z';
-// Triangle loop around (120,120), circumradius 100: participate, verify, reward.
-const XPLAN_LOOP = 'M120 20L206.6 170H33.4Z';
-
-/* /how-xplan-works: the DAOaaS mark inside a triangular loop; a packet travels the loop and each
-   corner pulses in turn. */
-export function XplanMotif() {
-  return (
-    <div className="al-page-motif al-motion" aria-hidden="true">
-      <svg viewBox="0 0 240 240" fill="none">
-        <path d={XPLAN_LOOP} stroke="currentColor" strokeOpacity=".5" />
-        <Flow d={XPLAN_LOOP} duration={6} />
-        {[[120, 20], [206.6, 170], [33.4, 170]].map(([x, y], i) => (
-          <g key={i}>
-            <circle cx={x} cy={y} r="9" stroke="currentColor" className="al-pulse" style={{ animationDelay: `${i * 0.93}s` }} />
-            <circle cx={x} cy={y} r="9" fill={i === 0 ? 'var(--al-cyan)' : 'currentColor'} stroke="currentColor" strokeWidth="2" />
-          </g>
-        ))}
-        <path d={DAOAAS_MARK} fill="currentColor" fillRule="evenodd" transform="translate(80 80) scale(0.8)" />
-      </svg>
-    </div>
-  );
-}
-
-/* /onboard: the wallet "X" whose halves part and snap back together, on a line carrying packets
-   from a wallet node (left) through the mark to the chain (right). */
-export function WalletMotif() {
-  return (
-    <div className="al-page-motif al-motion" aria-hidden="true">
-      <svg viewBox="0 0 240 240" fill="none">
-        <path d="M120 2v14M120 224v14" stroke="currentColor" strokeOpacity=".5" />
-        <circle cx="120" cy="120" r="104" stroke="currentColor" strokeOpacity=".4" strokeDasharray="1 7" />
-        <path d="M30 120H64M176 120H210" stroke="currentColor" />
-        <Flow d="M18 120H64" duration={2.4} />
-        <Flow d="M176 120H222" delay={1.2} duration={2.4} />
-        <rect x="6" y="108" width="24" height="24" fill="currentColor" />
-        <circle cx="222" cy="120" r="10" fill="var(--al-cyan)" stroke="currentColor" strokeWidth="2" />
-        <circle cx="120" cy="120" r="56" fill="currentColor" />
-        <Chevrons size={64} x={88} y={88} className="al-art-inverse al-wallet-chevrons" />
-      </svg>
-    </div>
-  );
-}
-
 // Seven region nodes on the outer ring, starting at the top.
 const WHY_NODES = Array.from({ length: 7 }, (_, i) => {
   const angle = (2 * Math.PI * i) / 7 - Math.PI / 2;

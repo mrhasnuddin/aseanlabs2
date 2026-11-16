@@ -56,17 +56,19 @@ Corners are square. Use 1px rules to organize content. Hard shadows are reserved
 ## Page structure
 
 1. Orbital hero: positioning, one primary business action, and four section links.
-2. Partner logo marquee.
+2. Partner logo marquee. ENI and DAOaaS appear here as past clients and partners only.
 3. About (`#about`): the ASEAN Labs role statement on the left, the four track-record figures as a 2×2 grid on the right; stacked below 800px.
-4. Five capability groups covering all nine existing services.
-5. ENI infrastructure feature.
-6. Builder, ecosystem and enterprise audience paths.
-7. DAOaaS participation and rewards feature.
-8. Three-part summary of the existing engagement process.
+4. Builder, ecosystem and enterprise audience paths (`#why-us`).
+5. Five capability groups covering all nine existing services.
+6. Three-part summary of the existing engagement process.
+7. Team (`#team`): three stepped cards.
+8. Multi-chain and EVM feature (`#integrations`).
 9. Searchable, filterable ecosystem directory.
 10. Grouped footer. There is no separate closing CTA band on any page: the footer carries the statement and contact email, and the legacy `#contact`, `#final-cta` and `#faq` anchors land on it.
 
-Keep existing routes and deep links working. The principal contact action is `mailto:contact@aseanlabs.io`; use the same label, "Work with us", for that intent throughout the English experience. Links to ENI, DAOaaS, social channels and project websites retain their actual destinations.
+ASEAN Labs is positioned as multi-chain and EVM. It is no longer tied to ENI or DAOaaS: don't describe the company as building on, for or with either, and don't add pages or sections about their products. Legal copy still mentions ENI and changes only when the owner supplies new text.
+
+Keep existing routes and deep links working. The principal contact action is `mailto:contact@aseanlabs.io`; use the same label, "Work with us", for that intent throughout the English experience. Links to partners, social channels and project websites retain their actual destinations.
 
 ## Components and behavior
 
@@ -76,7 +78,7 @@ The desktop header is 80px high; the mobile header is 64px. Keep the brand at th
 
 The language selector is a disclosure of real links (`next/link` with `locale`), never a native `<select>`: a globe, the short locale code and a chevron in the header; the full language name opening upward in the footer; a two-column list in the mobile menu. The current language carries `aria-current` and an inset ink rule. Switching keeps the current route.
 
-The footer has two bands: a 28px statement, a small mono "Built on" tag with the ENI mark, and the contact email as a button, beside four 16px link columns under 12px mono labels; then a mono legal row with the language selector and a 44px back-to-top control. Footer navigation must retain company, product, network and community destinations, plus privacy and terms pages. Legal copy must not change as part of a visual update.
+The footer has two bands: a 28px statement, and the contact email as a button, beside three 16px link columns (About, Services, Community) under 12px mono labels; then a mono legal row with the language selector and a 44px back-to-top control. Footer navigation must retain company, product, network and community destinations, plus privacy and terms pages. Legal copy must not change as part of a visual update.
 
 ### Calls to action
 
@@ -109,9 +111,15 @@ Keep all 19 existing project records and their real destinations. Search matches
 
 ### Secondary pages
 
-`/why-us`, `/process`, `/onboard`, `/how-xplan-works`, `/brand`, `/privacy-policy` and `/terms-of-service` use `src/components/PageLayout.tsx` and `src/styles/pages.css`. Each page opens like the homepage hero: a breadcrumb at top left, then a turning orbit motif with a page-specific brand symbol centred on the page at every width, with the optional mono label and a display-size H1 that rises word by word on load centred under it (a second phrase may sit below it in the supporting color). A single lead paragraph stays centred under the H1; two or more become left-aligned columns under a rule. Legal pages carry a motif too. No page closes with a separate contact block; the footer carries that role.
+`/why-us`, `/process`, `/brand`, `/privacy-policy` and `/terms-of-service` use `src/components/PageLayout.tsx` and `src/styles/pages.css`. Each page opens like the homepage hero: a breadcrumb at top left, then a turning orbit motif with a page-specific brand symbol centred on the page at every width, with the optional mono label and a display-size H1 that rises word by word on load centred under it (a second phrase may sit below it in the supporting color). A single lead paragraph stays centred under the H1; two or more become left-aligned columns under a rule. Legal pages carry a motif too. No page closes with a separate contact block; the footer carries that role.
 
-Show sequences in full: process and wallet steps use one ordered timeline that becomes vertical on small screens. Network values and colors are visible without interaction, and every copy button names what it copies. The wallet guide is the only selector; it uses native buttons with `aria-pressed`. The `/why-us` globe is decorative and hidden from assistive technology; the region buttons beside it carry the same information. Legal copy comes only from the dictionaries and must not change during visual work.
+Show sequences in full: process steps use one ordered timeline that becomes vertical on small screens. Every copy button names what it copies. The `/why-us` globe is decorative and hidden from assistive technology; the region buttons beside it carry the same information. Legal copy comes only from the dictionaries and must not change during visual work.
+
+### Team
+
+Three cards in a row, each stepped 48px lower than the one before (Namada's card pattern in the house system): the first on ink with yellow text, the second on paper, the third outlined on the canvas. A card is a square avatar, a mono role label, the name as an H3, a short bio, and a full-width LinkedIn button; on the ink card the same primary button is inverted (yellow outline that fills yellow). Below 800px the cards stack without the step.
+
+Avatars are a small collection drawn in code (`src/components/home/TeamAvatar.tsx`): one shared bust with different traits per person (background, headwear, eyes, a brand symbol as a pin) and a serial like `#001`. They are abstract characters, not likenesses, use only ink, yellow, paper and a little cyan, and keep fixed colours on every card. Add a member by adding a trait set, not a photo.
 
 ## Motion
 
@@ -136,7 +144,7 @@ Use CSS transforms and IntersectionObserver; do not add a motion dependency for 
 
 ### Illustrations
 
-Card and section drawings are flat 2D thin-line technical diagrams in the Galxe manner: 1px ink strokes, 11px mono annotations, and brand symbols nested as SVG at exact coordinates. No tilted ellipses, perspective or isometric shapes; orbits are concentric circles. Colour follows 60-30-10: the yellow canvas about 60%, ink about 30% as the main contrast (filled blocks, discs, terminals, key nodes), and paper plus cyan together at most 10% as small accents. Symbols on ink fills turn yellow (`.al-art-inverse`). Each drawing explains its section (positioning map, construction grid, build pipeline, community network, regional hub map, ENI lane with AppChains and tool feeds, participate–verify–reward, and the hero's flat orbit). Round computed coordinates to two decimals so server and browser output match during hydration. Under reduced motion the travelling packets (`.al-flow`) are hidden.
+Card and section drawings are flat 2D thin-line technical diagrams in the Galxe manner: 1px ink strokes, 11px mono annotations, and brand symbols nested as SVG at exact coordinates. No tilted ellipses, perspective or isometric shapes; orbits are concentric circles. Colour follows 60-30-10: the yellow canvas about 60%, ink about 30% as the main contrast (filled blocks, discs, terminals, key nodes), and paper plus cyan together at most 10% as small accents. Symbols on ink fills turn yellow (`.al-art-inverse`). Each drawing explains its section (positioning map, construction grid, build pipeline, community network, regional hub map, an EVM tile fed by chains, wallets and tooling, and the hero's flat orbit). Round computed coordinates to two decimals so server and browser output match during hydration. Under reduced motion the travelling packets (`.al-flow`) are hidden.
 
 ### Texture
 

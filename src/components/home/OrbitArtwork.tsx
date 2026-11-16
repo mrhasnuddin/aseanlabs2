@@ -39,7 +39,7 @@ export function OrbitArtwork() {
           IDEAS INTO ACTION
         </text>
         <text x="776" y="246" className="al-orbit-caption" textAnchor="end">
-          BUILT ON ENI
+          MULTI-CHAIN · EVM
         </text>
       </svg>
     </div>

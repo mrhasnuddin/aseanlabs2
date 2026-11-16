@@ -112,15 +112,13 @@ body {
 }
 .al-section-heading h2,
 .al-network h2,
-.al-growth h2,
 .al-about h2 {
   font-size: var(--al-text-h2);
   line-height: var(--al-leading-heading);
   letter-spacing: var(--al-tracking-heading);
 }
 .al-section-heading > p:not(.al-eyebrow),
-.al-network-copy > p,
-.al-growth-copy > p:not(.al-eyebrow),
+.al-network-copy > p:not(.al-eyebrow),
 .al-about-copy p {
   max-width: var(--al-measure);
   margin-top: var(--al-space-4);
@@ -138,7 +136,7 @@ body {
   text-transform: uppercase;
 }
 .al-section-heading .al-eyebrow,
-.al-growth-copy .al-eyebrow {
+.al-network-copy .al-eyebrow {
   margin-bottom: var(--al-space-4);
 }
 /* Two CTA tiers. Primary: ink outline that fills from the bottom on hover. Secondary: underlined text link. */
@@ -755,14 +753,10 @@ body {
 .al-network-copy .al-text-link {
   margin-top: var(--al-space-6);
 }
-.al-eni-lockup {
-  display: inline-flex;
-  margin-bottom: var(--al-space-8);
-}
-.al-eni-lockup img {
-  display: block;
-  width: auto;
-  height: 32px;
+.al-network-mark {
+  font: var(--al-weight-bold) 44px var(--al-font);
+  letter-spacing: 0.08em;
+  fill: var(--al-yellow);
 }
 .al-network-art > svg {
   display: block;
@@ -820,40 +814,6 @@ body {
 }
 .al-audience-detail .al-text-link {
   margin-top: var(--al-space-4);
-}
-
-.al-growth {
-  border-block: var(--al-border);
-  padding-block: var(--al-section);
-  background: var(--al-surface);
-}
-.al-growth-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: var(--al-space-24);
-}
-.al-growth-visual .al-growth-art {
-  height: auto;
-  aspect-ratio: 600 / 250;
-}
-.al-growth-visual .al-growth-art > svg {
-  padding: 0;
-}
-.al-growth-path {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: var(--al-space-4);
-  text-align: center;
-  font: var(--al-text-label) var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-  text-transform: uppercase;
-}
-.al-growth-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--al-space-6);
-  margin-top: var(--al-space-6);
 }
 
 .al-process-grid {
@@ -1029,35 +989,16 @@ body {
 }
 .al-footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.7fr) repeat(3, minmax(0, 1fr));
   gap: var(--al-space-12);
   padding-bottom: var(--al-space-16);
 }
 .al-footer-brand > p {
   max-width: 22ch;
-  margin-bottom: var(--al-space-4);
+  margin-bottom: var(--al-space-8);
   font-size: var(--al-text-h3);
   line-height: var(--al-leading-heading);
   letter-spacing: var(--al-tracking-heading);
-}
-/* A small label under the statement, not a link: mono caption plus the ENI mark. */
-.al-footer-brand > .al-footer-built {
-  display: flex;
-  align-items: center;
-  gap: var(--al-space-2);
-  width: fit-content;
-  margin-bottom: var(--al-space-8);
-  padding: 6px 10px;
-  border: var(--al-border);
-  font: var(--al-weight-medium) var(--al-text-label) / 1 var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-  text-transform: uppercase;
-  color: var(--al-muted);
-}
-.al-footer-built img {
-  display: block;
-  width: auto;
-  height: 14px;
 }
 .al-footer-column h3 {
   margin: 0 0 var(--al-space-6);
@@ -1350,37 +1291,6 @@ body {
     transform: rotate(90deg);
   }
 }
-/* Wallet motif: the two halves of the X part and snap back together, like a connection being made. */
-@media (prefers-reduced-motion: no-preference) {
-  .al-wallet-chevrons path:first-child {
-    animation: al-part-right 3.2s var(--al-ease-in-out) infinite;
-  }
-  .al-wallet-chevrons path:last-child {
-    animation: al-part-left 3.2s var(--al-ease-in-out) infinite;
-  }
-}
-@keyframes al-part-left {
-  0%,
-  25%,
-  100% {
-    transform: none;
-  }
-  55%,
-  70% {
-    transform: translateX(-10px);
-  }
-}
-@keyframes al-part-right {
-  0%,
-  25%,
-  100% {
-    transform: none;
-  }
-  55%,
-  70% {
-    transform: translateX(10px);
-  }
-}
 @keyframes al-underline {
   0% {
     transform: scaleX(1);
@@ -1549,7 +1459,6 @@ body {
     display: none;
   }
   .al-audience-layout,
-  .al-growth-layout,
   .al-network-layout {
     gap: var(--al-space-12);
   }
@@ -1567,7 +1476,7 @@ body {
     padding-inline: var(--al-space-6);
   }
   .al-footer-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--al-space-12) var(--al-space-8);
   }
   .al-footer-brand {
@@ -1665,18 +1574,6 @@ body {
   .al-audience-layout {
     grid-template-columns: 1fr;
     gap: var(--al-space-8);
-  }
-  .al-growth-layout {
-    grid-template-columns: 1fr;
-    gap: var(--al-space-8);
-  }
-  .al-growth-visual {
-    max-width: 550px;
-    width: 100%;
-    justify-self: center;
-  }
-  .al-growth-copy {
-    max-width: 550px;
   }
   .al-process-grid {
     gap: var(--al-space-8);
@@ -1801,7 +1698,7 @@ body {
 .al-capabilities,
 .al-network,
 .al-audience,
-.al-growth,
+.al-team,
 .al-process,
 .al-ecosystem,
 .al-footer,
@@ -1812,7 +1709,7 @@ body {
 .al-capabilities::before,
 .al-network::before,
 .al-audience::before,
-.al-growth::before,
+.al-team::before,
 .al-process::before,
 .al-ecosystem::before,
 .al-footer::before,
@@ -1825,4 +1722,84 @@ body {
   border-block: var(--al-border);
   background: var(--al-texture-hatch) left top repeat-x;
   pointer-events: none;
+}
+
+/* Team: three stepped cards after the Namada reference, in the house system. One ink, one paper,
+   one outline; the avatar is the card's top face and the LinkedIn action closes it. */
+.al-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--al-space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.al-team-card {
+  display: flex;
+  flex-direction: column;
+  border: var(--al-border-strong);
+}
+.al-team-card:nth-child(1) {
+  background: var(--al-ink);
+  color: var(--al-yellow);
+}
+.al-team-card:nth-child(2) {
+  margin-top: var(--al-space-12);
+  background: var(--al-paper);
+}
+.al-team-card:nth-child(3) {
+  margin-top: var(--al-space-24);
+}
+.al-team-avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: var(--al-border-strong);
+}
+.al-avatar-id {
+  font: var(--al-weight-medium) 13px var(--al-mono);
+  letter-spacing: var(--al-tracking-label);
+}
+.al-team-body {
+  flex: 1;
+  padding: var(--al-space-6);
+}
+.al-team-body h3 {
+  margin: var(--al-space-2) 0 var(--al-space-3);
+  font-size: var(--al-text-h3);
+  line-height: var(--al-leading-heading);
+  letter-spacing: var(--al-tracking-heading);
+}
+.al-team-body > p:last-child {
+  color: var(--al-muted);
+}
+.al-team-card:nth-child(1) .al-team-body > p:last-child {
+  color: var(--al-sand);
+}
+.al-team-card .al-button {
+  justify-content: center;
+  margin: 0 var(--al-space-6) var(--al-space-6);
+}
+/* The same primary button, inverted for the ink card: yellow outline that fills yellow. */
+.al-team-card:nth-child(1) .al-button {
+  border-color: var(--al-yellow);
+  color: var(--al-yellow);
+}
+.al-team-card:nth-child(1) .al-button::before {
+  background: var(--al-yellow);
+}
+@media (hover: hover) and (pointer: fine) {
+  .al-team-card:nth-child(1) .al-button:hover {
+    color: var(--al-ink);
+  }
+}
+@media (max-width: 800px) {
+  .al-team-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+  .al-team-card:nth-child(n) {
+    margin-top: 0;
+  }
 }

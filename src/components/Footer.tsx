@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowTopRightIcon, ArrowUpIcon } from '@radix-ui/react-icons';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
@@ -9,25 +8,18 @@ const columns = [
     title: 'footer.colAbout',
     links: [
       ['nav.aboutUs', '/#about'],
-      ['nav.process', '/process'],
+      ['nav.team', '/#team'],
       ['nav.whyUs', '/why-us'],
+      ['nav.process', '/process'],
       ['nav.brand', '/brand'],
     ],
   },
   {
-    title: 'footer.colProduct',
+    title: 'nav.product',
     links: [
       ['nav.coreCapabilities', '/#capabilities'],
-      ['nav.daoaas', '/#dao-as-a-service'],
-      ['nav.howXplanWorks', '/how-xplan-works'],
-    ],
-  },
-  {
-    title: 'footer.colNetwork',
-    links: [
+      ['nav.integrations', '/#integrations'],
       ['nav.ecosystem', '/#ecosystem'],
-      ['nav.eniMainnet', 'https://scan.eniac.network/'],
-      ['nav.walletTutorial', '/onboard'],
     ],
   },
   {
@@ -51,10 +43,6 @@ export function Footer() {
         <div className="al-footer-grid">
           <div className="al-footer-brand">
             <p>{t('home.footerBody')}</p>
-            <p className="al-footer-built">
-              {t('footer.builtOn')}
-              <Image src="/partners/mono/eni.svg" alt="ENI" width={45} height={14} />
-            </p>
             <a href="mailto:contact@aseanlabs.io" className="al-button">
               contact@aseanlabs.io
               <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />

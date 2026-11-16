@@ -11,9 +11,9 @@ const groups = [
     key: 'nav.about',
     links: [
       ['nav.aboutUs', '/#about'],
+      ['nav.team', '/#team'],
       ['nav.whyUs', '/why-us'],
       ['nav.process', '/process'],
-      ['nav.brand', '/brand'],
     ],
   },
   {
@@ -21,16 +21,7 @@ const groups = [
     links: [
       ['nav.coreCapabilities', '/#capabilities'],
       ['nav.integrations', '/#integrations'],
-      ['nav.daoaas', '/#dao-as-a-service'],
-      ['nav.howXplanWorks', '/how-xplan-works'],
-    ],
-  },
-  {
-    key: 'nav.network',
-    links: [
       ['nav.ecosystem', '/#ecosystem'],
-      ['nav.eniMainnet', 'https://scan.eniac.network/'],
-      ['nav.walletTutorial', '/onboard'],
     ],
   },
 ];
