@@ -95,7 +95,7 @@ Partners run as a full-bleed marquee directly under the hero. Logos are one-colo
 
 ### Hero
 
-Use the original mark with layered, independently moving orbit lines and nodes. The logo is still. Orbit motion pauses outside the viewport and while the tab is hidden; there is no on-page pause control by owner decision. On load, the headline rises word by word and the copy, action and section index fade up after it. On mobile, stack the illustration, copy/action, then section links.
+After Gravity's hero: the original mark, still, inside exactly two half-circle arcs. The outer arc is a row of short radial ticks on a solid baseline (a lens scale) and turns slowly one way; the inner arc is a thin line with one cyan node and turns the other way, faster. Don't add more rings, nodes, labels or packets. Orbit motion pauses outside the viewport and while the tab is hidden; there is no on-page pause control by owner decision. On load, the headline rises word by word and the copy, action and section index fade up after it. On mobile, stack the illustration, copy/action, then section links.
 
 ### Capabilities
 

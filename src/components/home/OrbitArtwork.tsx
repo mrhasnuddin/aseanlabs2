@@ -1,46 +1,31 @@
 import { LogoMark } from '@/components/icons/BrandSymbols';
 
-/* Flat orbit system around the still mark: concentric rings turn at different speeds, packets
-   travel in along the axis. Node coordinates are precomputed on the rings (centre 400,260). */
+// Both arcs turn about the mark's centre, not their own boxes, so each half circle stays on its ring.
+const aboutCentre = { transformBox: 'view-box', transformOrigin: '260px 260px' } as const;
+
+/* After Gravity's hero: the still mark inside two half-circle arcs and nothing else. The outer arc
+   is a row of short radial ticks on a solid baseline, like a lens scale, and turns slowly one way;
+   the inner arc turns the other way, faster. Centre is (260,260). */
 export function OrbitArtwork() {
   return (
     <div className="al-orbit al-motion" aria-hidden="true">
-      <svg viewBox="0 0 800 520" fill="none">
-        <path d="M24 260H164M636 260H776" stroke="currentColor" strokeOpacity=".5" />
-        <path d="M400 2v16M400 502v16M24 252v16M776 252v16" stroke="currentColor" strokeOpacity=".5" />
-        <path d="M24 260H164" pathLength={100} className="al-flow" stroke="currentColor" strokeWidth="5" />
-        <path
-          d="M776 260H636"
-          pathLength={100}
-          className="al-flow"
-          stroke="currentColor"
-          strokeWidth="5"
-          style={{ animationDelay: '1.8s' }}
-        />
-        <g className="al-spin" style={{ animationDuration: '96s' }}>
-          <circle cx="400" cy="260" r="240" stroke="currentColor" strokeOpacity=".45" strokeDasharray="1 7" />
-          <circle cx="607.85" cy="380" r="4" fill="currentColor" />
-          <circle cx="192.15" cy="380" r="4" fill="currentColor" />
-          <circle cx="400" cy="20" r="4" fill="currentColor" />
+      <svg viewBox="0 0 520 520" fill="none">
+        <g className="al-spin-rev" style={{ ...aboutCentre, animationDuration: '90s' }}>
+          {/* A wide stroke with a short dash draws the ticks: each 8 long, one every 6 along the arc. */}
+          <path
+            d="M180.31 478.95A233 233 0 0 1 339.69 41.05"
+            stroke="currentColor"
+            strokeWidth="8"
+            strokeDasharray="1.2 4.8"
+          />
+          {/* A solid baseline just inside the ticks, on the same span, so the scale reads as two layers. */}
+          <path d="M182.7 472.37A226 226 0 0 1 337.3 47.63" stroke="currentColor" strokeWidth="1.5" />
         </g>
-        <g className="al-spin-rev" style={{ animationDuration: '72s' }}>
-          <circle cx="400" cy="260" r="196" stroke="currentColor" strokeOpacity=".22" />
-          <path d="M332.97 75.82A196 196 0 0 1 584.18 192.96" stroke="currentColor" strokeWidth="2" />
-          <circle cx="584.18" cy="192.96" r="9" fill="var(--al-cyan)" stroke="currentColor" strokeWidth="2" />
+        <g className="al-spin" style={{ ...aboutCentre, animationDuration: '48s' }}>
+          <path d="M84 260A176 176 0 0 1 436 260" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="436" cy="260" r="8" fill="var(--al-cyan)" stroke="currentColor" strokeWidth="2" />
         </g>
-        <g className="al-spin" style={{ animationDuration: '54s' }}>
-          <circle cx="400" cy="260" r="150" stroke="currentColor" strokeOpacity=".35" strokeDasharray="64 10 2 10" />
-          <circle cx="259.05" cy="208.7" r="6" fill="var(--al-paper)" stroke="currentColor" strokeWidth="2" />
-          <path d="M469 389.9h12m-6-6v12M469 130.1h12m-6-6v12" stroke="currentColor" />
-        </g>
-        <circle cx="400" cy="260" r="112" stroke="currentColor" strokeOpacity=".16" />
         <LogoMark size={150} y={185} className="al-art-ink" />
-        <text x="24" y="246" className="al-orbit-caption">
-          IDEAS INTO ACTION
-        </text>
-        <text x="776" y="246" className="al-orbit-caption" textAnchor="end">
-          MULTI-CHAIN · EVM
-        </text>
       </svg>
     </div>
   );

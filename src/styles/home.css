@@ -492,11 +492,6 @@ body {
   width: 100%;
   height: auto;
 }
-.al-orbit-caption {
-  font: var(--al-weight-medium) 14px var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-  fill: currentColor;
-}
 .al-hero-bottom {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
@@ -1517,12 +1512,9 @@ body {
     padding-top: var(--al-space-4);
   }
   .al-orbit {
-    width: min(100%, 560px);
+    width: min(100%, 360px);
     height: auto;
-    aspect-ratio: 800 / 520;
-  }
-  .al-orbit-caption {
-    display: none;
+    aspect-ratio: 1;
   }
   .al-hero-bottom {
     padding-top: var(--al-space-8);
