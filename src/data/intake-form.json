@@ -1,0 +1,77 @@
+{
+  "en": {
+    "language": "English",
+    "packageField": "entry.1872200031",
+    "nameField": "entry.14445218",
+    "projectField": "entry.1801814321",
+    "briefField": "entry.1897642235",
+    "packages": {
+      "launch": "Launch Sprint (5,500 USDT for four weeks)",
+      "community": "Community Growth (4,500 USDT per 30 days, including 2 hosted X Spaces AMAs)",
+      "regional": "Regional Market Entry (9,000 USDT for eight weeks)",
+      "opencrew": "OpenCrew Representation (4,000 USDT per month)",
+      "standalone": "Other standalone service (content, website, UI/UX, etc.)",
+      "choose": "Help me choose"
+    }
+  },
+  "ms": {
+    "language": "Bahasa Melayu",
+    "packageField": "entry.1526274230",
+    "nameField": "entry.503712253",
+    "projectField": "entry.686439238",
+    "briefField": "entry.574952403",
+    "packages": {
+      "launch": "Pecutan pelancaran (5,500 USDT untuk 4 minggu)",
+      "community": "Pertumbuhan komuniti (4,500 USDT setiap 30 hari, termasuk 2 sesi AMA yang kami kendalikan di X Spaces)",
+      "regional": "Kemasukan pasaran serantau (9,000 USDT untuk 8 minggu)",
+      "opencrew": "Perkhidmatan wakil projek OpenCrew (4,000 USDT sebulan)",
+      "standalone": "Perkhidmatan tunggal lain (kandungan, laman web, UI/UX dan lain-lain)",
+      "choose": "Bantu saya memilih pakej"
+    }
+  },
+  "id": {
+    "language": "Bahasa Indonesia",
+    "packageField": "entry.593617268",
+    "nameField": "entry.1658881761",
+    "projectField": "entry.995290464",
+    "briefField": "entry.848997873",
+    "packages": {
+      "launch": "Sprint peluncuran (5.500 USDT untuk 4 minggu)",
+      "community": "Pertumbuhan komunitas (4.500 USDT per 30 hari, termasuk 2 sesi AMA di X Spaces yang dipandu tim kami)",
+      "regional": "Ekspansi pasar regional (9.000 USDT untuk 8 minggu)",
+      "opencrew": "Layanan perwakilan proyek OpenCrew (4.000 USDT per bulan)",
+      "standalone": "Layanan satuan lainnya (konten, situs web, UI/UX, dan lain-lain)",
+      "choose": "Bantu saya memilih paket"
+    }
+  },
+  "vi": {
+    "language": "Tiếng Việt",
+    "packageField": "entry.1302940676",
+    "nameField": "entry.1880587206",
+    "projectField": "entry.716247923",
+    "briefField": "entry.1252381011",
+    "packages": {
+      "launch": "Triển khai ra mắt (5.500 USDT trong 4 tuần)",
+      "community": "Tăng trưởng cộng đồng (4.500 USDT mỗi 30 ngày, gồm 2 buổi AMA trên X Spaces do chúng tôi tổ chức)",
+      "regional": "Thâm nhập thị trường khu vực (9.000 USDT trong 8 tuần)",
+      "opencrew": "Dịch vụ đại diện dự án OpenCrew (4.000 USDT mỗi tháng)",
+      "standalone": "Dịch vụ riêng lẻ khác (nội dung, trang web, UI/UX, v.v.)",
+      "choose": "Tôi cần tư vấn chọn gói"
+    }
+  },
+  "zh-CN": {
+    "language": "简体中文",
+    "packageField": "entry.1781720404",
+    "nameField": "entry.606120252",
+    "projectField": "entry.460970500",
+    "briefField": "entry.1641219166",
+    "packages": {
+      "launch": "上线冲刺（5,500 USDT／4 周）",
+      "community": "社区增长（4,500 USDT／30 天，含 2 场由我们主持的 X Spaces AMA）",
+      "regional": "区域市场拓展（9,000 USDT／8 周）",
+      "opencrew": "OpenCrew 项目代表服务（4,000 USDT／月）",
+      "standalone": "其他单项服务（内容、网站、UI/UX 等）",
+      "choose": "请协助推荐适合的服务"
+    }
+  }
+}

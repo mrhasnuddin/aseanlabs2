@@ -7,7 +7,7 @@ import styles from './TeamCard.module.css';
 export const TEAM = [
   { id: 'dean', name: 'Dean', edition: '001', portrait: '/team/dean-anime.png', href: 'https://www.linkedin.com/in/hasnuddin/' },
   { id: 'leo', name: 'Leo', edition: '002', portrait: '/team/leo-anime-v2.png', href: 'https://www.linkedin.com/in/amir-leo-bb49b0325/' },
-  { id: 'irhas', name: 'Irhas', edition: '003', portrait: '/team/irhas-anime.png', href: 'https://www.linkedin.com/in/muhamad-syazwan-bahrom-162029147/' },
+  { id: 'irhas', name: 'Irhas', edition: '003', portrait: '/team/irhas-anime.png', href: 'https://www.linkedin.com/company/irhas-aseab-labs/posts/?feedView=all' },
 ] as const;
 export type MemberId = typeof TEAM[number]['id'];
 
