@@ -64,11 +64,11 @@ Corners are square. Use 1px rules to organize content. Hard shadows are reserved
 7. Team (`#team`): three stepped cards.
 8. Multi-chain and EVM feature (`#integrations`).
 9. Searchable, filterable ecosystem directory.
-10. Grouped footer. There is no separate closing CTA band on any page: the footer carries the statement and contact email, and the legacy `#contact`, `#final-cta` and `#faq` anchors land on it.
+10. Package overview and project intake, immediately before the grouped footer. The homepage `#contact` anchor lands on the intake. On secondary pages the legacy contact anchor remains at the footer; the shared navigation points to `/#contact`. The `#final-cta` and `#faq` aliases remain at the footer.
 
 ASEAN Labs is positioned as multi-chain and EVM. It is no longer tied to ENI or DAOaaS: don't describe the company as building on, for or with either, and don't add pages or sections about their products. Legal copy still mentions ENI and changes only when the owner supplies new text.
 
-Keep existing routes and deep links working. The principal contact action is `mailto:contact@aseanlabs.io`; use the same label, "Work with us", for that intent throughout the English experience. Links to partners, social channels and project websites retain their actual destinations.
+Keep existing routes and deep links working. The principal contact action is `/#contact`; use the same label, "Work with us", for that intent throughout the English experience. Keep `mailto:contact@aseanlabs.io` and the company LinkedIn available as contact alternatives. Links to partners, social channels and project websites retain their actual destinations.
 
 ## Components and behavior
 
@@ -88,6 +88,12 @@ The footer has two bands: a 28px statement, and the contact email as a button, b
 | Secondary | `.al-text-link` | Medium text with a 1px underline | Underline retracts and redraws left to right |
 
 There are only these two tiers; don't add a solid-fill or shadowed variant. Both nudge their arrow up and right on hover, and the primary scales to 0.97 on press. Pair a primary with a secondary rather than placing two primaries side by side. Long translated labels wrap inside the button instead of widening the layout.
+
+### Packages and project intake
+
+This section is the page's one ink band, so the offer stands apart from the content sections: yellow text, sand supporting copy, yellow package cards with ink text, and form controls and the primary button inverted to yellow on ink. Don't put another section on ink.
+
+The primary contact popup has been replaced by `src/components/home/ProjectIntake.tsx`, near the homepage footer. Show the four owner-supplied package names, prices and durations; media, rewards and third-party costs are separate. OpenCrew is the owner's partner for talent management and services: identify this beside the package and link to `https://open-crew.vercel.app/`. Do not invent deliverable lists. A package button preselects the matching form option and focuses the select. Standalone service and Help me choose remain available. The five required fields are name, work email, project name or website, package interest, and brief. Until the owner provides the existing form URL, the working delivery path prepares a reviewable email draft and offers a copyable brief; never claim that an enquiry has been sent. Do not introduce a third-party submission provider without the owner's selection. Keep visible labels, native validation, 16px inputs, and keyboard focus styles. On small screens stack packages and form fields. Keep the mobile menu's Work with us link; the footer email stays a direct link.
 
 ### Partner logos
 

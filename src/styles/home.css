@@ -1727,6 +1727,12 @@ body {
   padding: 0;
   list-style: none;
 }
+.al-mobile-nav .al-mobile-contact {
+  width: 100%;
+  min-height: var(--al-button);
+  margin-top: var(--al-space-6);
+  font-size: var(--al-text-ui);
+}
 .al-team-card {
   display: flex;
   flex-direction: column;

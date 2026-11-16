@@ -115,10 +115,10 @@ export function Nav() {
           <div className="al-header-language">
             <LanguageSwitcher />
           </div>
-          <a href="mailto:contact@aseanlabs.io" className="al-button al-button-sm al-header-contact">
+          <Link href="/#contact" className="al-button al-button-sm al-header-contact">
             {t('home.contact')}
             <ArrowTopRightIcon width={15} height={15} aria-hidden="true" />
-          </a>
+          </Link>
           <button
             type="button"
             className="al-menu-toggle"
@@ -159,6 +159,10 @@ export function Nav() {
             </div>
           ))}
           <LanguageSwitcher variant="mobile" />
+          <Link href="/#contact" className="al-button al-mobile-contact" onClick={() => setMobileOpen(false)}>
+            {t('home.contact')}
+            <ArrowTopRightIcon width={18} height={18} aria-hidden="true" />
+          </Link>
         </nav>
       )}
     </header>

@@ -10,8 +10,9 @@ import { OrbitArtwork } from './OrbitArtwork';
 import { CapabilityArtwork, NetworkArtwork } from './CapabilityArtwork';
 import { TEAM, TeamCard } from './TeamCard';
 import { CountUp, Reveal, SplitText } from './Motion';
+import { ProjectIntake } from './ProjectIntake';
 
-const CONTACT = 'mailto:contact@aseanlabs.io';
+const CONTACT = '#contact';
 const CAPABILITIES = [
   { id: 'strategy', title: 'strategy', services: ['02'], kind: 'strategy' },
   { id: 'creative', title: 'creative', services: ['03', '04'], kind: 'creative' },
@@ -468,6 +469,7 @@ export function HomePage() {
         <TeamSection />
         <NetworkSection />
         <EcosystemSection />
+        <ProjectIntake />
       </main>
     </div>
   );

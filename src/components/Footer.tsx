@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ArrowTopRightIcon, ArrowUpIcon } from '@radix-ui/react-icons';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -34,9 +35,10 @@ const columns = [
 
 export function Footer() {
   const { t } = useTranslation();
+  const { pathname } = useRouter();
   return (
     <footer className="al-footer" id="footer">
-      <span id="contact" className="al-anchor-alias" />
+      {pathname !== '/' && <span id="contact" className="al-anchor-alias" />}
       <span id="final-cta" className="al-anchor-alias" />
       <span id="faq" className="al-anchor-alias" />
       <div className="al-container">
