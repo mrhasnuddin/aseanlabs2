@@ -1740,6 +1740,12 @@ body {
   flex-direction: column;
   border: var(--al-border-strong);
 }
+.al-team-collection > li:nth-child(2) { margin-top: var(--al-space-12); }
+.al-team-collection > li:nth-child(3) { margin-top: var(--al-space-24); }
+@media (max-width: 1000px) {
+  .al-team-collection > li:nth-child(n) { margin-top: 0; }
+  .al-team-collection { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+}
 .al-team-card:nth-child(1) {
   background: var(--al-ink);
   color: var(--al-yellow);

@@ -8,15 +8,10 @@ import { PROJECTS } from '@/data/ecosystem';
 import { PARTNERS } from '@/data/partners';
 import { OrbitArtwork } from './OrbitArtwork';
 import { CapabilityArtwork, NetworkArtwork } from './CapabilityArtwork';
-import { TeamAvatar } from './TeamAvatar';
+import { TEAM, TeamCard } from './TeamCard';
 import { CountUp, Reveal, SplitText } from './Motion';
 
 const CONTACT = 'mailto:contact@aseanlabs.io';
-const TEAM = [
-  { id: 'dean', name: 'Dean', href: 'https://www.linkedin.com/in/hasnuddin/' },
-  { id: 'leo', name: 'Leo', href: 'https://www.linkedin.com/in/amir-leo-bb49b0325/' },
-  { id: 'irhas', name: 'Irhas', href: 'https://www.linkedin.com/in/muhamad-syazwan-bahrom-162029147/' },
-] as const;
 const CAPABILITIES = [
   { id: 'strategy', title: 'strategy', services: ['02'], kind: 'strategy' },
   { id: 'creative', title: 'creative', services: ['03', '04'], kind: 'creative' },
@@ -304,25 +299,10 @@ function TeamSection() {
           </h2>
           <p>{t('home.teamBody')}</p>
         </Reveal>
-        <ul className="al-team-grid">
+        <ul className="al-team-grid al-team-collection">
           {TEAM.map((member) => (
-            <li key={member.id} className="al-team-card">
-              <TeamAvatar id={member.id} />
-              <div className="al-team-body">
-                <p className="al-small-label">{t(`team.${member.id}Role`)}</p>
-                <h3>{member.name}</h3>
-                <p>{t(`team.${member.id}Bio`)}</p>
-              </div>
-              <a
-                href={member.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="al-button"
-                aria-label={`${member.name}, LinkedIn`}
-              >
-                LinkedIn
-                <ArrowTopRightIcon width={18} height={18} aria-hidden="true" />
-              </a>
+            <li key={member.id}>
+              <TeamCard id={member.id} />
             </li>
           ))}
         </ul>
