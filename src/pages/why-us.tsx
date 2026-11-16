@@ -220,7 +220,6 @@ export default function WhyUsPage() {
     <PageShell title={t('why.pageTitle')} description={t('why.pageDesc')}>
       <PageIntro
         crumb={t('nav.whyUs')}
-        eyebrow={t('why.badge')}
         title={t('why.titlePart1')}
         highlight={t('why.titleHighlight')}
         motif={<WhyMotif />}

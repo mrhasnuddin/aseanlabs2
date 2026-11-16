@@ -48,9 +48,6 @@
 .al-breadcrumb [aria-current] {
   color: var(--al-ink);
 }
-.al-page-intro .al-eyebrow {
-  margin-bottom: var(--al-space-4);
-}
 .al-page-intro h1 {
   max-width: 18em;
   margin-inline: auto;
@@ -301,7 +298,7 @@
   background: var(--al-yellow);
   font: var(--al-text-label) var(--al-mono);
 }
-/* A ring pings out of each node in turn (--i), so a pulse travels 01 to 05 along the line. */
+/* A ring pings out of each node in turn (--i), carrying a pulse along the line. */
 .al-step-node::after {
   content: '';
   position: absolute;
@@ -502,10 +499,6 @@
   gap: var(--al-space-4) var(--al-space-6);
   margin-bottom: var(--al-space-12);
 }
-.al-brand-heading > span {
-  font: var(--al-text-label) var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-}
 .al-brand-heading h2 {
   font-size: var(--al-text-h2);
   line-height: var(--al-leading-heading);
@@ -523,10 +516,6 @@
 .al-brand-note + *,
 * + .al-brand-note {
   margin-top: var(--al-space-8);
-}
-.al-trait-label {
-  display: block;
-  margin-bottom: var(--al-space-4);
 }
 .al-logo-grid {
   display: grid;
@@ -709,6 +698,11 @@
 .al-legal p + p,
 .al-legal ul + p {
   margin-top: var(--al-space-4);
+}
+.al-legal .al-legal-updated {
+  margin-bottom: var(--al-space-6);
+  font-size: var(--al-text-label);
+  color: var(--al-muted);
 }
 .al-legal ul {
   margin: var(--al-space-3) 0 0;

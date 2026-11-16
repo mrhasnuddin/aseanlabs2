@@ -12,7 +12,6 @@ export default function ProcessPage() {
     <PageShell title={t('process.pageTitle')} description={t('process.pageDesc')}>
       <PageIntro
         crumb={t('nav.process')}
-        eyebrow={t('process.badge')}
         title={t('process.titlePart1')}
         highlight={t('process.titleHighlight')}
         motif={<ProcessMotif />}
@@ -29,9 +28,8 @@ export default function ProcessPage() {
             {STEPS.map((n, i) => (
               <li className="al-step" key={n} style={{ '--i': i } as React.CSSProperties}>
                 <span className="al-step-node" aria-hidden="true">
-                  {n}
                 </span>
-                {/* Dictionary titles carry their own "01 —" prefix; the node already shows it. */}
+                {/* Keep translated titles free of decorative step prefixes. */}
                 <h3>{t(`process.step${n}Title`).replace(/^\d+\s*[—–-]\s*/, '')}</h3>
                 <p>{t(`process.step${n}Desc`)}</p>
               </li>
@@ -50,9 +48,6 @@ export default function ProcessPage() {
           <div className="al-process-grid">
             {[1, 2, 3].map((i) => (
               <Reveal key={i} className="al-process-step">
-                <div className="al-process-step-top">
-                  <span>0{i}</span>
-                </div>
                 <h3>{t(`process.standard${i}Title`)}</h3>
                 <p>{t(`process.standard${i}Desc`)}</p>
               </Reveal>

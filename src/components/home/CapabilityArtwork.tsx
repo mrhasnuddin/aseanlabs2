@@ -331,6 +331,24 @@ export function ProcessMotif() {
   );
 }
 
+/* /events: an event pass hanging from a pin and swaying like a lanyard badge. The pin stays put;
+   the straps and the pass swing about it. */
+export function EventsMotif() {
+  return (
+    <div className="al-page-motif al-motion" aria-hidden="true">
+      <svg viewBox="0 0 240 240" fill="none">
+        <g className="al-motif-sway">
+          <path d="M120 12L98 66M120 12L142 66" stroke="currentColor" strokeWidth="2" />
+          <rect x="56" y="66" width="128" height="164" fill="currentColor" />
+          <Clover size={72} x={84} y={96} {...inverse} />
+          <path d="M82 194h76M82 208h46" stroke="var(--al-yellow)" strokeWidth="3" />
+        </g>
+        <circle cx="120" cy="12" r="7" fill="var(--al-cyan)" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    </div>
+  );
+}
+
 /* /brand: a design-tool moment. The selection box around the Sparkle scales out and back as if
    resized, then the Sparkle snaps a quarter turn; its four arms make each turn land seamlessly. */
 export function BrandMotif() {

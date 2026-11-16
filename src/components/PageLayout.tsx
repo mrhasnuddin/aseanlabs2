@@ -14,11 +14,13 @@ export function PageShell({
   title,
   description,
   children,
-}: Children & { title: string; description: string }) {
+  shareImage,
+  article = false,
+}: Children & { title: string; description: string; shareImage?: { src: string; alt: string; width: number; height: number }; article?: boolean }) {
   const { t } = useTranslation();
   return (
     <>
-      <Seo title={title} description={description} />
+      <Seo title={title} description={description} image={shareImage?.src} imageAlt={shareImage?.alt} imageWidth={shareImage?.width} imageHeight={shareImage?.height} type={article ? 'article' : 'website'} />
       <a className="al-skip-link" href="#main-content">
         {t('home.skipContent')}
       </a>
@@ -35,17 +37,17 @@ export function PageShell({
 
 export function PageIntro({
   crumb,
-  eyebrow,
   title,
   highlight,
   motif,
+  parents = [],
   children,
 }: Children & {
   crumb: string;
-  eyebrow?: string;
   title: string;
   highlight?: string;
   motif?: React.ReactNode;
+  parents?: { label: string; href: string }[];
 }) {
   const { t } = useTranslation();
   return (
@@ -55,12 +57,12 @@ export function PageIntro({
           <li>
             <Link href="/">ASEAN Labs</Link>
           </li>
+          {parents.map((parent) => <li key={parent.href}><Link href={parent.href}>{parent.label}</Link></li>)}
           <li aria-current="page">{crumb}</li>
         </ol>
       </nav>
       <div className="al-page-intro-main">
         {motif}
-        {eyebrow && <p className="al-eyebrow al-load-fade">{eyebrow}</p>}
         <h1 className="al-split-load">
           <SplitText text={title} />
           {highlight && (
@@ -121,10 +123,11 @@ export function LegalPage({
   const email = 'Info@aseanlabs.io';
   return (
     <PageShell title={t(`${ns}.pageTitle`)} description={t(`${ns}.pageDesc`)}>
-      <PageIntro crumb={crumb} eyebrow={t(`${ns}.lastUpdated`)} title={title} motif={motif} />
+      <PageIntro crumb={crumb} title={title} motif={motif} />
       <div className="al-container al-legal-layout">
         <p className="al-legal-aside">{t(`${ns}.introText`)}</p>
         <div className="al-legal">
+          <p className="al-legal-updated">{t(`${ns}.lastUpdated`)}</p>
           {children}
           <div className="al-legal-contact">
             <div>

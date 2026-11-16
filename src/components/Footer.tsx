@@ -10,6 +10,7 @@ const columns = [
     links: [
       ['nav.aboutUs', '/#about'],
       ['nav.team', '/#team'],
+      ['events.nav', '/events'],
       ['nav.whyUs', '/why-us'],
       ['nav.process', '/process'],
       ['nav.brand', '/brand'],

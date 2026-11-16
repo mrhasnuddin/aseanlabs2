@@ -576,4 +576,964 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/terms-of-service"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/terms-of-service"/>
   </url>
+  <url>
+    <loc>https://aseanlabs.io/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/aisem-selangor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/aisem-selangor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/aisem-selangor"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/changsha</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/changsha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/changsha"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/hangzhou</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/hangzhou"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/hangzhou"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/bali</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/bali"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/bali"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/chain-of-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/chain-of-trust"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/chain-of-trust"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/gala</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/gala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/gala"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/paygo-meetup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/paygo-meetup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/paygo-meetup"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/nova-mexc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/nova-mexc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/nova-mexc"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ms/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/id/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-TW/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/zh-CN/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/vi/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ja/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
+  <url>
+    <loc>https://aseanlabs.io/ko/events/blockchain-evolution</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aseanlabs.io/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aseanlabs.io/ms/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aseanlabs.io/id/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aseanlabs.io/zh-TW/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://aseanlabs.io/zh-CN/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aseanlabs.io/vi/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aseanlabs.io/ja/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aseanlabs.io/ko/events/blockchain-evolution"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aseanlabs.io/events/blockchain-evolution"/>
+  </url>
 </urlset>

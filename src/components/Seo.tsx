@@ -16,14 +16,17 @@ const OG_LOCALES: Record<string, string> = {
 };
 
 /* Title, description, canonical, language alternates and share-card tags for every page. */
-export function Seo({ title, description }: { title: string; description: string }) {
+export function Seo({ title, description, image: suppliedImage, imageAlt: suppliedAlt, imageWidth = 1200, imageHeight = 630, type = 'website' }: {
+  title: string; description: string; image?: string; imageAlt?: string;
+  imageWidth?: number; imageHeight?: number; type?: 'website' | 'article';
+}) {
   const { t } = useTranslation();
   const { asPath, locale = 'en', locales = ['en'], defaultLocale = 'en' } = useRouter();
   const path = asPath.split(/[?#]/)[0].replace(/\/$/, '');
   const urlFor = (l: string) => `${SITE_URL}${l === defaultLocale ? '' : `/${l}`}${path}`;
   const url = urlFor(locale);
-  const image = `${SITE_URL}/og-image.png`;
-  const imageAlt = `ASEAN Labs: ${t('hero.headline')}`;
+  const image = suppliedImage ? (suppliedImage.startsWith('/') ? `${SITE_URL}${suppliedImage}` : suppliedImage) : `${SITE_URL}/og-image.png`;
+  const imageAlt = suppliedAlt ?? `ASEAN Labs: ${t('hero.headline')}`;
 
   return (
     <Head>
@@ -35,15 +38,15 @@ export function Seo({ title, description }: { title: string; description: string
       ))}
       <link rel="alternate" hrefLang="x-default" href={urlFor(defaultLocale)} />
 
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:site_name" content="ASEAN Labs" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:locale" content={OG_LOCALES[locale] ?? 'en_US'} />
       <meta property="og:image" content={image} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content={String(imageWidth)} />
+      <meta property="og:image:height" content={String(imageHeight)} />
       <meta property="og:image:alt" content={imageAlt} />
 
       <meta name="twitter:card" content="summary_large_image" />

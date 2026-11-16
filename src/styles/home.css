@@ -117,8 +117,8 @@ body {
   line-height: var(--al-leading-heading);
   letter-spacing: var(--al-tracking-heading);
 }
-.al-section-heading > p:not(.al-eyebrow),
-.al-network-copy > p:not(.al-eyebrow),
+.al-section-heading > p,
+.al-network-copy > p,
 .al-about-copy p {
   max-width: var(--al-measure);
   margin-top: var(--al-space-4);
@@ -126,7 +126,6 @@ body {
   line-height: var(--al-leading-lead);
   color: var(--al-muted);
 }
-.al-eyebrow,
 .al-small-label {
   font-family: var(--al-mono);
   font-size: var(--al-text-label);
@@ -134,10 +133,6 @@ body {
   line-height: var(--al-leading-ui);
   letter-spacing: var(--al-tracking-label);
   text-transform: uppercase;
-}
-.al-section-heading .al-eyebrow,
-.al-network-copy .al-eyebrow {
-  margin-bottom: var(--al-space-4);
 }
 /* Two CTA tiers. Primary: ink outline that fills from the bottom on hover. Secondary: underlined text link. */
 .al-button {
@@ -503,9 +498,6 @@ body {
 .al-hero-copy {
   max-width: 640px;
 }
-.al-hero-copy .al-eyebrow {
-  margin-bottom: var(--al-space-4);
-}
 .al-hero-copy h1 {
   max-width: 620px;
   font-size: var(--al-text-display);
@@ -517,9 +509,6 @@ body {
   margin-block: var(--al-space-4) var(--al-space-8);
   font-size: var(--al-text-lead);
   line-height: var(--al-leading-lead);
-}
-.al-hero-index .al-small-label {
-  margin-bottom: var(--al-space-3);
 }
 .al-hero-index a {
   min-height: var(--al-control);
@@ -629,14 +618,6 @@ body {
 .al-cap-community,
 .al-cap-expansion {
   grid-column: span 3;
-}
-.al-cap-number {
-  position: absolute;
-  top: var(--al-space-6);
-  left: var(--al-space-8);
-  font: var(--al-text-label) var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-  z-index: 1;
 }
 .al-cap-art {
   position: relative;
@@ -789,11 +770,6 @@ body {
   letter-spacing: var(--al-tracking-heading);
   text-align: left;
 }
-.al-audience-index {
-  width: 32px;
-  font: var(--al-text-label) var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-}
 .al-audience-row h3 button > svg {
   margin-left: auto;
 }
@@ -801,7 +777,7 @@ body {
   box-shadow: inset 3px 0 0 var(--al-ink);
 }
 .al-audience-detail-body {
-  padding: 0 var(--al-space-12) var(--al-space-6) 64px;
+  padding: 0 var(--al-space-4) var(--al-space-6);
 }
 .al-audience-detail p {
   max-width: 28rem;
@@ -825,11 +801,6 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: var(--al-space-8);
-}
-.al-process-step-top > span {
-  font: var(--al-text-label) var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-  text-transform: uppercase;
 }
 .al-process-step h3 {
   margin-bottom: var(--al-space-3);
@@ -1286,6 +1257,24 @@ body {
     transform: rotate(90deg);
   }
 }
+/* Events motif: the pass swings about its pin like a pendulum. */
+.al-motif-sway {
+  transform-box: view-box;
+  transform-origin: 120px 12px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .al-motif-sway {
+    animation: al-sway 3.2s var(--al-ease-in-out) infinite alternate;
+  }
+}
+@keyframes al-sway {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
 @keyframes al-underline {
   0% {
     transform: scaleX(1);
@@ -1464,9 +1453,6 @@ body {
   .al-cap-detail-body {
     padding-inline: var(--al-space-6);
   }
-  .al-cap-number {
-    left: var(--al-space-6);
-  }
   .al-cap-toggle {
     padding-inline: var(--al-space-6);
   }
@@ -1525,9 +1511,6 @@ body {
   .al-hero-index {
     width: 100%;
     max-width: 460px;
-  }
-  .al-hero-index .al-small-label {
-    display: none;
   }
   .al-marquee a {
     height: 88px;
@@ -1614,7 +1597,7 @@ body {
     gap: var(--al-space-2);
   }
   .al-audience-detail-body {
-    padding: 0 var(--al-space-6) var(--al-space-6) 52px;
+    padding: 0 var(--al-space-3) var(--al-space-6);
   }
   .al-process-grid {
     grid-template-columns: 1fr;

@@ -12,6 +12,7 @@ const groups = [
     links: [
       ['nav.aboutUs', '/#about'],
       ['nav.team', '/#team'],
+      ['events.nav', '/events'],
       ['nav.whyUs', '/why-us'],
       ['nav.process', '/process'],
     ],

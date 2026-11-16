@@ -1,0 +1,92 @@
+[
+  {
+    "name": "GameSpace",
+    "logo": "/events/partners/gamespace.png",
+    "theme": "dark"
+  },
+  {
+    "name": "EUFT",
+    "logo": "/events/partners/euft.png",
+    "theme": "dark",
+    "logoWidth": 73,
+    "logoHeight": 27
+  },
+  {
+    "name": "Kripto101",
+    "url": "https://kripto101.0xme.dev/",
+    "logo": "/events/partners/kripto101.png",
+    "theme": "dark"
+  },
+  {
+    "name": "MyDAC Malaysia",
+    "url": "https://www.mydac.org.my/en",
+    "logo": "/events/partners/mydac-malaysia.svg",
+    "theme": "light"
+  },
+  {
+    "name": "LEJIEND",
+    "url": "https://lejiend.com/",
+    "logo": "/events/partners/lejiend.png",
+    "theme": "light"
+  },
+  {
+    "name": "DAOaaS",
+    "url": "https://daoaas.io/",
+    "logo": "/events/partners/daoaas.png",
+    "theme": "dark"
+  },
+  {
+    "name": "Pionex",
+    "url": "https://www.pionex.com/en",
+    "logo": "/events/partners/pionex.png",
+    "theme": "light"
+  },
+  {
+    "name": "9Bit",
+    "url": "https://the9bit.com/",
+    "logo": "/events/partners/9bit.svg",
+    "theme": "dark"
+  },
+  {
+    "name": "CCACC",
+    "url": "https://www.ccacc.io/",
+    "logo": "/events/partners/ccacc.png",
+    "theme": "dark"
+  },
+  {
+    "name": "Fableration",
+    "url": "https://fableration.com/",
+    "logo": "/events/partners/fableration.svg",
+    "theme": "light"
+  },
+  {
+    "name": "MySekolahKripto",
+    "url": "https://www.linkedin.com/company/sekolahkripto/home/",
+    "logo": "/events/partners/mysekolahkripto.jpg",
+    "theme": "white"
+  },
+  {
+    "name": "MDEC",
+    "url": "https://www.mdec.my/",
+    "logo": "/events/partners/mdec.svg",
+    "theme": "light"
+  },
+  {
+    "name": "PayGo",
+    "url": "https://www.paygo.ac/",
+    "logo": "/events/partners/paygo.png",
+    "theme": "light"
+  },
+  {
+    "name": "Finweek KL",
+    "url": "https://finweek.my/",
+    "logo": "/events/partners/finweek-kl.png",
+    "theme": "light"
+  },
+  {
+    "name": "MEXC",
+    "url": "https://www.mexc.com/",
+    "logo": "/events/partners/mexc.svg",
+    "theme": "dark"
+  }
+]

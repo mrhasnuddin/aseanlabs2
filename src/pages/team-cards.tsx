@@ -8,8 +8,8 @@ export default function TeamCards() {
   return <>
     <Head><title>Core team collection | ASEAN Labs</title><meta name="robots" content="noindex" /></Head>
     <main className={styles.page}>
-      <nav className={styles.nav} aria-label="Preview navigation"><Link href="/"><ArrowLeftIcon aria-hidden="true" /> Back to ASEAN Labs</Link><span>CORE TEAM COLLECTION / 01</span></nav>
-      <header className={styles.heading}><p>ASEANLABS / THE CORE TEAM</p><h1>The people<br />behind the work.</h1><div>Builders with different strengths.<br />One team getting things shipped.</div></header>
+      <nav className={styles.nav} aria-label="Preview navigation"><Link href="/"><ArrowLeftIcon aria-hidden="true" /> Back to ASEAN Labs</Link></nav>
+      <header className={styles.heading}><h1>The people<br />behind the work.</h1><div>Builders with different strengths.<br />One team getting things shipped.</div></header>
       <ul className={styles.collection}>
         {TEAM.map((member) => <li key={member.id}>
           <TeamCard id={member.id} />

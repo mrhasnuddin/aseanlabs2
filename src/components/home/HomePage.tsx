@@ -11,6 +11,7 @@ import { CapabilityArtwork, NetworkArtwork } from './CapabilityArtwork';
 import { TEAM, TeamCard } from './TeamCard';
 import { CountUp, Reveal, SplitText } from './Motion';
 import { ProjectIntake } from './ProjectIntake';
+import { EventsSection } from '@/components/events/EventsSection';
 
 const CONTACT = '#contact';
 const CAPABILITIES = [
@@ -37,7 +38,6 @@ export function HeroSection() {
       </div>
       <div className="al-hero-bottom al-container">
         <div className="al-hero-copy">
-          <p className="al-eyebrow al-load-fade">{t('hero.tagline')}</p>
           <h1 id="hero-title" className="al-split-load">
             <SplitText text={t('hero.headline')} />
           </h1>
@@ -50,7 +50,6 @@ export function HeroSection() {
           </div>
         </div>
         <nav className="al-hero-index al-load-fade" aria-label={t('home.exploreLabel')}>
-          <p className="al-small-label">{t('home.exploreLabel')}</p>
           {links.map(([id, label]) => (
             <a key={id} href={`#${id}`}>
               <span>{t(label)}</span>
@@ -144,23 +143,19 @@ function CapabilitiesSection() {
     >
       <div className="al-container">
         <Reveal className="al-section-heading">
-          <p className="al-eyebrow">{t('services.badge')}</p>
           <h2 id="capabilities-title">
             <SplitText text={t('home.capabilitiesTitle')} />
           </h2>
           <p>{t('home.capabilitiesBody')}</p>
         </Reveal>
         <div className="al-cap-grid">
-          {CAPABILITIES.map((cap, index) => {
+          {CAPABILITIES.map((cap) => {
             const open = selected === cap.id;
             return (
               <article
                 className={`al-cap-cell al-cap-${cap.id}${open ? ' is-open' : ''}`}
                 key={cap.id}
               >
-                <span className="al-cap-number" aria-hidden="true">
-                  0{index + 1}
-                </span>
                 <CapabilityArtwork kind={cap.kind} />
                 <div className="al-cap-content">
                   <h3>{t(`home.${cap.title}Title`)}</h3>
@@ -212,7 +207,6 @@ function NetworkSection() {
     <section id="integrations" className="al-network" aria-labelledby="network-title">
       <div className="al-container al-network-layout" id="foundation-section-wrapper">
         <Reveal className="al-network-copy">
-          <p className="al-eyebrow">Multi-chain · EVM</p>
           <h2 id="network-title">
             <SplitText text={t('home.networkTitle')} />
           </h2>
@@ -247,7 +241,7 @@ function AudienceSection() {
           </Link>
         </Reveal>
         <div className="al-audience-list">
-          {(['builders', 'ecosystem', 'enterprise'] as const).map((kind, index) => {
+          {(['builders', 'ecosystem', 'enterprise'] as const).map((kind) => {
             const open = active === kind;
             return (
               <div key={kind} className={`al-audience-row${open ? ' is-open' : ''}`}>
@@ -258,7 +252,6 @@ function AudienceSection() {
                     aria-expanded={open}
                     aria-controls={`audience-${kind}`}
                   >
-                    <span className="al-audience-index">0{index + 1}</span>
                     <span>{t(`audience.${kind}Title`)}</span>
                     <PlusIcon className="al-plus" width={22} height={22} aria-hidden="true" />
                   </button>
@@ -328,7 +321,6 @@ function ProcessSection() {
           {symbols.map((Symbol, i) => (
             <Reveal key={i} className="al-process-step">
               <div className="al-process-step-top">
-                <span>0{i + 1}</span>
                 <Symbol size={44} className="al-step-symbol" aria-hidden="true" />
               </div>
               <h3>{t(`home.process${i + 1}Title`)}</h3>
@@ -469,6 +461,7 @@ export function HomePage() {
         <TeamSection />
         <NetworkSection />
         <EcosystemSection />
+        <EventsSection />
         <ProjectIntake />
       </main>
     </div>

@@ -218,7 +218,6 @@ function BrandSection({
     <section className="al-section" aria-labelledby={`brand-${index}`}>
       <div className="al-container">
         <Reveal className="al-brand-heading">
-          <span>{index}</span>
           <h2 id={`brand-${index}`}>
             <SplitText text={title} />
           </h2>
@@ -267,7 +266,6 @@ export default function BrandIdentityPage() {
         <div className="al-process-grid">
           {[1, 2, 3].map((i) => (
             <div className="al-process-step" key={i}>
-              <span className="al-small-label al-trait-label">{t(`brand.personality${i}Sub`)}</span>
               <h3>{t(`brand.personality${i}Title`)}</h3>
               <p>{t(`brand.personality${i}Desc`)}</p>
             </div>
@@ -309,7 +307,6 @@ export default function BrandIdentityPage() {
       <BrandSection index="04" title={t('brand.typographyTitle')}>
         <div className="al-type-grid">
           <div className="al-type-card">
-            <span className="al-small-label">{t('brand.primaryTypeface')}</span>
             <h3 className="al-type-name">{t('brand.primaryTypefaceName')}</h3>
             <p>{t('brand.primaryTypefaceDesc')}</p>
             <div className="al-type-samples">
@@ -328,7 +325,6 @@ export default function BrandIdentityPage() {
             />
           </div>
           <div className="al-type-card al-type-mono">
-            <span className="al-small-label">{t('brand.secondaryTypeface')}</span>
             <h3 className="al-type-name">{t('brand.secondaryTypefaceName')}</h3>
             <p>{t('brand.secondaryTypefaceDesc')}</p>
             <div className="al-type-samples">

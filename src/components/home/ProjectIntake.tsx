@@ -39,13 +39,11 @@ export function ProjectIntake() {
   return <section id="packages" className={`al-section ${styles.section}`} aria-labelledby="packages-title">
     <div className="al-container">
       <header className={styles.heading}>
-        <div><p className="al-small-label">{t('intake.packagesLabel')}</p><h2 id="packages-title">{t('intake.packagesTitle')}</h2></div>
-        <p>{t('intake.packagesBody')}</p>
+        <h2 id="packages-title">{t('intake.packagesTitle')}</h2>
       </header>
       <ul className={styles.packages}>
-        {PACKAGES.map((item, index) => <li key={item.id}>
+        {PACKAGES.map((item) => <li key={item.id}>
           <svg className={styles.shape} viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">{SHAPES[item.id]}</svg>
-          <span className={styles.index}>0{index + 1}</span>
           <h3>{item.name}</h3>
           <p className={styles.description}>{item.id === 'opencrew' ? <><a href="https://open-crew.vercel.app/" target="_blank" rel="noopener noreferrer">OpenCrew<ArrowTopRightIcon aria-hidden="true" /></a> {t('intake.opencrewPartner')}</> : t(`intake.${item.id}Desc`)}</p>
           <div className={styles.price}><strong>{item.price}</strong><span>USDT</span></div>
@@ -58,19 +56,17 @@ export function ProjectIntake() {
       <p className={styles.feeNote}>{t('intake.feeNote')}</p>
       <div id="contact" className={styles.intake}>
         <div className={styles.intro}>
-          <p className="al-small-label">{t('intake.briefLabel')}</p>
           <h2 id="intake-title">{t('intake.title')}</h2>
           <p>{t('intake.body')}</p>
         </div>
         <div className={styles.contact}>
           <a className="al-button" href={buildIntakeUrl(locale)} target="_blank" rel="noopener noreferrer">{t('intake.contactCta')}<ArrowTopRightIcon aria-hidden="true" /></a>
           <p className={styles.formHint}>{t('intake.formNote')}</p>
-          <p className={styles.privacy}>{t('intake.privacyNote')} <Link href="/privacy-policy">{t('footer.privacyPolicy')}</Link>.</p>
-          <div className={styles.alternatives}>
-            <p>{t('intake.alternative')}</p>
-            <a href={`mailto:${EMAIL}`} className="al-text-link">{EMAIL}<ArrowTopRightIcon aria-hidden="true" /></a>
-            <a href="https://www.linkedin.com/company/107538116/" className="al-text-link" target="_blank" rel="noopener noreferrer">{t('contact.linkedin')}<ArrowTopRightIcon aria-hidden="true" /></a>
-          </div>
+          <p className={styles.privacy}><Link href="/privacy-policy">{t('footer.privacyPolicy')}</Link></p>
+        </div>
+        <div className={styles.alternatives}>
+          <a href={`mailto:${EMAIL}`} className="al-text-link">{EMAIL}<ArrowTopRightIcon aria-hidden="true" /></a>
+          <a href="https://www.linkedin.com/company/107538116/" className="al-text-link" target="_blank" rel="noopener noreferrer">{t('contact.linkedin')}<ArrowTopRightIcon aria-hidden="true" /></a>
         </div>
       </div>
     </div>
