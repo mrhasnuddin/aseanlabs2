@@ -16,3 +16,7 @@ docs/research/
 
 # Local design-critique snapshots
 .impeccable/
+
+# Build cache and local preview output
+tsconfig.tsbuildinfo
+output/
