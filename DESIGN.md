@@ -31,7 +31,7 @@ The existing Tailwind color aliases remain for secondary pages. New components m
 | `--al-muted`  | `#554724` | Supporting copy: warm ink at 72% on yellow, 5.4:1 contrast |
 | `--al-rule`   | `#9C792E` | Structural dividers on the yellow canvas                   |
 
-`--al-surface` resolves to `--al-yellow`. All page and section backgrounds, header/footer, menus, capability cards, expanded details, and directory controls use this canvas. Distinguish sections through spacing, typography, and ink rules rather than alternate background bands. Cyan and paper are limited to small illustration details. Ink action fills and subtle ink hover tints remain available for clear interaction feedback.
+`--al-surface` resolves to `--al-yellow`. All page and section backgrounds, header/footer, menus, capability cards, and directory controls use this canvas. The one exception inside a card is an opened capability panel, which fills ink with yellow headings and sand copy so the expanded card stands apart. Distinguish sections through spacing, typography, and ink rules rather than alternate background bands. Cyan and paper are limited to small illustration details. Ink action fills and subtle ink hover tints remain available for clear interaction feedback.
 
 Use Lexend for headings, navigation and body text; it was chosen for reading ease across all eight languages. Use Roboto Mono for small functional labels, numerical steps, and illustration annotations. Both load through `next/font/google` in `_app.tsx`, which self-hosts them at build time with Latin, Latin Extended and Vietnamese subsets, and set `--al-font` / `--al-mono`. The ASEAN LABS wordmark stays in Space Grotesk because it is the logotype; only its Latin file remains in `public/fonts/` with its license notice. Icons come from `@radix-ui/react-icons`; don't add a second icon set.
 
@@ -105,7 +105,7 @@ After Gravity's hero: the original mark, still, inside exactly two half-circle a
 
 ### Capabilities
 
-The desktop mosaic uses three cells followed by two wider cells. Each group has an explanatory SVG, outcome-oriented copy, original service labels, and a details disclosure. Details must preserve the services' meaning. Tablet layouts use two columns; small screens use one. Every disclosure uses a native button, `aria-expanded`, and a corresponding controlled panel.
+The desktop mosaic uses three cells followed by two wider cells. Each group has an explanatory SVG, outcome-oriented copy, and a details disclosure; the service names appear only inside the opened panel. Details must preserve the services' meaning. Tablet layouts use two columns; small screens use one. Every disclosure uses a native button, `aria-expanded`, and a corresponding controlled panel.
 
 ### Audiences
 

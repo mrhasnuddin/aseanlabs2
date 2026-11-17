@@ -667,16 +667,6 @@ body {
   line-height: var(--al-leading-body);
   color: var(--al-muted);
 }
-.al-cap-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--al-space-2) var(--al-space-4);
-  margin-top: var(--al-space-6);
-  font: var(--al-text-label) / var(--al-leading-ui) var(--al-mono);
-  letter-spacing: var(--al-tracking-label);
-  text-transform: uppercase;
-  color: var(--al-muted);
-}
 .al-cap-toggle {
   display: flex;
   align-items: center;
@@ -694,9 +684,22 @@ body {
   background: var(--al-ink);
   color: var(--al-yellow);
 }
+/* The open panel is ink, so the expanded card reads apart from its neighbours. */
 .al-cap-detail {
-  background: var(--al-surface);
+  border-top: 1px solid #f4bf4b40;
+  background: var(--al-ink);
+  color: var(--al-yellow);
   line-height: var(--al-leading-body);
+}
+.al-cap-detail p {
+  color: var(--al-sand);
+}
+.al-home .al-cap-detail :focus-visible,
+.al-home .al-cap-cell.is-open .al-cap-toggle:focus-visible {
+  outline-color: var(--al-yellow);
+}
+.al-home .al-cap-cell.is-open .al-cap-toggle:focus-visible {
+  outline-offset: -4px;
 }
 /* Padding sits inside the .al-collapse clip so the closed panel is exactly 0px high. */
 .al-cap-detail-body {

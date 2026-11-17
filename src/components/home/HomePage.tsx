@@ -160,11 +160,6 @@ function CapabilitiesSection() {
                 <div className="al-cap-content">
                   <h3>{t(`home.${cap.title}Title`)}</h3>
                   <p>{t(`home.${cap.title}Body`)}</p>
-                  <div className="al-cap-meta">
-                    {cap.services.map((n) => (
-                      <span key={n}>{t(`services.svc${n}Title`)}</span>
-                    ))}
-                  </div>
                 </div>
                 <button
                   type="button"
