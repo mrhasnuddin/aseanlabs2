@@ -62,7 +62,7 @@ Corners are square. Use 1px rules to organize content. Hard shadows are reserved
 5. Five capability groups covering all nine existing services.
 6. Three-part summary of the existing engagement process.
 7. Team (`#team`): three stepped cards.
-8. Multi-chain and EVM feature (`#integrations`).
+8. Multi-chain and EVM feature (`#integrations`), featuring Hevium (`https://hevium.xyz/`) as ASEAN Labs' official DEX partner (also listed in the partner marquee, ecosystem directory, capabilities development panel, and Services navigation).
 9. Searchable, filterable ecosystem directory.
 10. Package overview and project intake, immediately before the grouped footer. The homepage `#contact` anchor lands on the intake. On secondary pages the legacy contact anchor remains at the footer; the shared navigation points to `/#contact`. The `#final-cta` and `#faq` aliases remain at the footer.
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon, ArrowTopRightIcon, ChevronDownIcon, MagnifyingGlassIcon, PlusIcon } from '@radix-ui/react-icons';
@@ -7,7 +7,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { PROJECTS } from '@/data/ecosystem';
 import { PARTNERS } from '@/data/partners';
 import { OrbitArtwork } from './OrbitArtwork';
-import { CapabilityArtwork, NetworkArtwork } from './CapabilityArtwork';
+import { CapabilityArtwork, HeviumMark, NetworkArtwork } from './CapabilityArtwork';
 import { TEAM, TeamCard } from './TeamCard';
 import { CountUp, Reveal, SplitText } from './Motion';
 import { ProjectIntake } from './ProjectIntake';
@@ -180,6 +180,15 @@ function CapabilitiesSection() {
                           <p>{t(`services.svc${n}Desc`)}</p>
                         </div>
                       ))}
+                      {cap.id === 'development' && (
+                        <p className="al-cap-partner">
+                          <a href="https://hevium.xyz/" target="_blank" rel="noopener noreferrer">
+                            Hevium
+                            <ArrowTopRightIcon width={14} height={14} aria-hidden="true" />
+                          </a>{' '}
+                          {t('home.dexCapabilityNote')}
+                        </p>
+                      )}
                       <a href={CONTACT} className="al-text-link">
                         {t('home.contact')}
                         <ArrowTopRightIcon width={16} height={16} aria-hidden="true" />
@@ -206,6 +215,25 @@ function NetworkSection() {
             <SplitText text={t('home.networkTitle')} />
           </h2>
           <p>{t('home.networkBody')}</p>
+          <a
+            href="https://hevium.xyz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="al-network-partner"
+          >
+            <span className="al-network-partner-mark" aria-hidden="true">
+              <HeviumMark />
+            </span>
+            <span className="al-network-partner-body">
+              <span className="al-network-partner-title">Hevium</span>
+              <span className="al-small-label al-network-partner-role">{t('home.dexPartnerLabel')}</span>
+              <span className="al-network-partner-desc">{t('home.dexPartnerBody')}</span>
+              <span className="al-network-partner-url">
+                hevium.xyz
+                <ArrowTopRightIcon width={15} height={15} aria-hidden="true" />
+              </span>
+            </span>
+          </a>
           <a href={CONTACT} className="al-text-link">
             {t('home.networkCta')}
             <ArrowTopRightIcon width={17} height={17} aria-hidden="true" />
@@ -332,12 +360,148 @@ function ProcessSection() {
   );
 }
 
+interface FilterOption {
+  value: string;
+  label: string;
+  count: number;
+}
+
+function CategoryFilter({
+  value,
+  options,
+  label,
+  onChange,
+}: {
+  value: string;
+  options: FilterOption[];
+  label: string;
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const root = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLUListElement>(null);
+  const menuId = useId();
+  const currentLabel = options.find((opt) => opt.value === value)?.label ?? value;
+
+  useEffect(() => {
+    if (!open) return;
+    const close = (event: PointerEvent) => {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setOpen(false);
+      triggerRef.current?.focus();
+    };
+    document.addEventListener('pointerdown', close);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', close);
+      document.removeEventListener('keydown', escape);
+    };
+  }, [open]);
+
+  const focusOption = (index: number) => {
+    const items = menuRef.current?.querySelectorAll<HTMLButtonElement>('button');
+    if (!items?.length) return;
+    const clamped = (index + items.length) % items.length;
+    items[clamped]?.focus();
+  };
+
+  const select = (next: string) => {
+    onChange(next);
+    setOpen(false);
+    triggerRef.current?.focus();
+  };
+
+  return (
+    <div
+      className="al-filter"
+      ref={root}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+      }}
+    >
+      <button
+        ref={triggerRef}
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-controls={menuId}
+        aria-label={`${label}: ${currentLabel}`}
+        onClick={() => setOpen((prev) => !prev)}
+        onKeyDown={(event) => {
+          if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            if (!open) {
+              setOpen(true);
+              const selectedIdx = Math.max(
+                0,
+                options.findIndex((opt) => opt.value === value),
+              );
+              requestAnimationFrame(() => focusOption(selectedIdx));
+            } else {
+              focusOption(0);
+            }
+          } else if (event.key === 'ArrowUp' && !open) {
+            event.preventDefault();
+            setOpen(true);
+            requestAnimationFrame(() => focusOption(options.length - 1));
+          }
+        }}
+      >
+        <span>{currentLabel}</span>
+        <ChevronDownIcon width={18} height={18} aria-hidden="true" />
+      </button>
+      {open && (
+        <ul ref={menuRef} id={menuId} role="listbox" aria-label={label} className="al-filter-menu">
+          {options.map((opt, idx) => (
+            <li key={opt.value} role="option" aria-selected={opt.value === value}>
+              <button
+                type="button"
+                onClick={() => select(opt.value)}
+                onKeyDown={(event) => {
+                  if (event.key === 'ArrowDown') {
+                    event.preventDefault();
+                    focusOption(idx + 1);
+                  } else if (event.key === 'ArrowUp') {
+                    event.preventDefault();
+                    focusOption(idx - 1);
+                  } else if (event.key === 'Home') {
+                    event.preventDefault();
+                    focusOption(0);
+                  } else if (event.key === 'End') {
+                    event.preventDefault();
+                    focusOption(options.length - 1);
+                  }
+                }}
+              >
+                <span>{opt.label}</span>
+                <span>{opt.count}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 function EcosystemSection() {
   const { t } = useTranslation();
   const [category, setCategory] = useState('All');
   const [search, setSearch] = useState('');
   const [expanded, setExpanded] = useState(false);
   const tags = Array.from(new Set(PROJECTS.flatMap((project) => project.tags))).sort();
+  const filterOptions: FilterOption[] = [
+    { value: 'All', label: t('ecosystem.filterAll'), count: PROJECTS.length },
+    ...tags.map((tag) => ({
+      value: tag,
+      label: tag,
+      count: PROJECTS.filter((project) => project.tags.includes(tag)).length,
+    })),
+  ];
   const filtered = PROJECTS.filter(
     (project) =>
       (category === 'All' || project.tags.includes(category)) &&
@@ -370,24 +534,15 @@ function EcosystemSection() {
               }}
             />
           </label>
-          <label className="al-filter">
-            <span className="sr-only">{t('home.filterCategory')}</span>
-            <select
-              value={category}
-              onChange={(event) => {
-                setCategory(event.target.value);
-                setExpanded(false);
-              }}
-            >
-              <option value="All">{t('ecosystem.filterAll')}</option>
-              {tags.map((tag) => (
-                <option key={tag} value={tag}>
-                  {tag}
-                </option>
-              ))}
-            </select>
-            <ChevronDownIcon width={18} height={18} aria-hidden="true" />
-          </label>
+          <CategoryFilter
+            value={category}
+            options={filterOptions}
+            label={t('home.filterCategory')}
+            onChange={(next) => {
+              setCategory(next);
+              setExpanded(false);
+            }}
+          />
           <span className="al-result-count" aria-live="polite">
             {filtered.length} {t('home.projectsLabel')}
           </span>

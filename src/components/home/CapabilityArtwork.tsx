@@ -6,7 +6,7 @@ type Kind = 'strategy' | 'creative' | 'development' | 'community' | 'expansion';
 
 /* Shared drawing vocabulary, 60-30-10: yellow canvas, ink fills and 1px ink lines as the main contrast,
    cyan/paper only as small accents. Mono annotations, packets on paths. */
-function Label({ x, y, children, anchor }: { x: number; y: number; children: string; anchor?: 'middle' | 'end' }) {
+function Label({ x, y, children, anchor }: { x: number; y: number; children: string; anchor?: 'start' | 'middle' | 'end' }) {
   return (
     <text x={x} y={y} className="al-art-label" textAnchor={anchor}>
       {children}
@@ -227,28 +227,121 @@ export function CapabilityArtwork({ kind }: { kind: Kind }) {
   );
 }
 
-/* EVM at the centre; chains, wallets and tooling feed into it. Nodes sit on the r=170 ring around
-   (300,210) at -90, 150 and 30 degrees. */
-const CHAIN_FEEDS = [
-  { label: 'CHAINS', x: 300, y: 40, d: 'M300 49V168', lx: 300, ly: 24, accent: true },
-  { label: 'WALLETS', x: 152.78, y: 295, d: 'M160.6 290.5L222 252', lx: 152.78, ly: 326 },
-  { label: 'TOOLING', x: 447.22, y: 295, d: 'M439.4 290.5L378 252', lx: 447.22, ly: 326 },
+/* EVM at the centre; chains, wallets, tooling and Hevium (official DEX partner) feed into it.
+   Nodes sit on the r=164 ring around (300,210). */
+export const HEVIUM_MARK_PATH =
+  'M 24 -52.5 C 13.93 -36.78, -6.86 -25.5, -9 -6.5 C -7.36 -1.09, 3.27 -0.77, 9 -3.5 C 34.23 -15.52, 54.85 -34.92, 77 -52.5 C 66.44 -36.98, 45.8 -25.2, 44 -10.5 C 43.2 -4.8, 48.2 -2.9, 53.5 -2.1 C 61.5 -0.9, 69.2 -0.35, 77 0 C 59.09 1.69, 40.82 1.17, 26 9.5 C 7.63 19.83, -7.73 37.21, -24 52.5 C -13.93 36.78, 6.86 25.5, 9 6.5 C 7.36 1.09, -3.27 0.77, -9 3.5 C -34.23 15.52, -54.85 34.92, -77 52.5 C -66.44 36.98, -45.8 25.2, -44 10.5 C -43.2 4.8, -48.2 2.9, -53.5 2.1 C -61.5 0.9, -69.2 0.35, -77 0 C -59.09 -1.69, -40.82 -1.17, -26 -9.5 C -7.63 -19.83, 7.73 -37.21, 24 -52.5 Z';
+
+export function HeviumMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="-84 -60 168 120" fill="none" className={className} aria-hidden="true">
+      <path d={HEVIUM_MARK_PATH} fill="currentColor" />
+    </svg>
+  );
+}
+
+const RADAR_AXIS_TICKS = [
+  'M300 34v8',
+  'M300 378v8',
+  'M124 210h8',
+  'M468 210h8',
 ];
+
+const RADAR_NODES: {
+  label: string;
+  x: number;
+  y: number;
+  bearing: string;
+  lx: number;
+  ly: number;
+  anchor: 'start' | 'end';
+}[] = [
+  // Inner orbit (r=104) — core protocol layer
+  {
+    label: 'CHAINS',
+    x: 240.35,
+    y: 124.81,
+    bearing: 'M272.47 170.68L244.36 130.54',
+    lx: 222,
+    ly: 129,
+    anchor: 'end',
+  },
+  {
+    label: 'TOOLING',
+    x: 359.65,
+    y: 295.19,
+    bearing: 'M327.53 249.32L355.64 289.46',
+    lx: 378,
+    ly: 299,
+    anchor: 'start',
+  },
+  // Outer orbit (r=172) — user access
+  {
+    label: 'WALLETS',
+    x: 154.14,
+    y: 301.14,
+    bearing: 'M259.29 235.44L160.07 297.44',
+    lx: 134,
+    ly: 305,
+    anchor: 'end',
+  },
+];
+
+/* Flat 2D technical radar centred on EVM: pulses radiate outward across two concentric orbits
+   with two inner nodes (CHAINS, TOOLING) and two outer nodes (WALLETS, DEX · HEVIUM). */
 export function NetworkArtwork() {
   return (
     <svg viewBox="0 0 600 420" fill="none" className="al-motion">
-      <circle cx="300" cy="210" r="170" stroke="currentColor" strokeOpacity=".45" strokeDasharray="1 7" className="al-spin" />
-      <circle cx="300" cy="210" r="122" stroke="currentColor" strokeOpacity=".18" />
-      {CHAIN_FEEDS.map(({ label, x, y, d, lx, ly, accent }, i) => (
+      {/* Scope crosshair & cardinal range ticks */}
+      <path d="M300 28V392M118 210H482" stroke="currentColor" strokeOpacity=".14" />
+      {RADAR_AXIS_TICKS.map((d) => (
+        <path key={d} d={d} stroke="currentColor" strokeOpacity=".45" />
+      ))}
+
+      {/* Two concentric orbits */}
+      <circle cx="300" cy="210" r="104" stroke="currentColor" strokeOpacity=".35" />
+      <circle cx="300" cy="210" r="172" stroke="currentColor" strokeOpacity=".48" strokeDasharray="2 6" />
+
+      {/* Outward radar pulses radiating from EVM core (r=48) to outer orbit (r=172) */}
+      {[0, 1.4, 2.8].map((delay) => (
+        <circle
+          key={delay}
+          cx="300"
+          cy="210"
+          r="48"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          vectorEffect="non-scaling-stroke"
+          className="al-radar-pulse"
+          style={{ animationDelay: `${delay}s` }}
+        />
+      ))}
+
+      {/* Inner & outer standard nodes */}
+      {RADAR_NODES.map(({ label, x, y, bearing, lx, ly, anchor }) => (
         <g key={label}>
-          <path d={d} stroke="currentColor" />
-          <Flow d={d} delay={i * 0.9} duration={2.6} />
-          <circle cx={x} cy={y} r="9" fill={accent ? 'var(--al-cyan)' : 'currentColor'} stroke="currentColor" strokeWidth="2" />
-          <Label x={lx} y={ly} anchor="middle">{label}</Label>
+          <path d={bearing} stroke="currentColor" strokeOpacity=".3" />
+          <circle cx={x} cy={y} r="12" stroke="currentColor" strokeOpacity=".35" />
+          <circle cx={x} cy={y} r="7" fill="currentColor" />
+          <Label x={lx} y={ly} anchor={anchor}>{label}</Label>
         </g>
       ))}
-      <rect x="186" y="168" width="228" height="84" fill="currentColor" />
-      <text x="300" y="227" textAnchor="middle" className="al-network-mark">
+
+      {/* Outer orbit (r=172) featured DEX partner node: DEX · HEVIUM */}
+      <g>
+        <path d="M340.71 184.56L429.75 128.92" stroke="currentColor" strokeOpacity=".38" />
+        <circle cx="445.86" cy="118.86" r="25" stroke="currentColor" strokeDasharray="3 3" strokeOpacity=".5" />
+        <circle cx="445.86" cy="118.86" r="19" fill="currentColor" />
+        <g transform="translate(445.86 118.86) scale(0.165)">
+          <path d={HEVIUM_MARK_PATH} fill="var(--al-yellow)" />
+        </g>
+        <circle cx="460.5" cy="104.5" r="5" fill="var(--al-cyan)" stroke="currentColor" strokeWidth="1.5" />
+        <Label x={475} y={123}>{`DEX · HEVIUM`}</Label>
+      </g>
+
+      {/* Central EVM radar core */}
+      <circle cx="300" cy="210" r="48" fill="currentColor" />
+      <text x="300" y="219" textAnchor="middle" className="al-network-mark">
         EVM
       </text>
     </svg>

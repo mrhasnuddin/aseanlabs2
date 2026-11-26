@@ -1,6 +1,7 @@
 /* One-colour SVG traces in public/partners/mono. `ratio` is the trace's width/height; `tune` corrects
    optical weight for unusually light (thin-line) or heavy marks. */
 const PARTNER_LIST = [
+  { name: 'Hevium', file: 'hevium', href: 'https://hevium.xyz/', ratio: 4.67, tune: 0.96 },
   { name: 'ENI', file: 'eni', href: 'https://eni.top/', ratio: 3.24 },
   { name: 'Bitget Wallet', file: 'bitget', href: 'https://web3.bitget.com/en', ratio: 6.28 },
   { name: 'CertiK', file: 'certik', href: 'https://www.certik.com/', ratio: 3.43, tune: 1.1 },

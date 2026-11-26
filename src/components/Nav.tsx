@@ -23,6 +23,7 @@ const groups = [
       ['nav.coreCapabilities', '/#capabilities'],
       ['nav.integrations', '/#integrations'],
       ['nav.ecosystem', '/#ecosystem'],
+      ['nav.dexPartner', 'https://hevium.xyz/'],
     ],
   },
 ];

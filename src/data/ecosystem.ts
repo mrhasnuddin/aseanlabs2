@@ -1,5 +1,17 @@
 export const PROJECTS = [
   {
+    id: 'hevium',
+    name: 'Hevium',
+    tags: ['DEX', 'DeFi'],
+    descriptionKey: 'ecosystem.hevium.desc',
+    defaultDescription:
+      'Official DEX partner of ASEAN Labs. A multi-chain fair-launch and trading terminal across Base, BNB Chain, Solana, HyperEVM, and more.',
+    url: 'https://hevium.xyz/',
+    logo: '/projects/hevium.svg',
+    testimonyKey: '',
+    defaultTestimony: '',
+  },
+  {
     id: 't1',
     name: 'TeaDAO',
     tags: ['DAO'],
